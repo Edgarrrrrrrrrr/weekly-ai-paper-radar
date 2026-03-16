@@ -6,18 +6,31 @@ from pathlib import Path
 
 
 @dataclass(frozen=True)
+class LandmarkPaperConfig:
+    paper_id: str
+    title: str
+    abs_url: str
+    pdf_url: str
+    published_label: str
+    authors: list[str]
+    summary: str
+    rationale: str
+
+
+@dataclass(frozen=True)
 class TopicConfig:
     name: str
+    name_zh: str
     slug: str
-    keywords: list[str]
+    keyword_groups: list[list[str]]
+    landmarks: list[LandmarkPaperConfig]
 
 
 @dataclass(frozen=True)
 class PipelineConfig:
     days_back: int
     max_results: int
-    candidate_pool: int
-    max_papers: int
+    recent_papers_per_topic: int
     language: str
     categories: list[str]
     topics: list[TopicConfig]
@@ -26,12 +39,20 @@ class PipelineConfig:
 def load_config(path: str | Path) -> PipelineConfig:
     config_path = Path(path)
     raw = json.loads(config_path.read_text(encoding="utf-8"))
-    topics = [TopicConfig(**topic) for topic in raw["topics"]]
+    topics = [
+        TopicConfig(
+            name=topic["name"],
+            name_zh=topic["name_zh"],
+            slug=topic["slug"],
+            keyword_groups=topic["keyword_groups"],
+            landmarks=[LandmarkPaperConfig(**item) for item in topic["landmarks"]],
+        )
+        for topic in raw["topics"]
+    ]
     return PipelineConfig(
         days_back=raw["days_back"],
         max_results=raw["max_results"],
-        candidate_pool=raw["candidate_pool"],
-        max_papers=raw["max_papers"],
+        recent_papers_per_topic=raw["recent_papers_per_topic"],
         language=raw["language"],
         categories=raw["categories"],
         topics=topics,

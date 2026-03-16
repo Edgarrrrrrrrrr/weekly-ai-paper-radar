@@ -4,40 +4,40 @@
   <id>http://arxiv.org/api/sample</id>
   <updated>2026-03-16T00:00:00Z</updated>
   <entry>
-    <id>http://arxiv.org/abs/2603.00001v1</id>
+    <id>http://arxiv.org/abs/2603.00011v1</id>
     <updated>2026-03-14T12:00:00Z</updated>
     <published>2026-03-14T12:00:00Z</published>
-    <title>Fine-grained Text-to-Image Control with Sparse Diffusion Plans</title>
-    <summary>We introduce a text-to-image generation framework that decomposes prompts into sparse diffusion plans for controllable image synthesis and improved semantic fidelity.</summary>
+    <title>Autonomous Canvas Agents for Text-to-Image Editing Workflows</title>
+    <summary>We study a text-to-image and image editing system where an agent plans multi-step tool use, prompt rewriting, and region-level drawing actions to improve controllable visual generation.</summary>
     <author><name>Alice Example</name></author>
     <author><name>Bob Example</name></author>
-    <link href="http://arxiv.org/abs/2603.00001v1" rel="alternate" type="text/html" />
-    <link title="pdf" href="http://arxiv.org/pdf/2603.00001v1" rel="related" type="application/pdf" />
+    <link href="http://arxiv.org/abs/2603.00011v1" rel="alternate" type="text/html" />
+    <link title="pdf" href="http://arxiv.org/pdf/2603.00011v1" rel="related" type="application/pdf" />
     <category term="cs.CV" />
     <category term="cs.AI" />
   </entry>
   <entry>
-    <id>http://arxiv.org/abs/2603.00002v1</id>
+    <id>http://arxiv.org/abs/2603.00012v1</id>
     <updated>2026-03-13T09:00:00Z</updated>
     <published>2026-03-13T09:00:00Z</published>
-    <title>Long-Horizon Text-to-Video Generation with Memory-Conditioned World Models</title>
-    <summary>We present a text-to-video model that uses a memory-conditioned world model to improve long-horizon coherence, camera consistency, and controllable video generation.</summary>
+    <title>Planning-Guided Interactive World Models for Video Agents</title>
+    <summary>We present a video generation and world model framework that supports planning, action-conditioned simulation, and long-horizon control for agent training and evaluation.</summary>
     <author><name>Carol Example</name></author>
-    <link href="http://arxiv.org/abs/2603.00002v1" rel="alternate" type="text/html" />
-    <link title="pdf" href="http://arxiv.org/pdf/2603.00002v1" rel="related" type="application/pdf" />
+    <link href="http://arxiv.org/abs/2603.00012v1" rel="alternate" type="text/html" />
+    <link title="pdf" href="http://arxiv.org/pdf/2603.00012v1" rel="related" type="application/pdf" />
     <category term="cs.CV" />
     <category term="cs.LG" />
   </entry>
   <entry>
-    <id>http://arxiv.org/abs/2603.00003v1</id>
+    <id>http://arxiv.org/abs/2603.00013v1</id>
     <updated>2026-03-12T18:00:00Z</updated>
     <published>2026-03-12T18:00:00Z</published>
-    <title>Planner-Toolformer Agents for Reliable Web Task Completion</title>
-    <summary>We study agentic AI systems that combine planning and tool use to improve reliable completion on realistic web agent tasks with better error recovery.</summary>
+    <title>Recoverable Tool-Using Agents with Deliberate Planning</title>
+    <summary>We study agentic AI systems that combine planning, reasoning, and tool use to improve reliable completion on realistic tasks with better recovery from mistakes.</summary>
     <author><name>Dan Example</name></author>
     <author><name>Eve Example</name></author>
-    <link href="http://arxiv.org/abs/2603.00003v1" rel="alternate" type="text/html" />
-    <link title="pdf" href="http://arxiv.org/pdf/2603.00003v1" rel="related" type="application/pdf" />
+    <link href="http://arxiv.org/abs/2603.00013v1" rel="alternate" type="text/html" />
+    <link title="pdf" href="http://arxiv.org/pdf/2603.00013v1" rel="related" type="application/pdf" />
     <category term="cs.AI" />
   </entry>
 </feed>

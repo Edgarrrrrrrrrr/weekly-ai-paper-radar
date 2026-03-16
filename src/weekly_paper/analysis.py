@@ -1,95 +1,103 @@
 from __future__ import annotations
 
-from weekly_paper.config import PipelineConfig
-from weekly_paper.models import PaperAnalysis, RankedPaper, WeeklyEditorial
+from weekly_paper.models import PaperAnalysis, TopicReport, WeeklyEditorial, RankedPaper
 from weekly_paper.openai_client import OpenAIJSONClient
 
 
-def rank_with_llm(
+def enhance_topic_reports_with_llm(
     client: OpenAIJSONClient,
-    ranked_candidates: list[RankedPaper],
-    config: PipelineConfig,
-) -> tuple[list[RankedPaper], WeeklyEditorial]:
-    papers = [item.paper for item in ranked_candidates[: config.candidate_pool]]
-    items = []
-    for paper in papers:
-        items.append(
-            {
-                "paper_id": paper.paper_id,
-                "title": paper.title,
-                "abstract": paper.abstract,
-                "authors": paper.authors[:6],
-                "categories": paper.categories,
-                "published": paper.published.isoformat(),
-                "matched_topics": paper.matched_topics,
-                "keyword_score": paper.keyword_score,
-            }
+    topic_reports: list[TopicReport],
+    language: str,
+) -> list[TopicReport]:
+    updated: list[TopicReport] = []
+    for report in topic_reports:
+        system_prompt = (
+            "You are a senior AI research editor. "
+            "Write concise, specific weekly direction notes. "
+            "Use only the provided titles, rationales, and summaries. "
+            "Return strict JSON."
         )
+        payload = {
+            "topic": report.topic_name_zh,
+            "landmarks": [
+                {
+                    "title": item.paper.title,
+                    "reason": item.selection_reason,
+                    "summary": item.paper.abstract,
+                }
+                for item in report.landmark_papers
+            ],
+            "recent": [
+                {
+                    "title": item.paper.title,
+                    "reason": item.selection_reason,
+                    "summary": item.paper.abstract,
+                }
+                for item in report.recent_papers
+            ],
+        }
+        user_prompt = (
+            f"Language: {language}\n"
+            "Return JSON with this schema:\n"
+            "{"
+            '"summary":"...",'
+            '"trend_signals":["...", "...", "..."]'
+            "}\n"
+            f"Direction data:\n{payload}"
+        )
+        response = client.complete_json(system_prompt=system_prompt, user_prompt=user_prompt)
+        updated.append(
+            TopicReport(
+                topic_name=report.topic_name,
+                topic_name_zh=report.topic_name_zh,
+                topic_slug=report.topic_slug,
+                summary=response["summary"],
+                trend_signals=list(response["trend_signals"]),
+                landmark_papers=report.landmark_papers,
+                recent_papers=report.recent_papers,
+            )
+        )
+    return updated
 
+
+def enhance_editorial_with_llm(
+    client: OpenAIJSONClient,
+    topic_reports: list[TopicReport],
+    language: str,
+) -> WeeklyEditorial:
     system_prompt = (
-        "You are a world-class AI research analyst. "
-        "Choose the most important papers for an applied research team tracking "
-        "Text-to-Image, Text-to-Video, and Agentic AI. "
-        "Only use the provided metadata and abstracts. "
+        "You are a sharp but grounded AI strategy editor. "
+        "Summarize the weekly state of research directions based only on the supplied notes. "
         "Return strict JSON."
     )
+    payload = [
+        {
+            "topic": report.topic_name_zh,
+            "summary": report.summary,
+            "trends": report.trend_signals,
+            "landmarks": [item.paper.title for item in report.landmark_papers],
+            "recent": [item.paper.title for item in report.recent_papers],
+        }
+        for report in topic_reports
+    ]
     user_prompt = (
-        "Select the most important papers for this week.\n"
-        f"Need exactly {config.max_papers} papers.\n"
-        "Language for all narrative fields: Simplified Chinese.\n"
+        f"Language: {language}\n"
         "Return JSON with this schema:\n"
         "{"
-        '"selected":[{"paper_id":"...","rank":1,"importance_score":85,"why_now":"...","direction_fit":"..."}],'
-        '"editorial":{"headline":"...","overview":"...","trend_signals":["..."],"watchlist":["..."]}'
+        '"headline":"...",'
+        '"overview":"...",'
+        '"trend_signals":["...", "...", "..."],'
+        '"watchlist":["...", "...", "..."]'
         "}\n"
-        f"Candidates:\n{items}"
+        f"Direction reports:\n{payload}"
     )
-
     response = client.complete_json(system_prompt=system_prompt, user_prompt=user_prompt)
-    selected_lookup = {item["paper_id"]: item for item in response["selected"]}
-    updated: list[RankedPaper] = []
-
-    for candidate in papers:
-        chosen = selected_lookup.get(candidate.paper_id)
-        if not chosen:
-            continue
-        updated.append(
-            RankedPaper(
-                paper=candidate,
-                rank=int(chosen["rank"]),
-                importance_score=int(chosen["importance_score"]),
-                why_now=chosen["why_now"],
-                direction_fit=chosen["direction_fit"],
-            )
-        )
-
-    updated.sort(key=lambda item: item.rank)
-
-    if len(updated) < config.max_papers:
-        chosen_ids = {item.paper.paper_id for item in updated}
-        for candidate in ranked_candidates:
-            if candidate.paper.paper_id in chosen_ids:
-                continue
-            updated.append(
-                RankedPaper(
-                    paper=candidate.paper,
-                    rank=len(updated) + 1,
-                    importance_score=candidate.importance_score,
-                    why_now=candidate.why_now,
-                    direction_fit=candidate.direction_fit,
-                )
-            )
-            if len(updated) == config.max_papers:
-                break
-
-    editorial_data = response["editorial"]
-    editorial = WeeklyEditorial(
-        headline=editorial_data["headline"],
-        overview=editorial_data["overview"],
-        trend_signals=list(editorial_data["trend_signals"]),
-        watchlist=list(editorial_data["watchlist"]),
+    return WeeklyEditorial(
+        headline=response["headline"],
+        overview=response["overview"],
+        trend_signals=list(response["trend_signals"]),
+        watchlist=list(response["watchlist"]),
     )
-    return updated[: config.max_papers], editorial
 
 
 def analyze_paper(
@@ -99,8 +107,8 @@ def analyze_paper(
 ) -> PaperAnalysis:
     system_prompt = (
         "You are a thoughtful technical editor writing elegant, concrete research digests. "
-        "Use only the provided paper metadata and abstract. "
-        "Do not hallucinate experiments or numbers that are not implied by the abstract. "
+        "Use only the provided paper metadata and summary. "
+        "Do not hallucinate experiments or claims beyond the supplied information. "
         "Return strict JSON."
     )
     user_prompt = (
@@ -119,9 +127,10 @@ def analyze_paper(
         '"one_line":"..."'
         "}\n"
         f"Paper title: {paper.paper.title}\n"
-        f"Matched topics: {paper.paper.matched_topics}\n"
-        f"Why now: {paper.why_now}\n"
-        f"Abstract: {paper.paper.abstract}\n"
+        f"Direction: {paper.direction_fit}\n"
+        f"Collection kind: {paper.paper.collection_kind}\n"
+        f"Selection reason: {paper.selection_reason}\n"
+        f"Summary: {paper.paper.abstract}\n"
     )
     response = client.complete_json(system_prompt=system_prompt, user_prompt=user_prompt)
     return PaperAnalysis(
@@ -139,38 +148,53 @@ def analyze_paper(
 
 
 def fallback_analysis(paper: RankedPaper) -> PaperAnalysis:
-    first_sentence = paper.paper.abstract.split(". ")[0].strip()
+    first_sentence = paper.paper.abstract.split("。")[0].strip()
+    if not first_sentence:
+        first_sentence = paper.paper.abstract.split(". ")[0].strip()
     if not first_sentence:
         first_sentence = paper.paper.abstract[:180].strip()
 
+    if paper.paper.collection_kind == "landmark":
+        importance = "这是一篇值得长期反复回看的基石论文，用来建立这个方向的共同语言和判断框架。"
+        applications = [
+            "适合做方向入门和团队知识对齐。",
+            "适合用来判断今天很多新工作究竟是在延续哪条主线。",
+        ]
+        follow_ups = [
+            "回看它之后的代表性继承工作和变体路线。",
+            "把它和本期新工作放在一起看，判断哪些是真创新，哪些只是工程封装。",
+        ]
+    else:
+        importance = "这是当前阶段值得跟踪的新工作，适合拿来观察研究重心是否正在发生迁移。"
+        applications = [
+            "适合作为近期方向判断和技术情报输入。",
+            "适合帮助你发现哪些问题开始被研究社区反复强调。",
+        ]
+        follow_ups = [
+            "和同方向过去 4 到 8 周的工作做横向比较。",
+            "重点看实验设置、任务定义和是否真的解决了生产可用性问题。",
+        ]
+
     return PaperAnalysis(
         title_zh=paper.paper.title,
-        tagline=paper.why_now,
-        importance=(
-            "从关键词覆盖、发布时间和主题贴合度来看，这篇论文值得进入本周跟踪列表。"
-        ),
+        tagline=paper.selection_reason,
+        importance=importance,
         core_innovation=first_sentence,
         technical_takeaways=[
-            "论文摘要显示其核心贡献和当前关注方向高度相关。",
-            "如果你在做路线判断，这篇更适合拿来快速理解最新思路。",
-            "建议结合原文的实验部分进一步确认真实增益。"
+            "建议先把这篇放回整个方向脉络里看，而不是孤立地看一篇论文。",
+            "如果你在做路线判断，比起单个指标，更要看它重新定义了什么任务边界。",
+            "真正的价值通常体现在是否改变了后续研究的默认范式。",
         ],
-        applications=[
-            "可作为相关方向的技术情报输入。",
-            "可辅助判断近期研究热点是否发生迁移。",
-        ],
+        applications=applications,
         limitations=[
-            "当前分析基于摘要，不等价于完整精读。",
-            "真正的工程可用性还需要看实验设计和复现实验。"
+            "当前分析基于论文摘要或配置中的方向摘记，不等价于完整精读。",
+            "真正的工程价值仍然需要结合实验设计、复现难度和系统成本来判断。",
         ],
         who_should_read=[
-            "做多模态生成研究的人",
-            "做视频生成或 Agent 产品判断的人",
-            "需要跟踪前沿技术路线的团队负责人"
+            "需要做方向判断的研究负责人",
+            "在做生成式产品或 Agent 产品路线规划的人",
+            "需要追踪交叉方向机会的多模态团队",
         ],
-        follow_ups=[
-            "阅读原文方法部分与实验设置。",
-            "对比最近 4 到 6 周同方向论文的变化。"
-        ],
-        one_line=paper.why_now,
+        follow_ups=follow_ups,
+        one_line=paper.selection_reason,
     )

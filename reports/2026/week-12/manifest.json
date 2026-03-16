@@ -1,301 +1,388 @@
 {
   "week": "2026/week-12",
-  "headline": "本周研究重点围绕生成质量、视频时序一致性和 Agent 能力边界展开。",
-  "papers": [
+  "headline": "2026 年当前阶段，更值得跟踪的是 Agent 与视觉生成交叉方向的系统化演进。",
+  "overview": "这份周报不再只看最近几天的新论文，而是把每个方向的长期基石、近期值得关注的新工作、以及研究趋势放在一起看，帮助你做路线判断。",
+  "topics": [
     {
-      "rank": 1,
-      "paper": {
-        "paper_id": "2603.13162v1",
-        "source": "arXiv",
-        "title": "DiT-IC: Aligned Diffusion Transformer for Efficient Image Compression",
-        "abstract": "Diffusion-based image compression has recently shown outstanding perceptual fidelity, yet its practicality is hindered by prohibitive sampling overhead and high memory usage. Most existing diffusion codecs employ U-Net architectures, where hierarchical downsampling forces diffusion to operate in shallow latent spaces (typically with only 8x spatial downscaling), resulting in excessive computation. In contrast, conventional VAE-based codecs work in much deeper latent domains (16x - 64x downscaled), motivating a key question: Can diffusion operate effectively in such compact latent spaces without compromising reconstruction quality? To address this, we introduce DiT-IC, an Aligned Diffusion Transformer for Image Compression, which replaces the U-Net with a Diffusion Transformer capable of performing diffusion in latent space entirely at 32x downscaled resolution. DiT-IC adapts a pretrained text-to-image multi-step DiT into a single-step reconstruction model through three key alignment mechanisms: (1) a variance-guided reconstruction flow that adapts denoising strength to latent uncertainty for efficient reconstruction; (2) a self-distillation alignment that enforces consistency with encoder-defined latent geometry to enable one-step diffusion; and (3) a latent-conditioned guidance that replaces text prompts with semantically aligned latent conditions, enabling text-free inference. With these designs, DiT-IC achieves state-of-the-art perceptual quality while offering up to 30x faster decoding and drastically lower memory usage than existing diffusion-based codecs. Remarkably, it can reconstruct 2048x2048 images on a 16 GB laptop GPU.",
-        "authors": [
-          "Junqi Shi",
-          "Ming Lu",
-          "Xingchen Li",
-          "Anle Ke",
-          "Ruiqi Zhang",
-          "Zhan Ma"
-        ],
-        "categories": [
-          "eess.IV",
-          "cs.CV"
-        ],
-        "published": "2026-03-13 16:56:00+00:00",
-        "updated": "2026-03-13 16:56:00+00:00",
-        "abs_url": "http://arxiv.org/abs/2603.13162v1",
-        "pdf_url": "https://arxiv.org/pdf/2603.13162v1",
-        "matched_topics": [
-          "Text-to-Image"
-        ],
-        "keyword_score": 18.0
-      },
-      "analysis": {
-        "title_zh": "DiT-IC: Aligned Diffusion Transformer for Efficient Image Compression",
-        "tagline": "这篇论文同时命中了 Text-to-Image 方向的关键词，而且发布时间很近，适合作为本周优先跟踪对象。",
-        "importance": "从关键词覆盖、发布时间和主题贴合度来看，这篇论文值得进入本周跟踪列表。",
-        "core_innovation": "Diffusion-based image compression has recently shown outstanding perceptual fidelity, yet its practicality is hindered by prohibitive sampling overhead and high memory usage",
-        "technical_takeaways": [
-          "论文摘要显示其核心贡献和当前关注方向高度相关。",
-          "如果你在做路线判断，这篇更适合拿来快速理解最新思路。",
-          "建议结合原文的实验部分进一步确认真实增益。"
-        ],
-        "applications": [
-          "可作为相关方向的技术情报输入。",
-          "可辅助判断近期研究热点是否发生迁移。"
-        ],
-        "limitations": [
-          "当前分析基于摘要，不等价于完整精读。",
-          "真正的工程可用性还需要看实验设计和复现实验。"
-        ],
-        "who_should_read": [
-          "做多模态生成研究的人",
-          "做视频生成或 Agent 产品判断的人",
-          "需要跟踪前沿技术路线的团队负责人"
-        ],
-        "follow_ups": [
-          "阅读原文方法部分与实验设置。",
-          "对比最近 4 到 6 周同方向论文的变化。"
-        ],
-        "one_line": "这篇论文同时命中了 Text-to-Image 方向的关键词，而且发布时间很近，适合作为本周优先跟踪对象。"
-      },
-      "detail_path": "papers/01-dit-ic-aligned-diffusion-transformer-for-efficient-image-compression.md"
+      "topic_name": "Agentic AI",
+      "topic_name_zh": "Agentic AI",
+      "summary": "这个方向的核心已经从“会不会推理”转向“能不能在真实任务中规划、调用工具并稳定完成任务”。 本期可以重点留意：Recoverable Tool-Using Agents with Deliberate Planning；Planning-Guided Interactive World Models for Video Agents。",
+      "trend_signals": [
+        "更强调工具使用与规划，而不只是语言推理。 本期样本数：2。",
+        "研究目标逐步转向真实环境任务完成度。",
+        "鲁棒性、恢复能力和可验证性会越来越重要。"
+      ],
+      "landmark_papers": [
+        {
+          "rank": 1,
+          "importance_score": 98,
+          "selection_reason": "这是 Agentic AI 的长期基石论文之一，适合用来理解“思考 + 行动”范式的原点。",
+          "direction_fit": "Agentic AI",
+          "detail_path": "papers/2210-03629-react-synergizing-reasoning-and-acting-in-language-models.md",
+          "paper": {
+            "paper_id": "2210.03629",
+            "source": "arXiv",
+            "title": "ReAct: Synergizing Reasoning and Acting in Language Models",
+            "abstract": "这篇工作提出让语言模型在推理轨迹和外部动作之间交替执行，形成后续 Agent 领域最经典的闭环范式之一。",
+            "authors": [
+              "Shunyu Yao",
+              "Jeffrey Zhao",
+              "Dian Yu"
+            ],
+            "categories": [],
+            "published": "2022-01-01 00:00:00+00:00",
+            "updated": "2022-01-01 00:00:00+00:00",
+            "abs_url": "https://arxiv.org/abs/2210.03629",
+            "pdf_url": "https://arxiv.org/pdf/2210.03629",
+            "published_label": "2022",
+            "collection_kind": "landmark",
+            "matched_topics": [
+              "Agentic AI"
+            ],
+            "keyword_score": 100.0,
+            "topic_scores": {
+              "Agentic AI": 100.0
+            }
+          }
+        },
+        {
+          "rank": 2,
+          "importance_score": 97,
+          "selection_reason": "如果你关心 Agent 的工具使用能力，这篇是必须长期放在视野里的代表工作。",
+          "direction_fit": "Agentic AI",
+          "detail_path": "papers/2302-04761-toolformer-language-models-can-teach-themselves-to-use-tools.md",
+          "paper": {
+            "paper_id": "2302.04761",
+            "source": "arXiv",
+            "title": "Toolformer: Language Models Can Teach Themselves to Use Tools",
+            "abstract": "这篇论文展示了语言模型可以通过自监督方式学习何时调用计算器、搜索、翻译等外部工具，是工具调用路线的代表作。",
+            "authors": [
+              "Timo Schick",
+              "Jane Dwivedi-Yu",
+              "Roberto Dessi"
+            ],
+            "categories": [],
+            "published": "2023-01-01 00:00:00+00:00",
+            "updated": "2023-01-01 00:00:00+00:00",
+            "abs_url": "https://arxiv.org/abs/2302.04761",
+            "pdf_url": "https://arxiv.org/pdf/2302.04761",
+            "published_label": "2023",
+            "collection_kind": "landmark",
+            "matched_topics": [
+              "Agentic AI"
+            ],
+            "keyword_score": 100.0,
+            "topic_scores": {
+              "Agentic AI": 100.0
+            }
+          }
+        }
+      ],
+      "recent_papers": [
+        {
+          "rank": 1,
+          "importance_score": 90,
+          "selection_reason": "这是这个方向近期更值得跟踪的新工作之一，它同时命中了 Agentic AI 的关键特征。",
+          "direction_fit": "Agentic AI",
+          "detail_path": "papers/2603-00013v1-recoverable-tool-using-agents-with-deliberate-planning.md",
+          "paper": {
+            "paper_id": "2603.00013v1",
+            "source": "arXiv",
+            "title": "Recoverable Tool-Using Agents with Deliberate Planning",
+            "abstract": "We study agentic AI systems that combine planning, reasoning, and tool use to improve reliable completion on realistic tasks with better recovery from mistakes.",
+            "authors": [
+              "Dan Example",
+              "Eve Example"
+            ],
+            "categories": [
+              "cs.AI"
+            ],
+            "published": "2026-03-12 18:00:00+00:00",
+            "updated": "2026-03-12 18:00:00+00:00",
+            "abs_url": "http://arxiv.org/abs/2603.00013v1",
+            "pdf_url": "http://arxiv.org/pdf/2603.00013v1",
+            "published_label": "",
+            "collection_kind": "recent",
+            "matched_topics": [
+              "Agentic AI"
+            ],
+            "keyword_score": 14.0,
+            "topic_scores": {
+              "Agentic AI": 14.0
+            }
+          }
+        },
+        {
+          "rank": 2,
+          "importance_score": 81,
+          "selection_reason": "这是这个方向近期更值得跟踪的新工作之一，它同时命中了 Agentic AI 的关键特征。",
+          "direction_fit": "Agentic AI",
+          "detail_path": "papers/2603-00012v1-planning-guided-interactive-world-models-for-video-agents.md",
+          "paper": {
+            "paper_id": "2603.00012v1",
+            "source": "arXiv",
+            "title": "Planning-Guided Interactive World Models for Video Agents",
+            "abstract": "We present a video generation and world model framework that supports planning, action-conditioned simulation, and long-horizon control for agent training and evaluation.",
+            "authors": [
+              "Carol Example"
+            ],
+            "categories": [
+              "cs.CV",
+              "cs.LG"
+            ],
+            "published": "2026-03-13 09:00:00+00:00",
+            "updated": "2026-03-13 09:00:00+00:00",
+            "abs_url": "http://arxiv.org/abs/2603.00012v1",
+            "pdf_url": "http://arxiv.org/pdf/2603.00012v1",
+            "published_label": "",
+            "collection_kind": "recent",
+            "matched_topics": [
+              "Agentic AI",
+              "Text-to-Video + Agentic AI"
+            ],
+            "keyword_score": 24.0,
+            "topic_scores": {
+              "Agentic AI": 8.0,
+              "Text-to-Video + Agentic AI": 24.0
+            }
+          }
+        }
+      ]
     },
     {
-      "rank": 2,
-      "paper": {
-        "paper_id": "2603.13024v1",
-        "source": "arXiv",
-        "title": "SAW: Toward a Surgical Action World Model via Controllable and Scalable Video Generation",
-        "abstract": "A surgical world model capable of generating realistic surgical action videos with precise control over tool-tissue interactions can address fundamental challenges in surgical AI and simulation -- from data scarcity and rare event synthesis to bridging the sim-to-real gap for surgical automation. However, current video generation methods, the very core of such surgical world models, require expensive annotations or complex structured intermediates as conditioning signals at inference, limiting their scalability. Other approaches exhibit limited temporal consistency across complex laparoscopic scenes and do not possess sufficient realism. We propose Surgical Action World (SAW) -- a step toward surgical action world modeling through video diffusion conditioned on four lightweight signals: language prompts encoding tool-action context, a reference surgical scene, tissue affordance mask, and 2D tool-tip trajectories. We design a conditional video diffusion approach that reformulates video-to-video diffusion into trajectory-conditioned surgical action synthesis. The backbone diffusion model is fine-tuned on a custom-curated dataset of 12,044 laparoscopic clips with lightweight spatiotemporal conditioning signals, leveraging a depth consistency loss to enforce geometric plausibility without requiring depth at inference. SAW achieves state-of-the-art temporal consistency (CD-FVD: 199.19 vs. 546.82) and strong visual quality on held-out test data. Furthermore, we demonstrate its downstream utility for (a) surgical AI, where augmenting rare actions with SAW-generated videos improves action recognition (clipping F1-score: 20.93% to 43.14%; cutting: 0.00% to 8.33%) on real test data, and (b) surgical simulation, where rendering tool-tissue interaction videos from simulator-derived trajectory points toward a visually faithful simulation engine.",
-        "authors": [
-          "Sampath Rapuri",
-          "Lalithkumar Seenivasan",
-          "Dominik Schneider",
-          "Roger Soberanis-Mukul",
-          "Yufan He",
-          "Hao Ding",
-          "Jiru Xu",
-          "Chenhao Yu",
-          "Chenyan Jing",
-          "Pengfei Guo",
-          "Daguang Xu",
-          "Mathias Unberath"
-        ],
-        "categories": [
-          "cs.CV",
-          "cs.AI",
-          "cs.LG",
-          "eess.IV"
-        ],
-        "published": "2026-03-13 14:32:41+00:00",
-        "updated": "2026-03-13 14:32:41+00:00",
-        "abs_url": "http://arxiv.org/abs/2603.13024v1",
-        "pdf_url": "https://arxiv.org/pdf/2603.13024v1",
-        "matched_topics": [
-          "Text-to-Image",
-          "Text-to-Video"
-        ],
-        "keyword_score": 17.0
-      },
-      "analysis": {
-        "title_zh": "SAW: Toward a Surgical Action World Model via Controllable and Scalable Video Generation",
-        "tagline": "这篇论文同时命中了 Text-to-Image / Text-to-Video 方向的关键词，而且发布时间很近，适合作为本周优先跟踪对象。",
-        "importance": "从关键词覆盖、发布时间和主题贴合度来看，这篇论文值得进入本周跟踪列表。",
-        "core_innovation": "A surgical world model capable of generating realistic surgical action videos with precise control over tool-tissue interactions can address fundamental challenges in surgical AI and simulation -- from data scarcity and rare event synthesis to bridging the sim-to-real gap for surgical automation",
-        "technical_takeaways": [
-          "论文摘要显示其核心贡献和当前关注方向高度相关。",
-          "如果你在做路线判断，这篇更适合拿来快速理解最新思路。",
-          "建议结合原文的实验部分进一步确认真实增益。"
-        ],
-        "applications": [
-          "可作为相关方向的技术情报输入。",
-          "可辅助判断近期研究热点是否发生迁移。"
-        ],
-        "limitations": [
-          "当前分析基于摘要，不等价于完整精读。",
-          "真正的工程可用性还需要看实验设计和复现实验。"
-        ],
-        "who_should_read": [
-          "做多模态生成研究的人",
-          "做视频生成或 Agent 产品判断的人",
-          "需要跟踪前沿技术路线的团队负责人"
-        ],
-        "follow_ups": [
-          "阅读原文方法部分与实验设置。",
-          "对比最近 4 到 6 周同方向论文的变化。"
-        ],
-        "one_line": "这篇论文同时命中了 Text-to-Image / Text-to-Video 方向的关键词，而且发布时间很近，适合作为本周优先跟踪对象。"
-      },
-      "detail_path": "papers/02-saw-toward-a-surgical-action-world-model-via-controllable-and-scalable-v.md"
+      "topic_name": "Text-to-Image + Agentic AI",
+      "topic_name_zh": "文生图 + Agentic AI",
+      "summary": "这个方向更值得关注的是：大模型如何成为图像生成与编辑工具链的编排层，让生成流程可拆解、可修正、可多步执行。 本期可以重点留意：Autonomous Canvas Agents for Text-to-Image Editing Workflows。",
+      "trend_signals": [
+        "图像生成逐步成为可被 Agent 拆解和调度的工作流。 本期样本数：1。",
+        "编辑、重绘、局部控制等能力会比单纯画质更重要。",
+        "多模型协作会比单模型单次输出更值得关注。"
+      ],
+      "landmark_papers": [
+        {
+          "rank": 1,
+          "importance_score": 98,
+          "selection_reason": "这是图像生成 Agent 化的代表作之一，适合用来理解多工具视觉工作流如何被大模型调度。",
+          "direction_fit": "文生图 + Agentic AI",
+          "detail_path": "papers/2303-04671-visual-chatgpt-talking-drawing-and-editing-with-visual-foundation-models.md",
+          "paper": {
+            "paper_id": "2303.04671",
+            "source": "arXiv",
+            "title": "Visual ChatGPT: Talking, Drawing and Editing with Visual Foundation Models",
+            "abstract": "这篇工作把 ChatGPT 作为调度层，串联图像生成、编辑、理解等视觉基础模型，代表了“用 Agent 编排视觉生成工具链”的早期范式。",
+            "authors": [
+              "Chenfei Wu",
+              "Shengming Yin",
+              "Weixiang Sun"
+            ],
+            "categories": [],
+            "published": "2023-01-01 00:00:00+00:00",
+            "updated": "2023-01-01 00:00:00+00:00",
+            "abs_url": "https://arxiv.org/abs/2303.04671",
+            "pdf_url": "https://arxiv.org/pdf/2303.04671",
+            "published_label": "2023",
+            "collection_kind": "landmark",
+            "matched_topics": [
+              "Text-to-Image + Agentic AI"
+            ],
+            "keyword_score": 100.0,
+            "topic_scores": {
+              "Text-to-Image + Agentic AI": 100.0
+            }
+          }
+        },
+        {
+          "rank": 2,
+          "importance_score": 97,
+          "selection_reason": "它是理解“视觉生成或视觉专家能力如何被 Agent 框架统一调度”的关键参考。",
+          "direction_fit": "文生图 + Agentic AI",
+          "detail_path": "papers/2303-11381-mm-react-prompting-chatgpt-for-multimodal-reasoning-and-action.md",
+          "paper": {
+            "paper_id": "2303.11381",
+            "source": "arXiv",
+            "title": "MM-REACT: Prompting ChatGPT for Multimodal Reasoning and Action",
+            "abstract": "这篇论文强调让大模型通过外部视觉专家工具处理图像与视频任务，展示了多模态推理与行动的编排方式。",
+            "authors": [
+              "Shizhe Diao",
+              "Tianyao Wei",
+              "Ziwei Wang"
+            ],
+            "categories": [],
+            "published": "2023-01-01 00:00:00+00:00",
+            "updated": "2023-01-01 00:00:00+00:00",
+            "abs_url": "https://arxiv.org/abs/2303.11381",
+            "pdf_url": "https://arxiv.org/pdf/2303.11381",
+            "published_label": "2023",
+            "collection_kind": "landmark",
+            "matched_topics": [
+              "Text-to-Image + Agentic AI"
+            ],
+            "keyword_score": 100.0,
+            "topic_scores": {
+              "Text-to-Image + Agentic AI": 100.0
+            }
+          }
+        }
+      ],
+      "recent_papers": [
+        {
+          "rank": 1,
+          "importance_score": 90,
+          "selection_reason": "这是这个方向近期更值得跟踪的新工作之一，它同时命中了 文生图 + Agentic AI 的关键特征。",
+          "direction_fit": "文生图 + Agentic AI",
+          "detail_path": "papers/2603-00011v1-autonomous-canvas-agents-for-text-to-image-editing-workflows.md",
+          "paper": {
+            "paper_id": "2603.00011v1",
+            "source": "arXiv",
+            "title": "Autonomous Canvas Agents for Text-to-Image Editing Workflows",
+            "abstract": "We study a text-to-image and image editing system where an agent plans multi-step tool use, prompt rewriting, and region-level drawing actions to improve controllable visual generation.",
+            "authors": [
+              "Alice Example",
+              "Bob Example"
+            ],
+            "categories": [
+              "cs.CV",
+              "cs.AI"
+            ],
+            "published": "2026-03-14 12:00:00+00:00",
+            "updated": "2026-03-14 12:00:00+00:00",
+            "abs_url": "http://arxiv.org/abs/2603.00011v1",
+            "pdf_url": "http://arxiv.org/pdf/2603.00011v1",
+            "published_label": "",
+            "collection_kind": "recent",
+            "matched_topics": [
+              "Agentic AI",
+              "Text-to-Image + Agentic AI"
+            ],
+            "keyword_score": 22.0,
+            "topic_scores": {
+              "Agentic AI": 5.0,
+              "Text-to-Image + Agentic AI": 22.0
+            }
+          }
+        }
+      ]
     },
     {
-      "rank": 3,
-      "paper": {
-        "paper_id": "2603.13173v1",
-        "source": "arXiv",
-        "title": "Semantic Invariance in Agentic AI",
-        "abstract": "Large Language Models (LLMs) increasingly serve as autonomous reasoning agents in decision support, scientific problem-solving, and multi-agent coordination systems. However, deploying LLM agents in consequential applications requires assurance that their reasoning remains stable under semantically equivalent input variations, a property we term semantic invariance.Standard benchmark evaluations, which assess accuracy on fixed, canonical problem formulations, fail to capture this critical reliability dimension. To address this shortcoming, in this paper we present a metamorphic testing framework for systematically assessing the robustness of LLM reasoning agents, applying eight semantic-preserving transformations (identity, paraphrase, fact reordering, expansion, contraction, academic context, business context, and contrastive formulation) across seven foundation models spanning four distinct architectural families: Hermes (70B, 405B), Qwen3 (30B-A3B, 235B-A22B), DeepSeek-R1, and gpt-oss (20B, 120B). Our evaluation encompasses 19 multi-step reasoning problems across eight scientific domains. The results reveal that model scale does not predict robustness: the smaller Qwen3-30B-A3B achieves the highest stability (79.6% invariant responses, semantic similarity 0.91), while larger models exhibit greater fragility.",
-        "authors": [
-          "I. de Zarzà",
-          "J. de Curtò",
-          "Jordi Cabot",
-          "Pietro Manzoni",
-          "Carlos T. Calafate"
-        ],
-        "categories": [
-          "cs.AI",
-          "cs.CL"
-        ],
-        "published": "2026-03-13 17:08:44+00:00",
-        "updated": "2026-03-13 17:08:44+00:00",
-        "abs_url": "http://arxiv.org/abs/2603.13173v1",
-        "pdf_url": "https://arxiv.org/pdf/2603.13173v1",
-        "matched_topics": [
-          "Agentic AI"
-        ],
-        "keyword_score": 11.0
-      },
-      "analysis": {
-        "title_zh": "Semantic Invariance in Agentic AI",
-        "tagline": "这篇论文同时命中了 Agentic AI 方向的关键词，而且发布时间很近，适合作为本周优先跟踪对象。",
-        "importance": "从关键词覆盖、发布时间和主题贴合度来看，这篇论文值得进入本周跟踪列表。",
-        "core_innovation": "Large Language Models (LLMs) increasingly serve as autonomous reasoning agents in decision support, scientific problem-solving, and multi-agent coordination systems",
-        "technical_takeaways": [
-          "论文摘要显示其核心贡献和当前关注方向高度相关。",
-          "如果你在做路线判断，这篇更适合拿来快速理解最新思路。",
-          "建议结合原文的实验部分进一步确认真实增益。"
-        ],
-        "applications": [
-          "可作为相关方向的技术情报输入。",
-          "可辅助判断近期研究热点是否发生迁移。"
-        ],
-        "limitations": [
-          "当前分析基于摘要，不等价于完整精读。",
-          "真正的工程可用性还需要看实验设计和复现实验。"
-        ],
-        "who_should_read": [
-          "做多模态生成研究的人",
-          "做视频生成或 Agent 产品判断的人",
-          "需要跟踪前沿技术路线的团队负责人"
-        ],
-        "follow_ups": [
-          "阅读原文方法部分与实验设置。",
-          "对比最近 4 到 6 周同方向论文的变化。"
-        ],
-        "one_line": "这篇论文同时命中了 Agentic AI 方向的关键词，而且发布时间很近，适合作为本周优先跟踪对象。"
-      },
-      "detail_path": "papers/03-semantic-invariance-in-agentic-ai.md"
-    },
-    {
-      "rank": 4,
-      "paper": {
-        "paper_id": "2603.13100v1",
-        "source": "arXiv",
-        "title": "Evaluating VLMs' Spatial Reasoning Over Robot Motion: A Step Towards Robot Planning with Motion Preferences",
-        "abstract": "Understanding user instructions and object spatial relations in surrounding environments is crucial for intelligent robot systems to assist humans in various tasks. The natural language and spatial reasoning capabilities of Vision-Language Models (VLMs) have the potential to enhance the generalization of robot planners on new tasks, objects, and motion specifications. While foundation models have been applied to task planning, it is still unclear the degree to which they have the capability of spatial reasoning required to enforce user preferences or constraints on motion, such as desired distances from objects, topological properties, or motion style preferences. In this paper, we evaluate the capability of four state-of-the-art VLMs at spatial reasoning over robot motion, using four different querying methods. Our results show that, with the highest-performing querying method, Qwen2.5-VL achieves 71.4% accuracy zero-shot and 75% on a smaller model after fine-tuning, and GPT-4o leads to lower performance. We evaluate two types of motion preferences (object-proximity and path-style), and we also analyze the trade-off between accuracy and computation cost in number of tokens. This work shows some promise in the potential of VLM integration with robot motion planning pipelines.",
-        "authors": [
-          "Wenxi Wu",
-          "Jingjing Zhang",
-          "Martim Brandão"
-        ],
-        "categories": [
-          "cs.RO",
-          "cs.AI"
-        ],
-        "published": "2026-03-13 15:53:42+00:00",
-        "updated": "2026-03-13 15:53:42+00:00",
-        "abs_url": "http://arxiv.org/abs/2603.13100v1",
-        "pdf_url": "https://arxiv.org/pdf/2603.13100v1",
-        "matched_topics": [
-          "Agentic AI"
-        ],
-        "keyword_score": 11.0
-      },
-      "analysis": {
-        "title_zh": "Evaluating VLMs' Spatial Reasoning Over Robot Motion: A Step Towards Robot Planning with Motion Preferences",
-        "tagline": "这篇论文同时命中了 Agentic AI 方向的关键词，而且发布时间很近，适合作为本周优先跟踪对象。",
-        "importance": "从关键词覆盖、发布时间和主题贴合度来看，这篇论文值得进入本周跟踪列表。",
-        "core_innovation": "Understanding user instructions and object spatial relations in surrounding environments is crucial for intelligent robot systems to assist humans in various tasks",
-        "technical_takeaways": [
-          "论文摘要显示其核心贡献和当前关注方向高度相关。",
-          "如果你在做路线判断，这篇更适合拿来快速理解最新思路。",
-          "建议结合原文的实验部分进一步确认真实增益。"
-        ],
-        "applications": [
-          "可作为相关方向的技术情报输入。",
-          "可辅助判断近期研究热点是否发生迁移。"
-        ],
-        "limitations": [
-          "当前分析基于摘要，不等价于完整精读。",
-          "真正的工程可用性还需要看实验设计和复现实验。"
-        ],
-        "who_should_read": [
-          "做多模态生成研究的人",
-          "做视频生成或 Agent 产品判断的人",
-          "需要跟踪前沿技术路线的团队负责人"
-        ],
-        "follow_ups": [
-          "阅读原文方法部分与实验设置。",
-          "对比最近 4 到 6 周同方向论文的变化。"
-        ],
-        "one_line": "这篇论文同时命中了 Agentic AI 方向的关键词，而且发布时间很近，适合作为本周优先跟踪对象。"
-      },
-      "detail_path": "papers/04-evaluating-vlms-spatial-reasoning-over-robot-motion-a-step-towards-robot.md"
-    },
-    {
-      "rank": 5,
-      "paper": {
-        "paper_id": "2603.13091v1",
-        "source": "arXiv",
-        "title": "Reasoning over Video: Evaluating How MLLMs Extract, Integrate, and Reconstruct Spatiotemporal Evidence",
-        "abstract": "The growing interest in embodied agents increases the demand for spatiotemporal video understanding, yet existing benchmarks largely emphasize extractive reasoning, where answers can be explicitly presented within spatiotemporal events. It remains unclear whether multimodal large language models can instead perform abstractive spatiotemporal reasoning, which requires integrating observations over time, combining dispersed cues, and inferring implicit spatial and contextual structure. To address this gap, we formalize abstractive spatiotemporal reasoning from videos by introducing a structured evaluation taxonomy that systematically targets its core dimensions and construct a controllable, scenario-driven synthetic egocentric video dataset tailored to evaluate abstractive spatiotemporal reasoning capabilities, spanning object-, room-, and floor-plan-level scenarios. Based on this framework, we present VAEX-BENCH, a benchmark comprising five abstractive reasoning tasks together with their extractive counterparts. Our extensive experiments compare the performance of state-of-the-art MLLMs under extractive and abstractive settings, exposing their limitations on abstractive tasks and providing a fine-grained analysis of the underlying bottlenecks. The dataset will be released soon.",
-        "authors": [
-          "Seunghwan Bang",
-          "Hwanjun Song"
-        ],
-        "categories": [
-          "cs.CV"
-        ],
-        "published": "2026-03-13 15:40:42+00:00",
-        "updated": "2026-03-13 15:40:42+00:00",
-        "abs_url": "http://arxiv.org/abs/2603.13091v1",
-        "pdf_url": "https://arxiv.org/pdf/2603.13091v1",
-        "matched_topics": [
-          "Agentic AI"
-        ],
-        "keyword_score": 9.0
-      },
-      "analysis": {
-        "title_zh": "Reasoning over Video: Evaluating How MLLMs Extract, Integrate, and Reconstruct Spatiotemporal Evidence",
-        "tagline": "这篇论文同时命中了 Agentic AI 方向的关键词，而且发布时间很近，适合作为本周优先跟踪对象。",
-        "importance": "从关键词覆盖、发布时间和主题贴合度来看，这篇论文值得进入本周跟踪列表。",
-        "core_innovation": "The growing interest in embodied agents increases the demand for spatiotemporal video understanding, yet existing benchmarks largely emphasize extractive reasoning, where answers can be explicitly presented within spatiotemporal events",
-        "technical_takeaways": [
-          "论文摘要显示其核心贡献和当前关注方向高度相关。",
-          "如果你在做路线判断，这篇更适合拿来快速理解最新思路。",
-          "建议结合原文的实验部分进一步确认真实增益。"
-        ],
-        "applications": [
-          "可作为相关方向的技术情报输入。",
-          "可辅助判断近期研究热点是否发生迁移。"
-        ],
-        "limitations": [
-          "当前分析基于摘要，不等价于完整精读。",
-          "真正的工程可用性还需要看实验设计和复现实验。"
-        ],
-        "who_should_read": [
-          "做多模态生成研究的人",
-          "做视频生成或 Agent 产品判断的人",
-          "需要跟踪前沿技术路线的团队负责人"
-        ],
-        "follow_ups": [
-          "阅读原文方法部分与实验设置。",
-          "对比最近 4 到 6 周同方向论文的变化。"
-        ],
-        "one_line": "这篇论文同时命中了 Agentic AI 方向的关键词，而且发布时间很近，适合作为本周优先跟踪对象。"
-      },
-      "detail_path": "papers/05-reasoning-over-video-evaluating-how-mllms-extract-integrate-and-reconstr.md"
+      "topic_name": "Text-to-Video + Agentic AI",
+      "topic_name_zh": "文生视频 + Agentic AI",
+      "summary": "这个方向正在从单纯的视频生成走向可交互环境、世界模型和长时序控制，为 Agent 提供训练与模拟空间。 本期可以重点留意：Planning-Guided Interactive World Models for Video Agents。",
+      "trend_signals": [
+        "视频生成开始和世界模型、模拟环境概念靠近。 本期样本数：1。",
+        "长时序一致性和动作反馈是关键难点。",
+        "这一方向更适合关注“环境可用性”而不是单段视频好不好看。"
+      ],
+      "landmark_papers": [
+        {
+          "rank": 1,
+          "importance_score": 98,
+          "selection_reason": "虽然它不是今天意义上的文生视频系统，但它是视频世界模型与 Agent 结合最重要的源头之一。",
+          "direction_fit": "文生视频 + Agentic AI",
+          "detail_path": "papers/1803-10122-world-models.md",
+          "paper": {
+            "paper_id": "1803.10122",
+            "source": "arXiv",
+            "title": "World Models",
+            "abstract": "这篇经典工作提出用生成式环境模型压缩视觉世界并支持控制决策，为后续“生成环境服务 Agent”路线奠定了思想基础。",
+            "authors": [
+              "David Ha",
+              "Jürgen Schmidhuber"
+            ],
+            "categories": [],
+            "published": "2018-01-01 00:00:00+00:00",
+            "updated": "2018-01-01 00:00:00+00:00",
+            "abs_url": "https://arxiv.org/abs/1803.10122",
+            "pdf_url": "https://arxiv.org/pdf/1803.10122",
+            "published_label": "2018",
+            "collection_kind": "landmark",
+            "matched_topics": [
+              "Text-to-Video + Agentic AI"
+            ],
+            "keyword_score": 100.0,
+            "topic_scores": {
+              "Text-to-Video + Agentic AI": 100.0
+            }
+          }
+        },
+        {
+          "rank": 2,
+          "importance_score": 97,
+          "selection_reason": "如果你关心视频生成如何进一步成为 Agent 的训练场和模拟器，这篇很值得长期追踪。",
+          "direction_fit": "文生视频 + Agentic AI",
+          "detail_path": "papers/2402-15391-genie-generative-interactive-environments.md",
+          "paper": {
+            "paper_id": "2402.15391",
+            "source": "arXiv",
+            "title": "Genie: Generative Interactive Environments",
+            "abstract": "这篇工作从视频数据中学习可交互生成环境，让模型不仅生成视觉内容，还能支持动作驱动的环境反馈，是视频世界模型和 Agent 交叉方向的重要信号。",
+            "authors": [
+              "Google DeepMind"
+            ],
+            "categories": [],
+            "published": "2024-01-01 00:00:00+00:00",
+            "updated": "2024-01-01 00:00:00+00:00",
+            "abs_url": "https://arxiv.org/abs/2402.15391",
+            "pdf_url": "https://arxiv.org/pdf/2402.15391",
+            "published_label": "2024",
+            "collection_kind": "landmark",
+            "matched_topics": [
+              "Text-to-Video + Agentic AI"
+            ],
+            "keyword_score": 100.0,
+            "topic_scores": {
+              "Text-to-Video + Agentic AI": 100.0
+            }
+          }
+        }
+      ],
+      "recent_papers": [
+        {
+          "rank": 1,
+          "importance_score": 90,
+          "selection_reason": "这是这个方向近期更值得跟踪的新工作之一，它同时命中了 文生视频 + Agentic AI 的关键特征。",
+          "direction_fit": "文生视频 + Agentic AI",
+          "detail_path": "papers/2603-00012v1-planning-guided-interactive-world-models-for-video-agents.md",
+          "paper": {
+            "paper_id": "2603.00012v1",
+            "source": "arXiv",
+            "title": "Planning-Guided Interactive World Models for Video Agents",
+            "abstract": "We present a video generation and world model framework that supports planning, action-conditioned simulation, and long-horizon control for agent training and evaluation.",
+            "authors": [
+              "Carol Example"
+            ],
+            "categories": [
+              "cs.CV",
+              "cs.LG"
+            ],
+            "published": "2026-03-13 09:00:00+00:00",
+            "updated": "2026-03-13 09:00:00+00:00",
+            "abs_url": "http://arxiv.org/abs/2603.00012v1",
+            "pdf_url": "http://arxiv.org/pdf/2603.00012v1",
+            "published_label": "",
+            "collection_kind": "recent",
+            "matched_topics": [
+              "Agentic AI",
+              "Text-to-Video + Agentic AI"
+            ],
+            "keyword_score": 24.0,
+            "topic_scores": {
+              "Agentic AI": 8.0,
+              "Text-to-Video + Agentic AI": 24.0
+            }
+          }
+        }
+      ]
     }
-  ]
+  ],
+  "paper_details": {
+    "2210.03629": "papers/2210-03629-react-synergizing-reasoning-and-acting-in-language-models.md",
+    "2302.04761": "papers/2302-04761-toolformer-language-models-can-teach-themselves-to-use-tools.md",
+    "2603.00013v1": "papers/2603-00013v1-recoverable-tool-using-agents-with-deliberate-planning.md",
+    "2603.00012v1": "papers/2603-00012v1-planning-guided-interactive-world-models-for-video-agents.md",
+    "2303.04671": "papers/2303-04671-visual-chatgpt-talking-drawing-and-editing-with-visual-foundation-models.md",
+    "2303.11381": "papers/2303-11381-mm-react-prompting-chatgpt-for-multimodal-reasoning-and-action.md",
+    "2603.00011v1": "papers/2603-00011v1-autonomous-canvas-agents-for-text-to-image-editing-workflows.md",
+    "1803.10122": "papers/1803-10122-world-models.md",
+    "2402.15391": "papers/2402-15391-genie-generative-interactive-environments.md"
+  }
 }

@@ -1,8 +1,7 @@
 {
-  "days_back": 7,
-  "max_results": 80,
-  "candidate_pool": 12,
-  "max_papers": 5,
+  "days_back": 30,
+  "max_results": 120,
+  "recent_papers_per_topic": 2,
   "language": "zh-CN",
   "categories": [
     "cs.CV",
@@ -11,48 +10,160 @@
   ],
   "topics": [
     {
-      "name": "Text-to-Image",
-      "slug": "text-to-image",
-      "keywords": [
-        "text-to-image",
-        "text to image",
-        "image generation",
-        "image synthesis",
-        "diffusion",
-        "diffusion transformer",
-        "multimodal generation",
-        "visual generation"
-      ]
-    },
-    {
-      "name": "Text-to-Video",
-      "slug": "text-to-video",
-      "keywords": [
-        "text-to-video",
-        "text to video",
-        "video generation",
-        "video synthesis",
-        "video diffusion",
-        "world model",
-        "video editing",
-        "video prediction"
-      ]
-    },
-    {
       "name": "Agentic AI",
+      "name_zh": "Agentic AI",
       "slug": "agentic-ai",
-      "keywords": [
-        "agentic",
-        "ai agent",
-        "agents",
-        "tool use",
-        "tool-using",
-        "planning",
-        "multi-agent",
-        "computer use",
-        "web agent",
-        "autonomous agent",
-        "reasoning"
+      "keyword_groups": [
+        [
+          "agentic",
+          "ai agent",
+          "tool use",
+          "tool-using",
+          "planning",
+          "multi-agent",
+          "autonomous agent",
+          "reasoning",
+          "toolformer",
+          "react"
+        ]
+      ],
+      "landmarks": [
+        {
+          "paper_id": "2210.03629",
+          "title": "ReAct: Synergizing Reasoning and Acting in Language Models",
+          "abs_url": "https://arxiv.org/abs/2210.03629",
+          "pdf_url": "https://arxiv.org/pdf/2210.03629",
+          "published_label": "2022",
+          "authors": [
+            "Shunyu Yao",
+            "Jeffrey Zhao",
+            "Dian Yu"
+          ],
+          "summary": "这篇工作提出让语言模型在推理轨迹和外部动作之间交替执行，形成后续 Agent 领域最经典的闭环范式之一。",
+          "rationale": "这是 Agentic AI 的长期基石论文之一，适合用来理解“思考 + 行动”范式的原点。"
+        },
+        {
+          "paper_id": "2302.04761",
+          "title": "Toolformer: Language Models Can Teach Themselves to Use Tools",
+          "abs_url": "https://arxiv.org/abs/2302.04761",
+          "pdf_url": "https://arxiv.org/pdf/2302.04761",
+          "published_label": "2023",
+          "authors": [
+            "Timo Schick",
+            "Jane Dwivedi-Yu",
+            "Roberto Dessi"
+          ],
+          "summary": "这篇论文展示了语言模型可以通过自监督方式学习何时调用计算器、搜索、翻译等外部工具，是工具调用路线的代表作。",
+          "rationale": "如果你关心 Agent 的工具使用能力，这篇是必须长期放在视野里的代表工作。"
+        }
+      ]
+    },
+    {
+      "name": "Text-to-Image + Agentic AI",
+      "name_zh": "文生图 + Agentic AI",
+      "slug": "text-to-image-agentic-ai",
+      "keyword_groups": [
+        [
+          "text-to-image",
+          "text to image",
+          "image generation",
+          "image editing",
+          "drawing",
+          "visual foundation model",
+          "image synthesis"
+        ],
+        [
+          "agent",
+          "agentic",
+          "tool use",
+          "tool-using",
+          "planning",
+          "reasoning",
+          "chatgpt"
+        ]
+      ],
+      "landmarks": [
+        {
+          "paper_id": "2303.04671",
+          "title": "Visual ChatGPT: Talking, Drawing and Editing with Visual Foundation Models",
+          "abs_url": "https://arxiv.org/abs/2303.04671",
+          "pdf_url": "https://arxiv.org/pdf/2303.04671",
+          "published_label": "2023",
+          "authors": [
+            "Chenfei Wu",
+            "Shengming Yin",
+            "Weixiang Sun"
+          ],
+          "summary": "这篇工作把 ChatGPT 作为调度层，串联图像生成、编辑、理解等视觉基础模型，代表了“用 Agent 编排视觉生成工具链”的早期范式。",
+          "rationale": "这是图像生成 Agent 化的代表作之一，适合用来理解多工具视觉工作流如何被大模型调度。"
+        },
+        {
+          "paper_id": "2303.11381",
+          "title": "MM-REACT: Prompting ChatGPT for Multimodal Reasoning and Action",
+          "abs_url": "https://arxiv.org/abs/2303.11381",
+          "pdf_url": "https://arxiv.org/pdf/2303.11381",
+          "published_label": "2023",
+          "authors": [
+            "Shizhe Diao",
+            "Tianyao Wei",
+            "Ziwei Wang"
+          ],
+          "summary": "这篇论文强调让大模型通过外部视觉专家工具处理图像与视频任务，展示了多模态推理与行动的编排方式。",
+          "rationale": "它是理解“视觉生成或视觉专家能力如何被 Agent 框架统一调度”的关键参考。"
+        }
+      ]
+    },
+    {
+      "name": "Text-to-Video + Agentic AI",
+      "name_zh": "文生视频 + Agentic AI",
+      "slug": "text-to-video-agentic-ai",
+      "keyword_groups": [
+        [
+          "text-to-video",
+          "text to video",
+          "video generation",
+          "video synthesis",
+          "video diffusion",
+          "world model",
+          "interactive environment",
+          "simulation"
+        ],
+        [
+          "agent",
+          "agentic",
+          "planning",
+          "policy",
+          "action",
+          "control",
+          "reasoning"
+        ]
+      ],
+      "landmarks": [
+        {
+          "paper_id": "1803.10122",
+          "title": "World Models",
+          "abs_url": "https://arxiv.org/abs/1803.10122",
+          "pdf_url": "https://arxiv.org/pdf/1803.10122",
+          "published_label": "2018",
+          "authors": [
+            "David Ha",
+            "Jürgen Schmidhuber"
+          ],
+          "summary": "这篇经典工作提出用生成式环境模型压缩视觉世界并支持控制决策，为后续“生成环境服务 Agent”路线奠定了思想基础。",
+          "rationale": "虽然它不是今天意义上的文生视频系统，但它是视频世界模型与 Agent 结合最重要的源头之一。"
+        },
+        {
+          "paper_id": "2402.15391",
+          "title": "Genie: Generative Interactive Environments",
+          "abs_url": "https://arxiv.org/abs/2402.15391",
+          "pdf_url": "https://arxiv.org/pdf/2402.15391",
+          "published_label": "2024",
+          "authors": [
+            "Google DeepMind"
+          ],
+          "summary": "这篇工作从视频数据中学习可交互生成环境，让模型不仅生成视觉内容，还能支持动作驱动的环境反馈，是视频世界模型和 Agent 交叉方向的重要信号。",
+          "rationale": "如果你关心视频生成如何进一步成为 Agent 的训练场和模拟器，这篇很值得长期追踪。"
+        }
       ]
     }
   ]
