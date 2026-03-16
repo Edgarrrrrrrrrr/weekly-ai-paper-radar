@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>arXiv Query: sample</title>
+  <id>http://arxiv.org/api/sample</id>
+  <updated>2026-03-16T00:00:00Z</updated>
+  <entry>
+    <id>http://arxiv.org/abs/2603.00001v1</id>
+    <updated>2026-03-14T12:00:00Z</updated>
+    <published>2026-03-14T12:00:00Z</published>
+    <title>Fine-grained Text-to-Image Control with Sparse Diffusion Plans</title>
+    <summary>We introduce a text-to-image generation framework that decomposes prompts into sparse diffusion plans for controllable image synthesis and improved semantic fidelity.</summary>
+    <author><name>Alice Example</name></author>
+    <author><name>Bob Example</name></author>
+    <link href="http://arxiv.org/abs/2603.00001v1" rel="alternate" type="text/html" />
+    <link title="pdf" href="http://arxiv.org/pdf/2603.00001v1" rel="related" type="application/pdf" />
+    <category term="cs.CV" />
+    <category term="cs.AI" />
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2603.00002v1</id>
+    <updated>2026-03-13T09:00:00Z</updated>
+    <published>2026-03-13T09:00:00Z</published>
+    <title>Long-Horizon Text-to-Video Generation with Memory-Conditioned World Models</title>
+    <summary>We present a text-to-video model that uses a memory-conditioned world model to improve long-horizon coherence, camera consistency, and controllable video generation.</summary>
+    <author><name>Carol Example</name></author>
+    <link href="http://arxiv.org/abs/2603.00002v1" rel="alternate" type="text/html" />
+    <link title="pdf" href="http://arxiv.org/pdf/2603.00002v1" rel="related" type="application/pdf" />
+    <category term="cs.CV" />
+    <category term="cs.LG" />
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2603.00003v1</id>
+    <updated>2026-03-12T18:00:00Z</updated>
+    <published>2026-03-12T18:00:00Z</published>
+    <title>Planner-Toolformer Agents for Reliable Web Task Completion</title>
+    <summary>We study agentic AI systems that combine planning and tool use to improve reliable completion on realistic web agent tasks with better error recovery.</summary>
+    <author><name>Dan Example</name></author>
+    <author><name>Eve Example</name></author>
+    <link href="http://arxiv.org/abs/2603.00003v1" rel="alternate" type="text/html" />
+    <link title="pdf" href="http://arxiv.org/pdf/2603.00003v1" rel="related" type="application/pdf" />
+    <category term="cs.AI" />
+  </entry>
+</feed>

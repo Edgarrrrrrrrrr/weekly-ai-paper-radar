@@ -1,0 +1,59 @@
+{
+  "days_back": 7,
+  "max_results": 80,
+  "candidate_pool": 12,
+  "max_papers": 5,
+  "language": "zh-CN",
+  "categories": [
+    "cs.CV",
+    "cs.AI",
+    "cs.LG"
+  ],
+  "topics": [
+    {
+      "name": "Text-to-Image",
+      "slug": "text-to-image",
+      "keywords": [
+        "text-to-image",
+        "text to image",
+        "image generation",
+        "image synthesis",
+        "diffusion",
+        "diffusion transformer",
+        "multimodal generation",
+        "visual generation"
+      ]
+    },
+    {
+      "name": "Text-to-Video",
+      "slug": "text-to-video",
+      "keywords": [
+        "text-to-video",
+        "text to video",
+        "video generation",
+        "video synthesis",
+        "video diffusion",
+        "world model",
+        "video editing",
+        "video prediction"
+      ]
+    },
+    {
+      "name": "Agentic AI",
+      "slug": "agentic-ai",
+      "keywords": [
+        "agentic",
+        "ai agent",
+        "agents",
+        "tool use",
+        "tool-using",
+        "planning",
+        "multi-agent",
+        "computer use",
+        "web agent",
+        "autonomous agent",
+        "reasoning"
+      ]
+    }
+  ]
+}
