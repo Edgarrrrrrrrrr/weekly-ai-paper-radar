@@ -31,10 +31,10 @@ jobs:
 
       - name: Commit reports
         run: |
-          if [[ -n "$(git status --porcelain reports)" ]]; then
+          if [[ -n "$(git status --porcelain -- reports README.md docs/SETUP.md)" ]]; then
             git config user.name "github-actions[bot]"
             git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-            git add reports
+            git add reports README.md docs/SETUP.md
             git commit -m "chore: weekly paper digest"
             git push
           else

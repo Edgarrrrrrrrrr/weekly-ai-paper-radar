@@ -44,6 +44,12 @@ def write_report_bundle(
 
     readme_path = bundle_dir / "README.md"
     readme_path.write_text(render_weekly_index(target_date, editorial, paper_links), encoding="utf-8")
+    repo_root = output_root.parent
+    repo_readme_path = repo_root / "README.md"
+    repo_readme_path.write_text(
+        render_repository_readme(repo_root, output_root, target_date, editorial, paper_links),
+        encoding="utf-8",
+    )
 
     manifest_path = bundle_dir / "manifest.json"
     manifest_path.write_text(
@@ -212,3 +218,77 @@ def render_paper_detail(ranked: RankedPaper, analysis: PaperAnalysis) -> str:
 
 def escape_table(value: str) -> str:
     return value.replace("|", "\\|")
+
+
+def render_repository_readme(
+    repo_root: Path,
+    reports_root: Path,
+    target_date: date,
+    editorial: WeeklyEditorial,
+    paper_links: list[tuple[RankedPaper, PaperAnalysis, str]],
+) -> str:
+    latest_week = week_folder_name(target_date)
+    latest_readme = (reports_root / latest_week / "README.md").relative_to(repo_root).as_posix()
+    recent_reports = list_recent_reports(reports_root, repo_root)
+
+    lines = [
+        "# Weekly Paper Radar",
+        "",
+        "每周自动更新文生图、文生视频、Agentic AI 的重点论文、原文链接和中文精读。",
+        "",
+        f"- 最新周报：[查看 {target_date.isocalendar()[0]} 第 {target_date.isocalendar()[1]:02d} 周]({latest_readme})",
+        "- 自动更新：每周一 09:00（北京时间）",
+        "- 覆盖方向：Text-to-Image / Text-to-Video / Agentic AI",
+        "",
+        f"> {editorial.headline}",
+        "",
+        "## 本周文章直达",
+        "",
+        "| 排名 | 论文 | 方向 | 原文 | 精读 |",
+        "| --- | --- | --- | --- | --- |",
+    ]
+
+    for ranked, _, detail_link in paper_links:
+        detail_path = f"{latest_week}/{detail_link}" if not detail_link.startswith(latest_week) else detail_link
+        lines.append(
+            "| "
+            f"{ranked.rank} | "
+            f"{escape_table(ranked.paper.title)} | "
+            f"{escape_table(ranked.direction_fit)} | "
+            f"[Abstract]({ranked.paper.abs_url}) / [PDF]({ranked.paper.pdf_url}) | "
+            f"[阅读精读](reports/{detail_path}) |"
+        )
+
+    lines.extend(
+        [
+            "",
+            "## 历史周报",
+            "",
+        ]
+    )
+
+    for label, path in recent_reports:
+        lines.append(f"- [{label}]({path})")
+
+    lines.extend(
+        [
+            "",
+            "## 说明",
+            "",
+            "- 仓库首页只保留最新论文入口和周报导航。",
+            "- 生成与配置说明已移到 [docs/SETUP.md](docs/SETUP.md)。",
+            "",
+        ]
+    )
+    return "\n".join(lines)
+
+
+def list_recent_reports(reports_root: Path, repo_root: Path, limit: int = 8) -> list[tuple[str, str]]:
+    readmes = sorted(reports_root.glob("*/week-*/README.md"), reverse=True)
+    items: list[tuple[str, str]] = []
+    for readme in readmes[:limit]:
+        year = readme.parent.parent.name
+        week = readme.parent.name.replace("week-", "")
+        label = f"{year} 第 {week} 周"
+        items.append((label, readme.relative_to(repo_root).as_posix()))
+    return items

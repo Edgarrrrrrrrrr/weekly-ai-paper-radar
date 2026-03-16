@@ -44,11 +44,15 @@ class PipelineTestCase(unittest.TestCase):
         }
 
         with tempfile.TemporaryDirectory() as tmp_dir:
-            bundle_dir = write_report_bundle(Path(tmp_dir), now.date(), editorial, ranked, analyses)
+            output_root = Path(tmp_dir) / "reports"
+            bundle_dir = write_report_bundle(output_root, now.date(), editorial, ranked, analyses)
             self.assertTrue((bundle_dir / "README.md").exists())
             self.assertTrue((bundle_dir / "manifest.json").exists())
             paper_files = sorted((bundle_dir / "papers").glob("*.md"))
             self.assertEqual(len(paper_files), len(ranked))
+            repo_readme = Path(tmp_dir) / "README.md"
+            self.assertTrue(repo_readme.exists())
+            self.assertIn("本周文章直达", repo_readme.read_text(encoding="utf-8"))
 
 
 if __name__ == "__main__":
