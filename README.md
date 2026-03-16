@@ -84,6 +84,33 @@ Token 需要最少具备创建仓库和写仓库内容的权限。
 - `OPENAI_API_KEY` repo secret
 - 可选：`OPENAI_MODEL` repo variable
 - 可选：`OPENAI_BASE_URL` repo variable
+- 可选：`OPENAI_API_STYLE` repo variable
+
+## 如果你用的是 OpenAI 兼容中转
+
+当前代码同时支持两种风格：
+
+- `chat_completions`
+- `responses`
+
+如果你的中转配置像下面这样：
+
+- `base_url = "https://api-vip.codex-for.me/v1"`
+- `wire_api = "responses"`
+
+那推荐在 GitHub 仓库里这样配：
+
+```text
+Secret:
+OPENAI_API_KEY = 你的中转 key
+
+Variables:
+OPENAI_BASE_URL = https://api-vip.codex-for.me/v1
+OPENAI_API_STYLE = responses
+OPENAI_MODEL = gpt-5.3-codex
+```
+
+如果你的中转支持别的模型，也可以把 `OPENAI_MODEL` 换成你可用且更省钱的模型。
 
 ## 生成内容长什么样
 
