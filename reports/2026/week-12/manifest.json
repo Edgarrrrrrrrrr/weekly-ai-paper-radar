@@ -5,86 +5,36 @@
     {
       "rank": 1,
       "paper": {
-        "paper_id": "2603.00002v1",
+        "paper_id": "2603.13162v1",
         "source": "arXiv",
-        "title": "Long-Horizon Text-to-Video Generation with Memory-Conditioned World Models",
-        "abstract": "We present a text-to-video model that uses a memory-conditioned world model to improve long-horizon coherence, camera consistency, and controllable video generation.",
+        "title": "DiT-IC: Aligned Diffusion Transformer for Efficient Image Compression",
+        "abstract": "Diffusion-based image compression has recently shown outstanding perceptual fidelity, yet its practicality is hindered by prohibitive sampling overhead and high memory usage. Most existing diffusion codecs employ U-Net architectures, where hierarchical downsampling forces diffusion to operate in shallow latent spaces (typically with only 8x spatial downscaling), resulting in excessive computation. In contrast, conventional VAE-based codecs work in much deeper latent domains (16x - 64x downscaled), motivating a key question: Can diffusion operate effectively in such compact latent spaces without compromising reconstruction quality? To address this, we introduce DiT-IC, an Aligned Diffusion Transformer for Image Compression, which replaces the U-Net with a Diffusion Transformer capable of performing diffusion in latent space entirely at 32x downscaled resolution. DiT-IC adapts a pretrained text-to-image multi-step DiT into a single-step reconstruction model through three key alignment mechanisms: (1) a variance-guided reconstruction flow that adapts denoising strength to latent uncertainty for efficient reconstruction; (2) a self-distillation alignment that enforces consistency with encoder-defined latent geometry to enable one-step diffusion; and (3) a latent-conditioned guidance that replaces text prompts with semantically aligned latent conditions, enabling text-free inference. With these designs, DiT-IC achieves state-of-the-art perceptual quality while offering up to 30x faster decoding and drastically lower memory usage than existing diffusion-based codecs. Remarkably, it can reconstruct 2048x2048 images on a 16 GB laptop GPU.",
         "authors": [
-          "Carol Example"
+          "Junqi Shi",
+          "Ming Lu",
+          "Xingchen Li",
+          "Anle Ke",
+          "Ruiqi Zhang",
+          "Zhan Ma"
         ],
         "categories": [
-          "cs.CV",
-          "cs.LG"
+          "eess.IV",
+          "cs.CV"
         ],
-        "published": "2026-03-13 09:00:00+00:00",
-        "updated": "2026-03-13 09:00:00+00:00",
-        "abs_url": "http://arxiv.org/abs/2603.00002v1",
-        "pdf_url": "http://arxiv.org/pdf/2603.00002v1",
-        "matched_topics": [
-          "Text-to-Video"
-        ],
-        "keyword_score": 12.0
-      },
-      "analysis": {
-        "title_zh": "Long-Horizon Text-to-Video Generation with Memory-Conditioned World Models",
-        "tagline": "这篇论文同时命中了 Text-to-Video 方向的关键词，而且发布时间很近，适合作为本周优先跟踪对象。",
-        "importance": "从关键词覆盖、发布时间和主题贴合度来看，这篇论文值得进入本周跟踪列表。",
-        "core_innovation": "We present a text-to-video model that uses a memory-conditioned world model to improve long-horizon coherence, camera consistency, and controllable video generation.",
-        "technical_takeaways": [
-          "论文摘要显示其核心贡献和当前关注方向高度相关。",
-          "如果你在做路线判断，这篇更适合拿来快速理解最新思路。",
-          "建议结合原文的实验部分进一步确认真实增益。"
-        ],
-        "applications": [
-          "可作为相关方向的技术情报输入。",
-          "可辅助判断近期研究热点是否发生迁移。"
-        ],
-        "limitations": [
-          "当前分析基于摘要，不等价于完整精读。",
-          "真正的工程可用性还需要看实验设计和复现实验。"
-        ],
-        "who_should_read": [
-          "做多模态生成研究的人",
-          "做视频生成或 Agent 产品判断的人",
-          "需要跟踪前沿技术路线的团队负责人"
-        ],
-        "follow_ups": [
-          "阅读原文方法部分与实验设置。",
-          "对比最近 4 到 6 周同方向论文的变化。"
-        ],
-        "one_line": "这篇论文同时命中了 Text-to-Video 方向的关键词，而且发布时间很近，适合作为本周优先跟踪对象。"
-      },
-      "detail_path": "papers/01-long-horizon-text-to-video-generation-with-memory-conditioned-world-mode.md"
-    },
-    {
-      "rank": 2,
-      "paper": {
-        "paper_id": "2603.00001v1",
-        "source": "arXiv",
-        "title": "Fine-grained Text-to-Image Control with Sparse Diffusion Plans",
-        "abstract": "We introduce a text-to-image generation framework that decomposes prompts into sparse diffusion plans for controllable image synthesis and improved semantic fidelity.",
-        "authors": [
-          "Alice Example",
-          "Bob Example"
-        ],
-        "categories": [
-          "cs.CV",
-          "cs.AI"
-        ],
-        "published": "2026-03-14 12:00:00+00:00",
-        "updated": "2026-03-14 12:00:00+00:00",
-        "abs_url": "http://arxiv.org/abs/2603.00001v1",
-        "pdf_url": "http://arxiv.org/pdf/2603.00001v1",
+        "published": "2026-03-13 16:56:00+00:00",
+        "updated": "2026-03-13 16:56:00+00:00",
+        "abs_url": "http://arxiv.org/abs/2603.13162v1",
+        "pdf_url": "https://arxiv.org/pdf/2603.13162v1",
         "matched_topics": [
           "Text-to-Image"
         ],
-        "keyword_score": 10.0
+        "keyword_score": 18.0
       },
       "analysis": {
-        "title_zh": "Fine-grained Text-to-Image Control with Sparse Diffusion Plans",
+        "title_zh": "DiT-IC: Aligned Diffusion Transformer for Efficient Image Compression",
         "tagline": "这篇论文同时命中了 Text-to-Image 方向的关键词，而且发布时间很近，适合作为本周优先跟踪对象。",
         "importance": "从关键词覆盖、发布时间和主题贴合度来看，这篇论文值得进入本周跟踪列表。",
-        "core_innovation": "We introduce a text-to-image generation framework that decomposes prompts into sparse diffusion plans for controllable image synthesis and improved semantic fidelity.",
+        "core_innovation": "Diffusion-based image compression has recently shown outstanding perceptual fidelity, yet its practicality is hindered by prohibitive sampling overhead and high memory usage",
         "technical_takeaways": [
           "论文摘要显示其核心贡献和当前关注方向高度相关。",
           "如果你在做路线判断，这篇更适合拿来快速理解最新思路。",
@@ -109,36 +59,108 @@
         ],
         "one_line": "这篇论文同时命中了 Text-to-Image 方向的关键词，而且发布时间很近，适合作为本周优先跟踪对象。"
       },
-      "detail_path": "papers/02-fine-grained-text-to-image-control-with-sparse-diffusion-plans.md"
+      "detail_path": "papers/01-dit-ic-aligned-diffusion-transformer-for-efficient-image-compression.md"
+    },
+    {
+      "rank": 2,
+      "paper": {
+        "paper_id": "2603.13024v1",
+        "source": "arXiv",
+        "title": "SAW: Toward a Surgical Action World Model via Controllable and Scalable Video Generation",
+        "abstract": "A surgical world model capable of generating realistic surgical action videos with precise control over tool-tissue interactions can address fundamental challenges in surgical AI and simulation -- from data scarcity and rare event synthesis to bridging the sim-to-real gap for surgical automation. However, current video generation methods, the very core of such surgical world models, require expensive annotations or complex structured intermediates as conditioning signals at inference, limiting their scalability. Other approaches exhibit limited temporal consistency across complex laparoscopic scenes and do not possess sufficient realism. We propose Surgical Action World (SAW) -- a step toward surgical action world modeling through video diffusion conditioned on four lightweight signals: language prompts encoding tool-action context, a reference surgical scene, tissue affordance mask, and 2D tool-tip trajectories. We design a conditional video diffusion approach that reformulates video-to-video diffusion into trajectory-conditioned surgical action synthesis. The backbone diffusion model is fine-tuned on a custom-curated dataset of 12,044 laparoscopic clips with lightweight spatiotemporal conditioning signals, leveraging a depth consistency loss to enforce geometric plausibility without requiring depth at inference. SAW achieves state-of-the-art temporal consistency (CD-FVD: 199.19 vs. 546.82) and strong visual quality on held-out test data. Furthermore, we demonstrate its downstream utility for (a) surgical AI, where augmenting rare actions with SAW-generated videos improves action recognition (clipping F1-score: 20.93% to 43.14%; cutting: 0.00% to 8.33%) on real test data, and (b) surgical simulation, where rendering tool-tissue interaction videos from simulator-derived trajectory points toward a visually faithful simulation engine.",
+        "authors": [
+          "Sampath Rapuri",
+          "Lalithkumar Seenivasan",
+          "Dominik Schneider",
+          "Roger Soberanis-Mukul",
+          "Yufan He",
+          "Hao Ding",
+          "Jiru Xu",
+          "Chenhao Yu",
+          "Chenyan Jing",
+          "Pengfei Guo",
+          "Daguang Xu",
+          "Mathias Unberath"
+        ],
+        "categories": [
+          "cs.CV",
+          "cs.AI",
+          "cs.LG",
+          "eess.IV"
+        ],
+        "published": "2026-03-13 14:32:41+00:00",
+        "updated": "2026-03-13 14:32:41+00:00",
+        "abs_url": "http://arxiv.org/abs/2603.13024v1",
+        "pdf_url": "https://arxiv.org/pdf/2603.13024v1",
+        "matched_topics": [
+          "Text-to-Image",
+          "Text-to-Video"
+        ],
+        "keyword_score": 17.0
+      },
+      "analysis": {
+        "title_zh": "SAW: Toward a Surgical Action World Model via Controllable and Scalable Video Generation",
+        "tagline": "这篇论文同时命中了 Text-to-Image / Text-to-Video 方向的关键词，而且发布时间很近，适合作为本周优先跟踪对象。",
+        "importance": "从关键词覆盖、发布时间和主题贴合度来看，这篇论文值得进入本周跟踪列表。",
+        "core_innovation": "A surgical world model capable of generating realistic surgical action videos with precise control over tool-tissue interactions can address fundamental challenges in surgical AI and simulation -- from data scarcity and rare event synthesis to bridging the sim-to-real gap for surgical automation",
+        "technical_takeaways": [
+          "论文摘要显示其核心贡献和当前关注方向高度相关。",
+          "如果你在做路线判断，这篇更适合拿来快速理解最新思路。",
+          "建议结合原文的实验部分进一步确认真实增益。"
+        ],
+        "applications": [
+          "可作为相关方向的技术情报输入。",
+          "可辅助判断近期研究热点是否发生迁移。"
+        ],
+        "limitations": [
+          "当前分析基于摘要，不等价于完整精读。",
+          "真正的工程可用性还需要看实验设计和复现实验。"
+        ],
+        "who_should_read": [
+          "做多模态生成研究的人",
+          "做视频生成或 Agent 产品判断的人",
+          "需要跟踪前沿技术路线的团队负责人"
+        ],
+        "follow_ups": [
+          "阅读原文方法部分与实验设置。",
+          "对比最近 4 到 6 周同方向论文的变化。"
+        ],
+        "one_line": "这篇论文同时命中了 Text-to-Image / Text-to-Video 方向的关键词，而且发布时间很近，适合作为本周优先跟踪对象。"
+      },
+      "detail_path": "papers/02-saw-toward-a-surgical-action-world-model-via-controllable-and-scalable-v.md"
     },
     {
       "rank": 3,
       "paper": {
-        "paper_id": "2603.00003v1",
+        "paper_id": "2603.13173v1",
         "source": "arXiv",
-        "title": "Planner-Toolformer Agents for Reliable Web Task Completion",
-        "abstract": "We study agentic AI systems that combine planning and tool use to improve reliable completion on realistic web agent tasks with better error recovery.",
+        "title": "Semantic Invariance in Agentic AI",
+        "abstract": "Large Language Models (LLMs) increasingly serve as autonomous reasoning agents in decision support, scientific problem-solving, and multi-agent coordination systems. However, deploying LLM agents in consequential applications requires assurance that their reasoning remains stable under semantically equivalent input variations, a property we term semantic invariance.Standard benchmark evaluations, which assess accuracy on fixed, canonical problem formulations, fail to capture this critical reliability dimension. To address this shortcoming, in this paper we present a metamorphic testing framework for systematically assessing the robustness of LLM reasoning agents, applying eight semantic-preserving transformations (identity, paraphrase, fact reordering, expansion, contraction, academic context, business context, and contrastive formulation) across seven foundation models spanning four distinct architectural families: Hermes (70B, 405B), Qwen3 (30B-A3B, 235B-A22B), DeepSeek-R1, and gpt-oss (20B, 120B). Our evaluation encompasses 19 multi-step reasoning problems across eight scientific domains. The results reveal that model scale does not predict robustness: the smaller Qwen3-30B-A3B achieves the highest stability (79.6% invariant responses, semantic similarity 0.91), while larger models exhibit greater fragility.",
         "authors": [
-          "Dan Example",
-          "Eve Example"
+          "I. de Zarzà",
+          "J. de Curtò",
+          "Jordi Cabot",
+          "Pietro Manzoni",
+          "Carlos T. Calafate"
         ],
         "categories": [
-          "cs.AI"
+          "cs.AI",
+          "cs.CL"
         ],
-        "published": "2026-03-12 18:00:00+00:00",
-        "updated": "2026-03-12 18:00:00+00:00",
-        "abs_url": "http://arxiv.org/abs/2603.00003v1",
-        "pdf_url": "http://arxiv.org/pdf/2603.00003v1",
+        "published": "2026-03-13 17:08:44+00:00",
+        "updated": "2026-03-13 17:08:44+00:00",
+        "abs_url": "http://arxiv.org/abs/2603.13173v1",
+        "pdf_url": "https://arxiv.org/pdf/2603.13173v1",
         "matched_topics": [
           "Agentic AI"
         ],
-        "keyword_score": 7.0
+        "keyword_score": 11.0
       },
       "analysis": {
-        "title_zh": "Planner-Toolformer Agents for Reliable Web Task Completion",
+        "title_zh": "Semantic Invariance in Agentic AI",
         "tagline": "这篇论文同时命中了 Agentic AI 方向的关键词，而且发布时间很近，适合作为本周优先跟踪对象。",
         "importance": "从关键词覆盖、发布时间和主题贴合度来看，这篇论文值得进入本周跟踪列表。",
-        "core_innovation": "We study agentic AI systems that combine planning and tool use to improve reliable completion on realistic web agent tasks with better error recovery.",
+        "core_innovation": "Large Language Models (LLMs) increasingly serve as autonomous reasoning agents in decision support, scientific problem-solving, and multi-agent coordination systems",
         "technical_takeaways": [
           "论文摘要显示其核心贡献和当前关注方向高度相关。",
           "如果你在做路线判断，这篇更适合拿来快速理解最新思路。",
@@ -163,7 +185,117 @@
         ],
         "one_line": "这篇论文同时命中了 Agentic AI 方向的关键词，而且发布时间很近，适合作为本周优先跟踪对象。"
       },
-      "detail_path": "papers/03-planner-toolformer-agents-for-reliable-web-task-completion.md"
+      "detail_path": "papers/03-semantic-invariance-in-agentic-ai.md"
+    },
+    {
+      "rank": 4,
+      "paper": {
+        "paper_id": "2603.13100v1",
+        "source": "arXiv",
+        "title": "Evaluating VLMs' Spatial Reasoning Over Robot Motion: A Step Towards Robot Planning with Motion Preferences",
+        "abstract": "Understanding user instructions and object spatial relations in surrounding environments is crucial for intelligent robot systems to assist humans in various tasks. The natural language and spatial reasoning capabilities of Vision-Language Models (VLMs) have the potential to enhance the generalization of robot planners on new tasks, objects, and motion specifications. While foundation models have been applied to task planning, it is still unclear the degree to which they have the capability of spatial reasoning required to enforce user preferences or constraints on motion, such as desired distances from objects, topological properties, or motion style preferences. In this paper, we evaluate the capability of four state-of-the-art VLMs at spatial reasoning over robot motion, using four different querying methods. Our results show that, with the highest-performing querying method, Qwen2.5-VL achieves 71.4% accuracy zero-shot and 75% on a smaller model after fine-tuning, and GPT-4o leads to lower performance. We evaluate two types of motion preferences (object-proximity and path-style), and we also analyze the trade-off between accuracy and computation cost in number of tokens. This work shows some promise in the potential of VLM integration with robot motion planning pipelines.",
+        "authors": [
+          "Wenxi Wu",
+          "Jingjing Zhang",
+          "Martim Brandão"
+        ],
+        "categories": [
+          "cs.RO",
+          "cs.AI"
+        ],
+        "published": "2026-03-13 15:53:42+00:00",
+        "updated": "2026-03-13 15:53:42+00:00",
+        "abs_url": "http://arxiv.org/abs/2603.13100v1",
+        "pdf_url": "https://arxiv.org/pdf/2603.13100v1",
+        "matched_topics": [
+          "Agentic AI"
+        ],
+        "keyword_score": 11.0
+      },
+      "analysis": {
+        "title_zh": "Evaluating VLMs' Spatial Reasoning Over Robot Motion: A Step Towards Robot Planning with Motion Preferences",
+        "tagline": "这篇论文同时命中了 Agentic AI 方向的关键词，而且发布时间很近，适合作为本周优先跟踪对象。",
+        "importance": "从关键词覆盖、发布时间和主题贴合度来看，这篇论文值得进入本周跟踪列表。",
+        "core_innovation": "Understanding user instructions and object spatial relations in surrounding environments is crucial for intelligent robot systems to assist humans in various tasks",
+        "technical_takeaways": [
+          "论文摘要显示其核心贡献和当前关注方向高度相关。",
+          "如果你在做路线判断，这篇更适合拿来快速理解最新思路。",
+          "建议结合原文的实验部分进一步确认真实增益。"
+        ],
+        "applications": [
+          "可作为相关方向的技术情报输入。",
+          "可辅助判断近期研究热点是否发生迁移。"
+        ],
+        "limitations": [
+          "当前分析基于摘要，不等价于完整精读。",
+          "真正的工程可用性还需要看实验设计和复现实验。"
+        ],
+        "who_should_read": [
+          "做多模态生成研究的人",
+          "做视频生成或 Agent 产品判断的人",
+          "需要跟踪前沿技术路线的团队负责人"
+        ],
+        "follow_ups": [
+          "阅读原文方法部分与实验设置。",
+          "对比最近 4 到 6 周同方向论文的变化。"
+        ],
+        "one_line": "这篇论文同时命中了 Agentic AI 方向的关键词，而且发布时间很近，适合作为本周优先跟踪对象。"
+      },
+      "detail_path": "papers/04-evaluating-vlms-spatial-reasoning-over-robot-motion-a-step-towards-robot.md"
+    },
+    {
+      "rank": 5,
+      "paper": {
+        "paper_id": "2603.13091v1",
+        "source": "arXiv",
+        "title": "Reasoning over Video: Evaluating How MLLMs Extract, Integrate, and Reconstruct Spatiotemporal Evidence",
+        "abstract": "The growing interest in embodied agents increases the demand for spatiotemporal video understanding, yet existing benchmarks largely emphasize extractive reasoning, where answers can be explicitly presented within spatiotemporal events. It remains unclear whether multimodal large language models can instead perform abstractive spatiotemporal reasoning, which requires integrating observations over time, combining dispersed cues, and inferring implicit spatial and contextual structure. To address this gap, we formalize abstractive spatiotemporal reasoning from videos by introducing a structured evaluation taxonomy that systematically targets its core dimensions and construct a controllable, scenario-driven synthetic egocentric video dataset tailored to evaluate abstractive spatiotemporal reasoning capabilities, spanning object-, room-, and floor-plan-level scenarios. Based on this framework, we present VAEX-BENCH, a benchmark comprising five abstractive reasoning tasks together with their extractive counterparts. Our extensive experiments compare the performance of state-of-the-art MLLMs under extractive and abstractive settings, exposing their limitations on abstractive tasks and providing a fine-grained analysis of the underlying bottlenecks. The dataset will be released soon.",
+        "authors": [
+          "Seunghwan Bang",
+          "Hwanjun Song"
+        ],
+        "categories": [
+          "cs.CV"
+        ],
+        "published": "2026-03-13 15:40:42+00:00",
+        "updated": "2026-03-13 15:40:42+00:00",
+        "abs_url": "http://arxiv.org/abs/2603.13091v1",
+        "pdf_url": "https://arxiv.org/pdf/2603.13091v1",
+        "matched_topics": [
+          "Agentic AI"
+        ],
+        "keyword_score": 9.0
+      },
+      "analysis": {
+        "title_zh": "Reasoning over Video: Evaluating How MLLMs Extract, Integrate, and Reconstruct Spatiotemporal Evidence",
+        "tagline": "这篇论文同时命中了 Agentic AI 方向的关键词，而且发布时间很近，适合作为本周优先跟踪对象。",
+        "importance": "从关键词覆盖、发布时间和主题贴合度来看，这篇论文值得进入本周跟踪列表。",
+        "core_innovation": "The growing interest in embodied agents increases the demand for spatiotemporal video understanding, yet existing benchmarks largely emphasize extractive reasoning, where answers can be explicitly presented within spatiotemporal events",
+        "technical_takeaways": [
+          "论文摘要显示其核心贡献和当前关注方向高度相关。",
+          "如果你在做路线判断，这篇更适合拿来快速理解最新思路。",
+          "建议结合原文的实验部分进一步确认真实增益。"
+        ],
+        "applications": [
+          "可作为相关方向的技术情报输入。",
+          "可辅助判断近期研究热点是否发生迁移。"
+        ],
+        "limitations": [
+          "当前分析基于摘要，不等价于完整精读。",
+          "真正的工程可用性还需要看实验设计和复现实验。"
+        ],
+        "who_should_read": [
+          "做多模态生成研究的人",
+          "做视频生成或 Agent 产品判断的人",
+          "需要跟踪前沿技术路线的团队负责人"
+        ],
+        "follow_ups": [
+          "阅读原文方法部分与实验设置。",
+          "对比最近 4 到 6 周同方向论文的变化。"
+        ],
+        "one_line": "这篇论文同时命中了 Agentic AI 方向的关键词，而且发布时间很近，适合作为本周优先跟踪对象。"
+      },
+      "detail_path": "papers/05-reasoning-over-video-evaluating-how-mllms-extract-integrate-and-reconstr.md"
     }
   ]
 }
