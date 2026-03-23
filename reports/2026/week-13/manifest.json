@@ -1,0 +1,462 @@
+{
+  "week": "2026/week-13",
+  "headline": "2026 年当前阶段，更值得跟踪的是 Agent 与视觉生成交叉方向的系统化演进。",
+  "overview": "这份周报不再只看最近几天的新论文，而是把每个方向的长期基石、近期值得关注的新工作、以及研究趋势放在一起看，帮助你做路线判断。",
+  "topics": [
+    {
+      "topic_name": "Agentic AI",
+      "topic_name_zh": "Agentic AI",
+      "summary": "这个方向的核心已经从“会不会推理”转向“能不能在真实任务中规划、调用工具并稳定完成任务”。 本期可以重点留意：MuSteerNet: Human Reaction Generation from Videos via Observation-Reaction Mutual Steering；MME-CoF-Pro: Evaluating Reasoning Coherence in Video Generative Models with Text and Visual Hints。",
+      "trend_signals": [
+        "更强调工具使用与规划，而不只是语言推理。 本期样本数：2。",
+        "研究目标逐步转向真实环境任务完成度。",
+        "鲁棒性、恢复能力和可验证性会越来越重要。"
+      ],
+      "landmark_papers": [
+        {
+          "rank": 1,
+          "importance_score": 98,
+          "selection_reason": "这是 Agentic AI 的长期基石论文之一，适合用来理解“思考 + 行动”范式的原点。",
+          "direction_fit": "Agentic AI",
+          "detail_path": "papers/2210-03629-react-synergizing-reasoning-and-acting-in-language-models.md",
+          "paper": {
+            "paper_id": "2210.03629",
+            "source": "arXiv",
+            "title": "ReAct: Synergizing Reasoning and Acting in Language Models",
+            "abstract": "这篇工作提出让语言模型在推理轨迹和外部动作之间交替执行，形成后续 Agent 领域最经典的闭环范式之一。",
+            "authors": [
+              "Shunyu Yao",
+              "Jeffrey Zhao",
+              "Dian Yu"
+            ],
+            "categories": [],
+            "published": "2022-01-01 00:00:00+00:00",
+            "updated": "2022-01-01 00:00:00+00:00",
+            "abs_url": "https://arxiv.org/abs/2210.03629",
+            "pdf_url": "https://arxiv.org/pdf/2210.03629",
+            "published_label": "2022",
+            "collection_kind": "landmark",
+            "matched_topics": [
+              "Agentic AI"
+            ],
+            "keyword_score": 100.0,
+            "topic_scores": {
+              "Agentic AI": 100.0
+            }
+          }
+        },
+        {
+          "rank": 2,
+          "importance_score": 97,
+          "selection_reason": "如果你关心 Agent 的工具使用能力，这篇是必须长期放在视野里的代表工作。",
+          "direction_fit": "Agentic AI",
+          "detail_path": "papers/2302-04761-toolformer-language-models-can-teach-themselves-to-use-tools.md",
+          "paper": {
+            "paper_id": "2302.04761",
+            "source": "arXiv",
+            "title": "Toolformer: Language Models Can Teach Themselves to Use Tools",
+            "abstract": "这篇论文展示了语言模型可以通过自监督方式学习何时调用计算器、搜索、翻译等外部工具，是工具调用路线的代表作。",
+            "authors": [
+              "Timo Schick",
+              "Jane Dwivedi-Yu",
+              "Roberto Dessi"
+            ],
+            "categories": [],
+            "published": "2023-01-01 00:00:00+00:00",
+            "updated": "2023-01-01 00:00:00+00:00",
+            "abs_url": "https://arxiv.org/abs/2302.04761",
+            "pdf_url": "https://arxiv.org/pdf/2302.04761",
+            "published_label": "2023",
+            "collection_kind": "landmark",
+            "matched_topics": [
+              "Agentic AI"
+            ],
+            "keyword_score": 100.0,
+            "topic_scores": {
+              "Agentic AI": 100.0
+            }
+          }
+        }
+      ],
+      "recent_papers": [
+        {
+          "rank": 1,
+          "importance_score": 90,
+          "selection_reason": "这是这个方向近期更值得跟踪的新工作之一，它同时命中了 Agentic AI 的关键特征。",
+          "direction_fit": "Agentic AI",
+          "detail_path": "papers/2603-20187v1-musteernet-human-reaction-generation-from-videos-via-observation-reactio.md",
+          "paper": {
+            "paper_id": "2603.20187v1",
+            "source": "arXiv",
+            "title": "MuSteerNet: Human Reaction Generation from Videos via Observation-Reaction Mutual Steering",
+            "abstract": "Video-driven human reaction generation aims to synthesize 3D human motions that directly react to observed video sequences, which is crucial for building human-like interactive AI systems. However, existing methods often fail to effectively leverage video inputs to steer human reaction synthesis, resulting in reaction motions that are mismatched with the content of video sequences. We reveal that this limitation arises from a severe relational distortion between visual observations and reaction types. In light of this, we propose MuSteerNet, a simple yet effective framework that generates 3D human reactions from videos via observation-reaction mutual steering. Specifically, we first propose a Prototype Feedback Steering mechanism to mitigate relational distortion by refining visual observations with a gated delta-rectification modulator and a relational margin constraint, guided by prototypical vectors learned from human reactions. We then introduce Dual-Coupled Reaction Refinement that fully leverages rectified visual cues to further steer the refinement of generated reaction motions, thereby effectively improving reaction quality and enabling MuSteerNet to achieve competitive performance. Extensive experiments and ablation studies validate the effectiveness of our method. Code coming soon: https://github.com/zhouyuan888888/MuSteerNet.",
+            "authors": [
+              "Yuan Zhou",
+              "Yongzhi Li",
+              "Yanqi Dai",
+              "Xingyu Zhu",
+              "Yi Tan",
+              "Qingshan Xu",
+              "Beier Zhu",
+              "Richang Hong",
+              "Hanwang Zhang"
+            ],
+            "categories": [
+              "cs.CV"
+            ],
+            "published": "2026-03-20 17:59:06+00:00",
+            "updated": "2026-03-20 17:59:06+00:00",
+            "abs_url": "http://arxiv.org/abs/2603.20187v1",
+            "pdf_url": "https://arxiv.org/pdf/2603.20187v1",
+            "published_label": "",
+            "collection_kind": "recent",
+            "matched_topics": [
+              "Agentic AI"
+            ],
+            "keyword_score": 21.0,
+            "topic_scores": {
+              "Agentic AI": 21.0
+            }
+          }
+        },
+        {
+          "rank": 2,
+          "importance_score": 90,
+          "selection_reason": "这是这个方向近期更值得跟踪的新工作之一，它同时命中了 Agentic AI 的关键特征。",
+          "direction_fit": "Agentic AI",
+          "detail_path": "papers/2603-20194v1-mme-cof-pro-evaluating-reasoning-coherence-in-video-generative-models-wi.md",
+          "paper": {
+            "paper_id": "2603.20194v1",
+            "source": "arXiv",
+            "title": "MME-CoF-Pro: Evaluating Reasoning Coherence in Video Generative Models with Text and Visual Hints",
+            "abstract": "Video generative models show emerging reasoning behaviors. It is essential to ensure that generated events remain causally consistent across frames for reliable deployment, a property we define as reasoning coherence. To bridge the gap in literature for missing reasoning coherence evaluation, we propose MME-CoF-Pro, a comprehensive video reasoning benchmark to assess reasoning coherence in video models. Specifically, MME-CoF-Pro contains 303 samples across 16 categories, ranging from visual logical to scientific reasoning. It introduces Reasoning Score as evaluation metric for assessing process-level necessary intermediate reasoning steps, and includes three evaluation settings, (a) no hint (b) text hint and (c) visual hint, enabling a controlled investigation into the underlying mechanisms of reasoning hint guidance. Evaluation results in 7 open and closed-source video models reveals insights including: (1) Video generative models exhibit weak reasoning coherence, decoupled from generation quality. (2) Text hints boost apparent correctness but often cause inconsistency and hallucinated reasoning (3) Visual hints benefit structured perceptual tasks but struggle with fine-grained perception. Website: https://video-reasoning-coherence.github.io/",
+            "authors": [
+              "Yu Qi",
+              "Xinyi Xu",
+              "Ziyu Guo",
+              "Siyuan Ma",
+              "Renrui Zhang",
+              "Xinyan Chen",
+              "Ruichuan An",
+              "Ruofan Xing",
+              "Jiayi Zhang",
+              "Haojie Huang",
+              "Pheng-Ann Heng",
+              "Jonathan Tremblay",
+              "Lawson L. S. Wong"
+            ],
+            "categories": [
+              "cs.CV"
+            ],
+            "published": "2026-03-20 17:59:56+00:00",
+            "updated": "2026-03-20 17:59:56+00:00",
+            "abs_url": "http://arxiv.org/abs/2603.20194v1",
+            "pdf_url": "https://arxiv.org/pdf/2603.20194v1",
+            "published_label": "",
+            "collection_kind": "recent",
+            "matched_topics": [
+              "Agentic AI"
+            ],
+            "keyword_score": 19.0,
+            "topic_scores": {
+              "Agentic AI": 19.0
+            }
+          }
+        }
+      ]
+    },
+    {
+      "topic_name": "Text-to-Image + Agentic AI",
+      "topic_name_zh": "文生图 + Agentic AI",
+      "summary": "这个方向更值得关注的是：大模型如何成为图像生成与编辑工具链的编排层，让生成流程可拆解、可修正、可多步执行。 本期可以重点留意：LLM-Enhanced Semantic Data Integration of Electronic Component Qualifications in the Aerospace Domain。",
+      "trend_signals": [
+        "图像生成逐步成为可被 Agent 拆解和调度的工作流。 本期样本数：1。",
+        "编辑、重绘、局部控制等能力会比单纯画质更重要。",
+        "多模型协作会比单模型单次输出更值得关注。"
+      ],
+      "landmark_papers": [
+        {
+          "rank": 1,
+          "importance_score": 98,
+          "selection_reason": "这是图像生成 Agent 化的代表作之一，适合用来理解多工具视觉工作流如何被大模型调度。",
+          "direction_fit": "文生图 + Agentic AI",
+          "detail_path": "papers/2303-04671-visual-chatgpt-talking-drawing-and-editing-with-visual-foundation-models.md",
+          "paper": {
+            "paper_id": "2303.04671",
+            "source": "arXiv",
+            "title": "Visual ChatGPT: Talking, Drawing and Editing with Visual Foundation Models",
+            "abstract": "这篇工作把 ChatGPT 作为调度层，串联图像生成、编辑、理解等视觉基础模型，代表了“用 Agent 编排视觉生成工具链”的早期范式。",
+            "authors": [
+              "Chenfei Wu",
+              "Shengming Yin",
+              "Weixiang Sun"
+            ],
+            "categories": [],
+            "published": "2023-01-01 00:00:00+00:00",
+            "updated": "2023-01-01 00:00:00+00:00",
+            "abs_url": "https://arxiv.org/abs/2303.04671",
+            "pdf_url": "https://arxiv.org/pdf/2303.04671",
+            "published_label": "2023",
+            "collection_kind": "landmark",
+            "matched_topics": [
+              "Text-to-Image + Agentic AI"
+            ],
+            "keyword_score": 100.0,
+            "topic_scores": {
+              "Text-to-Image + Agentic AI": 100.0
+            }
+          }
+        },
+        {
+          "rank": 2,
+          "importance_score": 97,
+          "selection_reason": "它是理解“视觉生成或视觉专家能力如何被 Agent 框架统一调度”的关键参考。",
+          "direction_fit": "文生图 + Agentic AI",
+          "detail_path": "papers/2303-11381-mm-react-prompting-chatgpt-for-multimodal-reasoning-and-action.md",
+          "paper": {
+            "paper_id": "2303.11381",
+            "source": "arXiv",
+            "title": "MM-REACT: Prompting ChatGPT for Multimodal Reasoning and Action",
+            "abstract": "这篇论文强调让大模型通过外部视觉专家工具处理图像与视频任务，展示了多模态推理与行动的编排方式。",
+            "authors": [
+              "Shizhe Diao",
+              "Tianyao Wei",
+              "Ziwei Wang"
+            ],
+            "categories": [],
+            "published": "2023-01-01 00:00:00+00:00",
+            "updated": "2023-01-01 00:00:00+00:00",
+            "abs_url": "https://arxiv.org/abs/2303.11381",
+            "pdf_url": "https://arxiv.org/pdf/2303.11381",
+            "published_label": "2023",
+            "collection_kind": "landmark",
+            "matched_topics": [
+              "Text-to-Image + Agentic AI"
+            ],
+            "keyword_score": 100.0,
+            "topic_scores": {
+              "Text-to-Image + Agentic AI": 100.0
+            }
+          }
+        }
+      ],
+      "recent_papers": [
+        {
+          "rank": 1,
+          "importance_score": 85,
+          "selection_reason": "这是这个方向近期更值得跟踪的新工作之一，它同时命中了 文生图 + Agentic AI 的关键特征。",
+          "direction_fit": "文生图 + Agentic AI",
+          "detail_path": "papers/2603-20094v1-llm-enhanced-semantic-data-integration-of-electronic-component-qualifica.md",
+          "paper": {
+            "paper_id": "2603.20094v1",
+            "source": "arXiv",
+            "title": "LLM-Enhanced Semantic Data Integration of Electronic Component Qualifications in the Aerospace Domain",
+            "abstract": "Large manufacturing companies face challenges in information retrieval due to data silos maintained by different departments, leading to inconsistencies and misalignment across databases. This paper presents an experience in integrating and retrieving qualification data for electronic components used in satellite board design. Due to data silos, designers cannot immediately determine the qualification status of individual components. However, this process is critical during the planning phase, when assembly drawings are issued before production, to optimize new qualifications and avoid redundant efforts. To address this, we propose a pipeline that uses Virtual Knowledge Graphs for a unified view over heterogeneous data sources and LLMs to enhance retrieval and reduce manual effort in data cleansing. The retrieval of qualifications is then performed through an Ontology-based Data Access approach for structured queries and a vector search mechanism for retrieving qualifications based on similar textual properties. We perform a comparative cost-benefit analysis, demonstrating that the proposed pipeline also outperforms approaches relying solely on LLMs, such as Retrieval-Augmented Generation (RAG), in terms of long-term efficiency.",
+            "authors": [
+              "Antonio De Santis",
+              "Marco Balduini",
+              "Matteo Belcao",
+              "Andrea Proia",
+              "Marco Brambilla",
+              "Emanuele Della Valle"
+            ],
+            "categories": [
+              "cs.IR",
+              "cs.AI",
+              "cs.DB"
+            ],
+            "published": "2026-03-20 16:22:06+00:00",
+            "updated": "2026-03-20 16:22:06+00:00",
+            "abs_url": "http://arxiv.org/abs/2603.20094v1",
+            "pdf_url": "https://arxiv.org/pdf/2603.20094v1",
+            "published_label": "",
+            "collection_kind": "recent",
+            "matched_topics": [
+              "Agentic AI",
+              "Text-to-Image + Agentic AI"
+            ],
+            "keyword_score": 10.0,
+            "topic_scores": {
+              "Agentic AI": 5.0,
+              "Text-to-Image + Agentic AI": 10.0
+            }
+          }
+        }
+      ]
+    },
+    {
+      "topic_name": "Text-to-Video + Agentic AI",
+      "topic_name_zh": "文生视频 + Agentic AI",
+      "summary": "这个方向正在从单纯的视频生成走向可交互环境、世界模型和长时序控制，为 Agent 提供训练与模拟空间。 本期可以重点留意：X-World: Controllable Ego-Centric Multi-Camera World Models for Scalable End-to-End Driving；LumosX: Relate Any Identities with Their Attributes for Personalized Video Generation。",
+      "trend_signals": [
+        "视频生成开始和世界模型、模拟环境概念靠近。 本期样本数：2。",
+        "长时序一致性和动作反馈是关键难点。",
+        "这一方向更适合关注“环境可用性”而不是单段视频好不好看。"
+      ],
+      "landmark_papers": [
+        {
+          "rank": 1,
+          "importance_score": 98,
+          "selection_reason": "虽然它不是今天意义上的文生视频系统，但它是视频世界模型与 Agent 结合最重要的源头之一。",
+          "direction_fit": "文生视频 + Agentic AI",
+          "detail_path": "papers/1803-10122-world-models.md",
+          "paper": {
+            "paper_id": "1803.10122",
+            "source": "arXiv",
+            "title": "World Models",
+            "abstract": "这篇经典工作提出用生成式环境模型压缩视觉世界并支持控制决策，为后续“生成环境服务 Agent”路线奠定了思想基础。",
+            "authors": [
+              "David Ha",
+              "Jürgen Schmidhuber"
+            ],
+            "categories": [],
+            "published": "2018-01-01 00:00:00+00:00",
+            "updated": "2018-01-01 00:00:00+00:00",
+            "abs_url": "https://arxiv.org/abs/1803.10122",
+            "pdf_url": "https://arxiv.org/pdf/1803.10122",
+            "published_label": "2018",
+            "collection_kind": "landmark",
+            "matched_topics": [
+              "Text-to-Video + Agentic AI"
+            ],
+            "keyword_score": 100.0,
+            "topic_scores": {
+              "Text-to-Video + Agentic AI": 100.0
+            }
+          }
+        },
+        {
+          "rank": 2,
+          "importance_score": 97,
+          "selection_reason": "如果你关心视频生成如何进一步成为 Agent 的训练场和模拟器，这篇很值得长期追踪。",
+          "direction_fit": "文生视频 + Agentic AI",
+          "detail_path": "papers/2402-15391-genie-generative-interactive-environments.md",
+          "paper": {
+            "paper_id": "2402.15391",
+            "source": "arXiv",
+            "title": "Genie: Generative Interactive Environments",
+            "abstract": "这篇工作从视频数据中学习可交互生成环境，让模型不仅生成视觉内容，还能支持动作驱动的环境反馈，是视频世界模型和 Agent 交叉方向的重要信号。",
+            "authors": [
+              "Google DeepMind"
+            ],
+            "categories": [],
+            "published": "2024-01-01 00:00:00+00:00",
+            "updated": "2024-01-01 00:00:00+00:00",
+            "abs_url": "https://arxiv.org/abs/2402.15391",
+            "pdf_url": "https://arxiv.org/pdf/2402.15391",
+            "published_label": "2024",
+            "collection_kind": "landmark",
+            "matched_topics": [
+              "Text-to-Video + Agentic AI"
+            ],
+            "keyword_score": 100.0,
+            "topic_scores": {
+              "Text-to-Video + Agentic AI": 100.0
+            }
+          }
+        }
+      ],
+      "recent_papers": [
+        {
+          "rank": 1,
+          "importance_score": 90,
+          "selection_reason": "这是这个方向近期更值得跟踪的新工作之一，它同时命中了 文生视频 + Agentic AI 的关键特征。",
+          "direction_fit": "文生视频 + Agentic AI",
+          "detail_path": "papers/2603-19979v1-x-world-controllable-ego-centric-multi-camera-world-models-for-scalable.md",
+          "paper": {
+            "paper_id": "2603.19979v1",
+            "source": "arXiv",
+            "title": "X-World: Controllable Ego-Centric Multi-Camera World Models for Scalable End-to-End Driving",
+            "abstract": "Scalable and reliable evaluation is increasingly critical in the end-to-end era of autonomous driving, where vision--language--action (VLA) policies directly map raw sensor streams to driving actions. Yet, current evaluation pipelines still rely heavily on real-world road testing, which is costly, biased toward limited scenario coverage, and difficult to reproduce. These challenges motivate a real-world simulator that can generate realistic future observations under proposed actions, while remaining controllable and stable over long horizons. We present X-World, an action-conditioned multi-camera generative world model that simulates future observations directly in video space. Given synchronized multi-view camera history and a future action sequence, X-World generates future multi-camera video streams that follow the commanded actions. To ensure reproducible and editable scene rollouts, X-World further supports optional controls over dynamic traffic agents and static road elements, and retains a text-prompt interface for appearance-level control (e.g., weather and time of day). Beyond world simulation, X-World also enables video style transfer by conditioning on appearance prompts while preserving the underlying action and scene dynamics. At the core of X-World is a multi-view latent video generator designed to explicitly encourage cross-view geometric consistency and temporal coherence under diverse control signals. Experiments show that X-World achieves high-quality multi-view video generation with (i) strong view consistency across cameras, (ii) stable temporal dynamics over long rollouts, and (iii) high controllability with strict action following and faithful adherence to optional scene controls. These properties make X-World a practical foundation for scalable and reproducible evaluation.",
+            "authors": [
+              "Chaoda Zheng",
+              "Sean Li",
+              "Jinhao Deng",
+              "Zhennan Wang",
+              "Shijia Chen",
+              "Liqiang Xiao",
+              "Ziheng Chi",
+              "Hongbin Lin",
+              "Kangjie Chen",
+              "Boyang Wang",
+              "Yu Zhang",
+              "Xianming Liu"
+            ],
+            "categories": [
+              "cs.CV",
+              "cs.AI"
+            ],
+            "published": "2026-03-20 14:23:32+00:00",
+            "updated": "2026-03-20 14:23:32+00:00",
+            "abs_url": "http://arxiv.org/abs/2603.19979v1",
+            "pdf_url": "https://arxiv.org/pdf/2603.19979v1",
+            "published_label": "",
+            "collection_kind": "recent",
+            "matched_topics": [
+              "Text-to-Video + Agentic AI"
+            ],
+            "keyword_score": 32.0,
+            "topic_scores": {
+              "Text-to-Video + Agentic AI": 32.0
+            }
+          }
+        },
+        {
+          "rank": 2,
+          "importance_score": 90,
+          "selection_reason": "这是这个方向近期更值得跟踪的新工作之一，它同时命中了 文生视频 + Agentic AI 的关键特征。",
+          "direction_fit": "文生视频 + Agentic AI",
+          "detail_path": "papers/2603-20192v1-lumosx-relate-any-identities-with-their-attributes-for-personalized-vide.md",
+          "paper": {
+            "paper_id": "2603.20192v1",
+            "source": "arXiv",
+            "title": "LumosX: Relate Any Identities with Their Attributes for Personalized Video Generation",
+            "abstract": "Recent advances in diffusion models have significantly improved text-to-video generation, enabling personalized content creation with fine-grained control over both foreground and background elements. However, precise face-attribute alignment across subjects remains challenging, as existing methods lack explicit mechanisms to ensure intra-group consistency. Addressing this gap requires both explicit modeling strategies and face-attribute-aware data resources. We therefore propose LumosX, a framework that advances both data and model design. On the data side, a tailored collection pipeline orchestrates captions and visual cues from independent videos, while multimodal large language models (MLLMs) infer and assign subject-specific dependencies. These extracted relational priors impose a finer-grained structure that amplifies the expressive control of personalized video generation and enables the construction of a comprehensive benchmark. On the modeling side, Relational Self-Attention and Relational Cross-Attention intertwine position-aware embeddings with refined attention dynamics to inscribe explicit subject-attribute dependencies, enforcing disciplined intra-group cohesion and amplifying the separation between distinct subject clusters. Comprehensive evaluations on our benchmark demonstrate that LumosX achieves state-of-the-art performance in fine-grained, identity-consistent, and semantically aligned personalized multi-subject video generation. Code and models are available at https://jiazheng-xing.github.io/lumosx-home/.",
+            "authors": [
+              "Jiazheng Xing",
+              "Fei Du",
+              "Hangjie Yuan",
+              "Pengwei Liu",
+              "Hongbin Xu",
+              "Hai Ci",
+              "Ruigang Niu",
+              "Weihua Chen",
+              "Fan Wang",
+              "Yong Liu"
+            ],
+            "categories": [
+              "cs.CV",
+              "cs.AI"
+            ],
+            "published": "2026-03-20 17:59:46+00:00",
+            "updated": "2026-03-20 17:59:46+00:00",
+            "abs_url": "http://arxiv.org/abs/2603.20192v1",
+            "pdf_url": "https://arxiv.org/pdf/2603.20192v1",
+            "published_label": "",
+            "collection_kind": "recent",
+            "matched_topics": [
+              "Text-to-Video + Agentic AI"
+            ],
+            "keyword_score": 17.0,
+            "topic_scores": {
+              "Text-to-Video + Agentic AI": 17.0
+            }
+          }
+        }
+      ]
+    }
+  ],
+  "paper_details": {
+    "2210.03629": "papers/2210-03629-react-synergizing-reasoning-and-acting-in-language-models.md",
+    "2302.04761": "papers/2302-04761-toolformer-language-models-can-teach-themselves-to-use-tools.md",
+    "2603.20187v1": "papers/2603-20187v1-musteernet-human-reaction-generation-from-videos-via-observation-reactio.md",
+    "2603.20194v1": "papers/2603-20194v1-mme-cof-pro-evaluating-reasoning-coherence-in-video-generative-models-wi.md",
+    "2303.04671": "papers/2303-04671-visual-chatgpt-talking-drawing-and-editing-with-visual-foundation-models.md",
+    "2303.11381": "papers/2303-11381-mm-react-prompting-chatgpt-for-multimodal-reasoning-and-action.md",
+    "2603.20094v1": "papers/2603-20094v1-llm-enhanced-semantic-data-integration-of-electronic-component-qualifica.md",
+    "1803.10122": "papers/1803-10122-world-models.md",
+    "2402.15391": "papers/2402-15391-genie-generative-interactive-environments.md",
+    "2603.19979v1": "papers/2603-19979v1-x-world-controllable-ego-centric-multi-camera-world-models-for-scalable.md",
+    "2603.20192v1": "papers/2603-20192v1-lumosx-relate-any-identities-with-their-attributes-for-personalized-vide.md"
+  }
+}
