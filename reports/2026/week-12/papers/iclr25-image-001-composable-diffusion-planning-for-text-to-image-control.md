@@ -1,18 +1,18 @@
-# Planning-Guided Interactive World Models for Video Agents
+# Composable Diffusion Planning for Text-to-Image Control
 
-> 中文标题：Planning-Guided Interactive World Models for Video Agents
+> 中文标题：Composable Diffusion Planning for Text-to-Image Control
 
-> 这是这个方向近期更值得跟踪的新工作之一，它同时命中了 文生视频 的关键特征。
+> 这是这个方向近期更值得跟踪的新工作之一，它同时命中了 文生图 的关键特征。 同时它来自 ICLR 2025 Conference，值得优先看。
 
 | 字段 | 内容 |
 | --- | --- |
-| 方向 | Text-to-Video / Text-to-Video + Agentic AI |
+| 方向 | Text-to-Image / Text-to-Image + Agentic AI |
 | 类型 | 本期关注 |
-| 来源 | arXiv |
-| 发布时间 | 2026-03-13 |
-| 作者 | Carol Example |
-| 原文入口 | [Abstract](http://arxiv.org/abs/2603.00012v1) |
-| PDF | [Download PDF](http://arxiv.org/pdf/2603.00012v1) |
+| 来源 | ICLR 2025 Conference |
+| 发布时间 | 2025 |
+| 作者 | Cara Vision, David Vision |
+| 原文入口 | [Abstract](https://openreview.net/forum?id=iclr25-image-001) |
+| PDF | [Download PDF](https://openreview.net/pdf?id=iclr25-image-001) |
 
 ## 为什么值得看
 
@@ -20,7 +20,7 @@
 
 ## 核心方法 / 关键贡献
 
-We present a video generation and world model framework that supports planning, action-conditioned simulation, and long-horizon control for agent training and evaluation.
+We present a text-to-image diffusion framework with stronger compositional control, prompt planning, and efficient image editing.
 
 ## 技术要点
 
@@ -51,8 +51,8 @@ We present a video generation and world model framework that supports planning, 
 
 ## 摘要 / 内容摘记
 
-We present a video generation and world model framework that supports planning, action-conditioned simulation, and long-horizon control for agent training and evaluation.
+We present a text-to-image diffusion framework with stronger compositional control, prompt planning, and efficient image editing.
 
 ## 一句话结论
 
-这是这个方向近期更值得跟踪的新工作之一，它同时命中了 文生视频 的关键特征。
+这是这个方向近期更值得跟踪的新工作之一，它同时命中了 文生图 的关键特征。 同时它来自 ICLR 2025 Conference，值得优先看。

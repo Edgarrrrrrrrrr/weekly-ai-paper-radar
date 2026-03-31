@@ -14,6 +14,7 @@ if str(SRC) not in sys.path:
 
 from weekly_paper.arxiv_client import fetch_recent_papers
 from weekly_paper.analysis import fallback_analysis
+from weekly_paper.conference_client import fetch_conference_papers
 from weekly_paper.config import load_config
 from weekly_paper.pipeline import build_landmark_rankings
 from weekly_paper.ranking import annotate_papers, build_topic_reports, build_weekly_editorial
@@ -33,10 +34,16 @@ class PipelineTestCase(unittest.TestCase):
             feed_text=feed_text,
             now=now,
         )
-        self.assertEqual(len(papers), 3)
+        papers.extend(
+            fetch_conference_papers(
+                config.conference_sources,
+                fixture_dir=str(ROOT / "tests/fixtures/conferences"),
+            )
+        )
+        self.assertGreaterEqual(len(papers), 6)
 
         annotated = annotate_papers(papers, config.topics)
-        self.assertEqual(len(annotated), 3)
+        self.assertGreaterEqual(len(annotated), 6)
 
         _, landmarks = build_landmark_rankings(config)
         topic_reports = build_topic_reports(config, landmarks, annotated)
@@ -58,6 +65,8 @@ class PipelineTestCase(unittest.TestCase):
             content = repo_readme.read_text(encoding="utf-8")
             self.assertIn("长期重要论文", content)
             self.assertIn("Agentic AI", content)
+            self.assertIn("文生图", content)
+            self.assertIn("文生视频", content)
             self.assertIn("文生图 + Agentic AI", content)
             self.assertIn("文生视频 + Agentic AI", content)
 

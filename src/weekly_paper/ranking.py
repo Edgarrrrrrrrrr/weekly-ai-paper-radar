@@ -26,7 +26,7 @@ def annotate_papers(papers: list[Paper], topics: list[TopicConfig]) -> list[Pape
                 group_scores.append(score)
 
             if group_scores and all(score > 0 for score in group_scores):
-                total_score = sum(group_scores) + (len(group_scores) * 4)
+                total_score = sum(group_scores) + (len(group_scores) * 4) + source_bonus(paper)
                 matched_topics.append(topic.name)
                 topic_scores[topic.name] = total_score
 
@@ -60,15 +60,18 @@ def select_recent_papers_for_topic(
     ranked: list[RankedPaper] = []
     for index, paper in enumerate(candidates[:limit], start=1):
         score = int(65 + min(25, paper.topic_scores.get(topic.name, 0.0) * 2))
+        selection_reason = (
+            f"这是这个方向近期更值得跟踪的新工作之一，"
+            f"它同时命中了 {topic.name_zh} 的关键特征。"
+        )
+        if paper.source in {"ICLR", "CVPR"}:
+            selection_reason += f" 同时它来自 {paper.venue or paper.source}，值得优先看。"
         ranked.append(
             RankedPaper(
                 paper=paper,
                 rank=index,
                 importance_score=score,
-                selection_reason=(
-                    f"这是这个方向近期更值得跟踪的新工作之一，"
-                    f"它同时命中了 {topic.name_zh} 的关键特征。"
-                ),
+                selection_reason=selection_reason,
                 direction_fit=topic.name_zh,
             )
         )
@@ -118,6 +121,7 @@ def build_weekly_editorial(topic_reports: list[TopicReport], now: datetime | Non
     )
     trend_signals = [
         "Agentic AI 持续从单轮推理走向工具调用、规划和恢复能力。",
+        "纯文生图和纯文生视频方向仍然值得看最新会议论文，因为方法迭代往往先在 CVPR / ICLR 等 venue 集中出现。",
         "文生图 + Agent 方向更像在构建可编排的视觉工作流，而不只是单次生成。",
         "文生视频 + Agent 方向越来越接近世界模型、交互环境和长期控制。",
     ]
@@ -134,13 +138,25 @@ def build_weekly_editorial(topic_reports: list[TopicReport], now: datetime | Non
     )
 
 
+def source_bonus(paper: Paper) -> float:
+    if paper.source in {"ICLR", "CVPR"}:
+        return 8.0
+    return 0.0
+
+
 def _fallback_topic_summary(topic: TopicConfig, recents: list[RankedPaper]) -> str:
     if topic.slug == "agentic-ai":
         base = "这个方向的核心已经从“会不会推理”转向“能不能在真实任务中规划、调用工具并稳定完成任务”。"
+    elif topic.slug == "text-to-image":
+        base = "纯文生图方向更值得关注模型可控性、编辑能力、效率和数据配方，而最新方法往往会先在顶会和 arXiv 同步冒出来。"
+    elif topic.slug == "text-to-video":
+        base = "纯文生视频方向更值得持续看长时序一致性、运动建模、可编辑性和训练效率，这类进展在最新会议论文里通常很集中。"
     elif topic.slug == "text-to-image-agentic-ai":
         base = "这个方向更值得关注的是：大模型如何成为图像生成与编辑工具链的编排层，让生成流程可拆解、可修正、可多步执行。"
-    else:
+    elif topic.slug == "text-to-video-agentic-ai":
         base = "这个方向正在从单纯的视频生成走向可交互环境、世界模型和长时序控制，为 Agent 提供训练与模拟空间。"
+    else:
+        base = "这个方向本期仍值得结合长期代表论文和最新会议论文一起看。"
 
     if not recents:
         return base
@@ -156,17 +172,35 @@ def _fallback_topic_signals(topic: TopicConfig, recents: list[RankedPaper]) -> l
             "研究目标逐步转向真实环境任务完成度。",
             "鲁棒性、恢复能力和可验证性会越来越重要。",
         ]
+    elif topic.slug == "text-to-image":
+        signals = [
+            "图像生成研究继续关注更强可控性和更低推理成本。",
+            "高质量编辑、局部约束和一致性是更实用的方向。",
+            "CVPR / ICLR 里的方法论文通常比单篇 demo 更值得长期看。",
+        ]
+    elif topic.slug == "text-to-video":
+        signals = [
+            "视频生成研究的核心仍是长时序一致性和运动质量。",
+            "世界模型、压缩表示和效率优化越来越重要。",
+            "顶会论文更适合用来判断真正的技术方向，而不只是看产品效果。",
+        ]
     elif topic.slug == "text-to-image-agentic-ai":
         signals = [
             "图像生成逐步成为可被 Agent 拆解和调度的工作流。",
             "编辑、重绘、局部控制等能力会比单纯画质更重要。",
             "多模型协作会比单模型单次输出更值得关注。",
         ]
-    else:
+    elif topic.slug == "text-to-video-agentic-ai":
         signals = [
             "视频生成开始和世界模型、模拟环境概念靠近。",
             "长时序一致性和动作反馈是关键难点。",
             "这一方向更适合关注“环境可用性”而不是单段视频好不好看。",
+        ]
+    else:
+        signals = [
+            "这个方向本期有值得继续跟踪的工作。",
+            "建议长期论文和最新会议论文一起看。",
+            "趋势判断应更多参考连续数周的变化。",
         ]
 
     if recents:

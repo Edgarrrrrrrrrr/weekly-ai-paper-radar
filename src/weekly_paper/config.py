@@ -18,6 +18,16 @@ class LandmarkPaperConfig:
 
 
 @dataclass(frozen=True)
+class ConferenceSourceConfig:
+    name: str
+    type: str
+    year: int
+    base_url: str
+    invitation: str = ""
+    all_papers_url: str = ""
+
+
+@dataclass(frozen=True)
 class TopicConfig:
     name: str
     name_zh: str
@@ -33,6 +43,7 @@ class PipelineConfig:
     recent_papers_per_topic: int
     language: str
     categories: list[str]
+    conference_sources: list[ConferenceSourceConfig]
     topics: list[TopicConfig]
 
 
@@ -49,11 +60,13 @@ def load_config(path: str | Path) -> PipelineConfig:
         )
         for topic in raw["topics"]
     ]
+    conference_sources = [ConferenceSourceConfig(**item) for item in raw.get("conference_sources", [])]
     return PipelineConfig(
         days_back=raw["days_back"],
         max_results=raw["max_results"],
         recent_papers_per_topic=raw["recent_papers_per_topic"],
         language=raw["language"],
         categories=raw["categories"],
+        conference_sources=conference_sources,
         topics=topics,
     )

@@ -1,12 +1,28 @@
 {
-  "days_back": 30,
-  "max_results": 120,
-  "recent_papers_per_topic": 2,
+  "days_back": 45,
+  "max_results": 180,
+  "recent_papers_per_topic": 3,
   "language": "zh-CN",
   "categories": [
     "cs.CV",
     "cs.AI",
     "cs.LG"
+  ],
+  "conference_sources": [
+    {
+      "name": "ICLR",
+      "type": "openreview",
+      "year": 2025,
+      "base_url": "https://api.openreview.net",
+      "invitation": "ICLR.cc/2025/Conference/-/Submission"
+    },
+    {
+      "name": "CVPR",
+      "type": "cvf",
+      "year": 2025,
+      "base_url": "https://openaccess.thecvf.com/",
+      "all_papers_url": "https://openaccess.thecvf.com/CVPR2025?day=all"
+    }
   ],
   "topics": [
     {
@@ -19,12 +35,12 @@
           "ai agent",
           "tool use",
           "tool-using",
-          "planning",
           "multi-agent",
           "autonomous agent",
-          "reasoning",
           "toolformer",
-          "react"
+          "react",
+          "web agent",
+          "computer use"
         ]
       ],
       "landmarks": [
@@ -55,6 +71,98 @@
           ],
           "summary": "这篇论文展示了语言模型可以通过自监督方式学习何时调用计算器、搜索、翻译等外部工具，是工具调用路线的代表作。",
           "rationale": "如果你关心 Agent 的工具使用能力，这篇是必须长期放在视野里的代表工作。"
+        }
+      ]
+    },
+    {
+      "name": "Text-to-Image",
+      "name_zh": "文生图",
+      "slug": "text-to-image",
+      "keyword_groups": [
+        [
+          "text-to-image",
+          "text to image",
+          "image generation",
+          "image synthesis",
+          "text-guided image",
+          "image editing",
+          "image-to-image"
+        ]
+      ],
+      "landmarks": [
+        {
+          "paper_id": "2112.10752",
+          "title": "High-Resolution Image Synthesis with Latent Diffusion Models",
+          "abs_url": "https://arxiv.org/abs/2112.10752",
+          "pdf_url": "https://arxiv.org/pdf/2112.10752",
+          "published_label": "2021",
+          "authors": [
+            "Robin Rombach",
+            "Andreas Blattmann",
+            "Dominik Lorenz"
+          ],
+          "summary": "Latent Diffusion Models 是今天大多数文生图系统的关键技术基础之一，把扩散过程搬到潜空间，大幅降低了成本。",
+          "rationale": "这篇几乎是现代文生图路线的基石论文，长期都值得反复回看。"
+        },
+        {
+          "paper_id": "2302.05543",
+          "title": "Adding Conditional Control to Text-to-Image Diffusion Models",
+          "abs_url": "https://arxiv.org/abs/2302.05543",
+          "pdf_url": "https://arxiv.org/pdf/2302.05543",
+          "published_label": "2023",
+          "authors": [
+            "Lvmin Zhang",
+            "Anyi Rao",
+            "Maneesh Agrawala"
+          ],
+          "summary": "ControlNet 展示了如何在保持大模型能力的同时加入强条件控制，这条路线对可控生成和实际工作流影响极大。",
+          "rationale": "如果你关心文生图真正可用性，这篇比很多“更大模型”论文更值得长期看。"
+        }
+      ]
+    },
+    {
+      "name": "Text-to-Video",
+      "name_zh": "文生视频",
+      "slug": "text-to-video",
+      "keyword_groups": [
+        [
+          "text-to-video",
+          "text to video",
+          "video generation",
+          "video synthesis",
+          "video diffusion",
+          "video transformer",
+          "video editing"
+        ]
+      ],
+      "landmarks": [
+        {
+          "paper_id": "2204.03458",
+          "title": "Video Diffusion Models",
+          "abs_url": "https://arxiv.org/abs/2204.03458",
+          "pdf_url": "https://arxiv.org/pdf/2204.03458",
+          "published_label": "2022",
+          "authors": [
+            "Jonathan Ho",
+            "Tim Salimans",
+            "Alexey Gritsenko"
+          ],
+          "summary": "这是早期最有代表性的视频扩散模型论文之一，系统展示了扩散方法如何迁移到视频生成。",
+          "rationale": "它非常适合用来理解后续绝大多数文生视频方法的共同技术祖先。"
+        },
+        {
+          "paper_id": "2210.02303",
+          "title": "Imagen Video: High Definition Video Generation with Diffusion Models",
+          "abs_url": "https://arxiv.org/abs/2210.02303",
+          "pdf_url": "https://arxiv.org/pdf/2210.02303",
+          "published_label": "2022",
+          "authors": [
+            "Jonathan Ho",
+            "William Chan",
+            "Chitwan Saharia"
+          ],
+          "summary": "Imagen Video 展示了级联扩散在高清视频生成上的威力，是高质量视频生成路线的代表作。",
+          "rationale": "如果你要看文生视频真正迈向高质量的一批代表论文，这篇不能缺。"
         }
       ]
     },

@@ -1,0 +1,69 @@
+{
+  "notes": [
+    {
+      "id": "iclr25-agent-001",
+      "forum": "iclr25-agent-001",
+      "cdate": 1735603200000,
+      "content": {
+        "title": {
+          "value": "Planning with External Tools for Reliable Agentic Reasoning"
+        },
+        "abstract": {
+          "value": "We study reliable agentic reasoning with explicit planning and external tool use, improving completion on complex decision tasks."
+        },
+        "authors": {
+          "value": [
+            "Alice Conference",
+            "Bob Conference"
+          ]
+        },
+        "venue": {
+          "value": "ICLR 2025 Conference"
+        }
+      }
+    },
+    {
+      "id": "iclr25-image-001",
+      "forum": "iclr25-image-001",
+      "cdate": 1735603200000,
+      "content": {
+        "title": {
+          "value": "Composable Diffusion Planning for Text-to-Image Control"
+        },
+        "abstract": {
+          "value": "We present a text-to-image diffusion framework with stronger compositional control, prompt planning, and efficient image editing."
+        },
+        "authors": {
+          "value": [
+            "Cara Vision",
+            "David Vision"
+          ]
+        },
+        "venue": {
+          "value": "ICLR 2025 Conference"
+        }
+      }
+    },
+    {
+      "id": "iclr25-video-001",
+      "forum": "iclr25-video-001",
+      "cdate": 1735603200000,
+      "content": {
+        "title": {
+          "value": "Long-Horizon Video Diffusion with Motion-Aware Memory"
+        },
+        "abstract": {
+          "value": "This paper improves text-to-video generation with motion-aware memory for long-horizon coherence and video synthesis quality."
+        },
+        "authors": {
+          "value": [
+            "Eva Motion"
+          ]
+        },
+        "venue": {
+          "value": "ICLR 2025 Conference"
+        }
+      }
+    }
+  ]
+}

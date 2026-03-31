@@ -11,6 +11,7 @@ from weekly_paper.analysis import (
     fallback_analysis,
 )
 from weekly_paper.arxiv_client import fetch_recent_papers
+from weekly_paper.conference_client import fetch_conference_papers
 from weekly_paper.config import PipelineConfig, load_config
 from weekly_paper.models import Paper, RankedPaper
 from weekly_paper.openai_client import OpenAIJSONClient
@@ -23,6 +24,7 @@ def build_parser() -> ArgumentParser:
     parser.add_argument("--config", default="config/pipeline.json")
     parser.add_argument("--output-dir", default="reports")
     parser.add_argument("--feed-file", default="")
+    parser.add_argument("--conference-fixtures-dir", default="")
     parser.add_argument("--today", default="")
     parser.add_argument("--offline", action="store_true")
     return parser
@@ -44,13 +46,21 @@ def main() -> int:
     if args.feed_file:
         feed_text = Path(args.feed_file).read_text(encoding="utf-8")
 
-    recent_papers = fetch_recent_papers(
+    arxiv_papers = fetch_recent_papers(
         categories=config.categories,
         days_back=config.days_back,
         max_results=config.max_results,
         feed_text=feed_text,
         now=now,
     )
+    conference_sources = config.conference_sources
+    if args.offline and not args.conference_fixtures_dir:
+        conference_sources = []
+    conference_papers = fetch_conference_papers(
+        conference_sources,
+        fixture_dir=args.conference_fixtures_dir,
+    )
+    recent_papers = dedupe_papers(arxiv_papers + conference_papers)
     recent_papers = annotate_papers(recent_papers, config.topics)
 
     _, landmark_rankings = build_landmark_rankings(config)
@@ -159,3 +169,16 @@ def collect_unique_ranked_papers(topic_reports) -> list[RankedPaper]:
 
 if __name__ == "__main__":
     raise SystemExit(main())
+
+
+def dedupe_papers(papers: list[Paper]) -> list[Paper]:
+    by_key: dict[str, Paper] = {}
+    for paper in papers:
+        key = paper.abs_url or paper.paper_id or paper.title.lower()
+        existing = by_key.get(key)
+        if existing is None:
+            by_key[key] = paper
+            continue
+        if paper.abstract and len(paper.abstract) > len(existing.abstract):
+            by_key[key] = paper
+    return list(by_key.values())

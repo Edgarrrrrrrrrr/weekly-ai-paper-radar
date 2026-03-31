@@ -16,6 +16,7 @@ class Paper:
     updated: datetime
     abs_url: str
     pdf_url: str
+    venue: str = ""
     published_label: str = ""
     collection_kind: str = "recent"
     matched_topics: list[str] = field(default_factory=list)

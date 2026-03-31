@@ -2,11 +2,11 @@
 
 > 中文标题：Autonomous Canvas Agents for Text-to-Image Editing Workflows
 
-> 这是这个方向近期更值得跟踪的新工作之一，它同时命中了 文生图 + Agentic AI 的关键特征。
+> 这是这个方向近期更值得跟踪的新工作之一，它同时命中了 文生图 的关键特征。
 
 | 字段 | 内容 |
 | --- | --- |
-| 方向 | Agentic AI / Text-to-Image + Agentic AI |
+| 方向 | Agentic AI / Text-to-Image / Text-to-Image + Agentic AI |
 | 类型 | 本期关注 |
 | 来源 | arXiv |
 | 发布时间 | 2026-03-14 |
@@ -55,4 +55,4 @@ We study a text-to-image and image editing system where an agent plans multi-ste
 
 ## 一句话结论
 
-这是这个方向近期更值得跟踪的新工作之一，它同时命中了 文生图 + Agentic AI 的关键特征。
+这是这个方向近期更值得跟踪的新工作之一，它同时命中了 文生图 的关键特征。

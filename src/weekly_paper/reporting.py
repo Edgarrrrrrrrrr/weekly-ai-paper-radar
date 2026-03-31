@@ -141,8 +141,8 @@ def render_paper_table(
 ) -> list[str]:
     if include_published:
         lines = [
-            "| 排名 | 论文 | 发布时间 | 为什么值得看 | 原文 | 精读 |",
-            "| --- | --- | --- | --- | --- | --- |",
+            "| 排名 | 论文 | 来源 | 发布时间 | 为什么值得看 | 原文 | 精读 |",
+            "| --- | --- | --- | --- | --- | --- | --- |",
         ]
     else:
         lines = [
@@ -151,7 +151,7 @@ def render_paper_table(
         ]
 
     if not papers:
-        lines.append("| - | 暂无强匹配论文 | - | - | - | - |" if include_published else "| - | 暂无已配置论文 | - | - | - |")
+        lines.append("| - | 暂无强匹配论文 | - | - | - | - | - |" if include_published else "| - | 暂无已配置论文 | - | - | - |")
         return lines
 
     for ranked in papers:
@@ -162,6 +162,7 @@ def render_paper_table(
                 "| "
                 f"{ranked.rank} | "
                 f"{escape_table(ranked.paper.title)} | "
+                f"{escape_table(ranked.paper.venue or ranked.paper.source)} | "
                 f"{escape_table(format_published(ranked.paper))} | "
                 f"{escape_table(ranked.selection_reason)} | "
                 f"{original} | "
@@ -193,7 +194,7 @@ def render_paper_detail(ranked: RankedPaper, analysis: PaperAnalysis) -> str:
         "| --- | --- |",
         f"| 方向 | {topics} |",
         f"| 类型 | {paper_kind_label(ranked.paper.collection_kind)} |",
-        f"| 来源 | {ranked.paper.source} |",
+        f"| 来源 | {ranked.paper.venue or ranked.paper.source} |",
         f"| 发布时间 | {format_published(ranked.paper)} |",
         f"| 作者 | {authors} |",
         f"| 原文入口 | [Abstract]({ranked.paper.abs_url}) |",
@@ -264,10 +265,11 @@ def render_repository_readme(
     lines = [
         "# Weekly Paper Radar",
         "",
-        "每周自动更新三个方向的长期重要论文、近期新工作、原文链接和中文精读：Agentic AI、文生图 + Agentic AI、文生视频 + Agentic AI。",
+        "每周自动更新五个方向的长期重要论文、近期新工作、原文链接和中文精读：Agentic AI、文生图、文生视频、文生图 + Agentic AI、文生视频 + Agentic AI。",
         "",
         f"- 最新周报：[查看 {target_date.isocalendar()[0]} 第 {target_date.isocalendar()[1]:02d} 周]({latest_readme})",
         "- 自动更新：每周一 09:00（北京时间）",
+        "- 来源：arXiv + ICLR + CVPR",
         "- 结构：长期重要论文 + 本期关注 + 趋势判断",
         "",
         f"> {editorial.headline}",
@@ -306,10 +308,12 @@ def render_repository_topic_links(
         return ["- 暂无条目"]
     lines: list[str] = []
     for ranked in papers:
+        source_label = ranked.paper.venue or ranked.paper.source
         lines.append(
             "- "
             f"[{ranked.paper.title}]({ranked.paper.abs_url})"
             f" | [PDF]({ranked.paper.pdf_url})"
+            f" | {source_label}"
             f" | [精读]({detail_paths[ranked.paper.paper_id]})"
         )
     return lines

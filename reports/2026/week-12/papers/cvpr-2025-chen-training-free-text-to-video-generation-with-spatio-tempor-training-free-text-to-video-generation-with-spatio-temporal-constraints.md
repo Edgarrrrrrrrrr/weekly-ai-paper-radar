@@ -1,18 +1,18 @@
-# Planning-Guided Interactive World Models for Video Agents
+# Training-Free Text-to-Video Generation with Spatio-Temporal Constraints
 
-> 中文标题：Planning-Guided Interactive World Models for Video Agents
+> 中文标题：Training-Free Text-to-Video Generation with Spatio-Temporal Constraints
 
-> 这是这个方向近期更值得跟踪的新工作之一，它同时命中了 文生视频 的关键特征。
+> 这是这个方向近期更值得跟踪的新工作之一，它同时命中了 文生视频 的关键特征。 同时它来自 CVPR 2025，值得优先看。
 
 | 字段 | 内容 |
 | --- | --- |
-| 方向 | Text-to-Video / Text-to-Video + Agentic AI |
+| 方向 | Text-to-Video |
 | 类型 | 本期关注 |
-| 来源 | arXiv |
-| 发布时间 | 2026-03-13 |
-| 作者 | Carol Example |
-| 原文入口 | [Abstract](http://arxiv.org/abs/2603.00012v1) |
-| PDF | [Download PDF](http://arxiv.org/pdf/2603.00012v1) |
+| 来源 | CVPR 2025 |
+| 发布时间 | 2025 |
+| 作者 | Li Chen, Omar Khan |
+| 原文入口 | [Abstract](https://openaccess.thecvf.com/content/CVPR2025/html/Chen_Training-Free_Text-to-Video_Generation_with_Spatio-Temporal_Constraints_CVPR_2025_paper.html) |
+| PDF | [Download PDF](https://openaccess.thecvf.com/content/CVPR2025/papers/Chen_Training-Free_Text-to-Video_Generation_with_Spatio-Temporal_Constraints_CVPR_2025_paper.pdf) |
 
 ## 为什么值得看
 
@@ -20,7 +20,7 @@
 
 ## 核心方法 / 关键贡献
 
-We present a video generation and world model framework that supports planning, action-conditioned simulation, and long-horizon control for agent training and evaluation.
+Training-Free Text-to-Video Generation with Spatio-Temporal Constraints
 
 ## 技术要点
 
@@ -51,8 +51,8 @@ We present a video generation and world model framework that supports planning, 
 
 ## 摘要 / 内容摘记
 
-We present a video generation and world model framework that supports planning, action-conditioned simulation, and long-horizon control for agent training and evaluation.
+Training-Free Text-to-Video Generation with Spatio-Temporal Constraints
 
 ## 一句话结论
 
-这是这个方向近期更值得跟踪的新工作之一，它同时命中了 文生视频 的关键特征。
+这是这个方向近期更值得跟踪的新工作之一，它同时命中了 文生视频 的关键特征。 同时它来自 CVPR 2025，值得优先看。
