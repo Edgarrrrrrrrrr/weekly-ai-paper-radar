@@ -1,0 +1,871 @@
+{
+  "week": "2026/week-19",
+  "headline": "2026 年当前阶段，更值得跟踪的是 Agent 与视觉生成交叉方向的系统化演进。",
+  "overview": "这份周报不再只看最近几天的新论文，而是把每个方向的长期基石、近期值得关注的新工作、以及研究趋势放在一起看，帮助你做路线判断。",
+  "topics": [
+    {
+      "topic_name": "Agentic AI",
+      "topic_name_zh": "Agentic AI",
+      "summary": "这个方向的核心已经从“会不会推理”转向“能不能在真实任务中规划、调用工具并稳定完成任务”。 本期可以重点留意：MCCD: Multi-Agent Collaboration-based Compositional Diffusion for Complex Text-to-Image Generation；Learning to Detect Objects from Multi-Agent LiDAR Scans without Manual Labels。",
+      "trend_signals": [
+        "更强调工具使用与规划，而不只是语言推理。 本期样本数：3。",
+        "研究目标逐步转向真实环境任务完成度。",
+        "鲁棒性、恢复能力和可验证性会越来越重要。"
+      ],
+      "landmark_papers": [
+        {
+          "rank": 1,
+          "importance_score": 98,
+          "selection_reason": "这是 Agentic AI 的长期基石论文之一，适合用来理解“思考 + 行动”范式的原点。",
+          "direction_fit": "Agentic AI",
+          "detail_path": "papers/2210-03629-react-synergizing-reasoning-and-acting-in-language-models.md",
+          "paper": {
+            "paper_id": "2210.03629",
+            "source": "arXiv",
+            "title": "ReAct: Synergizing Reasoning and Acting in Language Models",
+            "abstract": "这篇工作提出让语言模型在推理轨迹和外部动作之间交替执行，形成后续 Agent 领域最经典的闭环范式之一。",
+            "authors": [
+              "Shunyu Yao",
+              "Jeffrey Zhao",
+              "Dian Yu"
+            ],
+            "categories": [],
+            "published": "2022-01-01 00:00:00+00:00",
+            "updated": "2022-01-01 00:00:00+00:00",
+            "abs_url": "https://arxiv.org/abs/2210.03629",
+            "pdf_url": "https://arxiv.org/pdf/2210.03629",
+            "venue": "",
+            "published_label": "2022",
+            "collection_kind": "landmark",
+            "matched_topics": [
+              "Agentic AI"
+            ],
+            "keyword_score": 100.0,
+            "topic_scores": {
+              "Agentic AI": 100.0
+            }
+          }
+        },
+        {
+          "rank": 2,
+          "importance_score": 97,
+          "selection_reason": "如果你关心 Agent 的工具使用能力，这篇是必须长期放在视野里的代表工作。",
+          "direction_fit": "Agentic AI",
+          "detail_path": "papers/2302-04761-toolformer-language-models-can-teach-themselves-to-use-tools.md",
+          "paper": {
+            "paper_id": "2302.04761",
+            "source": "arXiv",
+            "title": "Toolformer: Language Models Can Teach Themselves to Use Tools",
+            "abstract": "这篇论文展示了语言模型可以通过自监督方式学习何时调用计算器、搜索、翻译等外部工具，是工具调用路线的代表作。",
+            "authors": [
+              "Timo Schick",
+              "Jane Dwivedi-Yu",
+              "Roberto Dessi"
+            ],
+            "categories": [],
+            "published": "2023-01-01 00:00:00+00:00",
+            "updated": "2023-01-01 00:00:00+00:00",
+            "abs_url": "https://arxiv.org/abs/2302.04761",
+            "pdf_url": "https://arxiv.org/pdf/2302.04761",
+            "venue": "",
+            "published_label": "2023",
+            "collection_kind": "landmark",
+            "matched_topics": [
+              "Agentic AI"
+            ],
+            "keyword_score": 100.0,
+            "topic_scores": {
+              "Agentic AI": 100.0
+            }
+          }
+        }
+      ],
+      "recent_papers": [
+        {
+          "rank": 1,
+          "importance_score": 90,
+          "selection_reason": "这是这个方向近期更值得跟踪的新工作之一，它同时命中了 Agentic AI 的关键特征。 同时它来自 CVPR 2025，值得优先看。",
+          "direction_fit": "Agentic AI",
+          "detail_path": "papers/cvpr-2025-li-mccd-multi-agent-collaboration-based-compositional-diffusio-mccd-multi-agent-collaboration-based-compositional-diffusion-for-complex.md",
+          "paper": {
+            "paper_id": "cvpr-2025-Li_MCCD_Multi-Agent_Collaboration-based_Compositional_Diffusion_for_Complex_Text-to-Image_Generation_CVPR_2025_paper",
+            "source": "CVPR",
+            "title": "MCCD: Multi-Agent Collaboration-based Compositional Diffusion for Complex Text-to-Image Generation",
+            "abstract": "MCCD: Multi-Agent Collaboration-based Compositional Diffusion for Complex Text-to-Image Generation",
+            "authors": [],
+            "categories": [],
+            "published": "2025-01-01 00:00:00+00:00",
+            "updated": "2025-01-01 00:00:00+00:00",
+            "abs_url": "https://openaccess.thecvf.com/content/CVPR2025/html/Li_MCCD_Multi-Agent_Collaboration-based_Compositional_Diffusion_for_Complex_Text-to-Image_Generation_CVPR_2025_paper.html",
+            "pdf_url": "https://openaccess.thecvf.com/content/CVPR2025/papers/Li_MCCD_Multi-Agent_Collaboration-based_Compositional_Diffusion_for_Complex_Text-to-Image_Generation_CVPR_2025_paper.pdf",
+            "venue": "CVPR 2025",
+            "published_label": "2025",
+            "collection_kind": "recent",
+            "matched_topics": [
+              "Agentic AI",
+              "Text-to-Image",
+              "Text-to-Image + Agentic AI"
+            ],
+            "keyword_score": 28.0,
+            "topic_scores": {
+              "Agentic AI": 16.0,
+              "Text-to-Image": 20.0,
+              "Text-to-Image + Agentic AI": 28.0
+            }
+          }
+        },
+        {
+          "rank": 2,
+          "importance_score": 90,
+          "selection_reason": "这是这个方向近期更值得跟踪的新工作之一，它同时命中了 Agentic AI 的关键特征。 同时它来自 CVPR 2025，值得优先看。",
+          "direction_fit": "Agentic AI",
+          "detail_path": "papers/cvpr-2025-xia-learning-to-detect-objects-from-multi-agent-lidar-scans-wi-learning-to-detect-objects-from-multi-agent-lidar-scans-without-manual-l.md",
+          "paper": {
+            "paper_id": "cvpr-2025-Xia_Learning_to_Detect_Objects_from__Multi-Agent_LiDAR_Scans_without_CVPR_2025_paper",
+            "source": "CVPR",
+            "title": "Learning to Detect Objects from Multi-Agent LiDAR Scans without Manual Labels",
+            "abstract": "Learning to Detect Objects from Multi-Agent LiDAR Scans without Manual Labels",
+            "authors": [],
+            "categories": [],
+            "published": "2025-01-01 00:00:00+00:00",
+            "updated": "2025-01-01 00:00:00+00:00",
+            "abs_url": "https://openaccess.thecvf.com/content/CVPR2025/html/Xia_Learning_to_Detect_Objects_from__Multi-Agent_LiDAR_Scans_without_CVPR_2025_paper.html",
+            "pdf_url": "https://openaccess.thecvf.com/content/CVPR2025/papers/Xia_Learning_to_Detect_Objects_from__Multi-Agent_LiDAR_Scans_without_CVPR_2025_paper.pdf",
+            "venue": "CVPR 2025",
+            "published_label": "2025",
+            "collection_kind": "recent",
+            "matched_topics": [
+              "Agentic AI"
+            ],
+            "keyword_score": 16.0,
+            "topic_scores": {
+              "Agentic AI": 16.0
+            }
+          }
+        },
+        {
+          "rank": 3,
+          "importance_score": 90,
+          "selection_reason": "这是这个方向近期更值得跟踪的新工作之一，它同时命中了 Agentic AI 的关键特征。 同时它来自 CVPR 2025，值得优先看。",
+          "direction_fit": "Agentic AI",
+          "detail_path": "papers/cvpr-2025-ziliotto-tango-training-free-embodied-ai-agents-for-open-world-tango-training-free-embodied-ai-agents-for-open-world-tasks.md",
+          "paper": {
+            "paper_id": "cvpr-2025-Ziliotto_TANGO_Training-free_Embodied_AI_Agents_for_Open-world_Tasks_CVPR_2025_paper",
+            "source": "CVPR",
+            "title": "TANGO: Training-free Embodied AI Agents for Open-world Tasks",
+            "abstract": "TANGO: Training-free Embodied AI Agents for Open-world Tasks",
+            "authors": [],
+            "categories": [],
+            "published": "2025-01-01 00:00:00+00:00",
+            "updated": "2025-01-01 00:00:00+00:00",
+            "abs_url": "https://openaccess.thecvf.com/content/CVPR2025/html/Ziliotto_TANGO_Training-free_Embodied_AI_Agents_for_Open-world_Tasks_CVPR_2025_paper.html",
+            "pdf_url": "https://openaccess.thecvf.com/content/CVPR2025/papers/Ziliotto_TANGO_Training-free_Embodied_AI_Agents_for_Open-world_Tasks_CVPR_2025_paper.pdf",
+            "venue": "CVPR 2025",
+            "published_label": "2025",
+            "collection_kind": "recent",
+            "matched_topics": [
+              "Agentic AI"
+            ],
+            "keyword_score": 16.0,
+            "topic_scores": {
+              "Agentic AI": 16.0
+            }
+          }
+        }
+      ]
+    },
+    {
+      "topic_name": "Text-to-Image",
+      "topic_name_zh": "文生图",
+      "summary": "纯文生图方向更值得关注模型可控性、编辑能力、效率和数据配方，而最新方法往往会先在顶会和 arXiv 同步冒出来。 本期可以重点留意：MCCD: Multi-Agent Collaboration-based Compositional Diffusion for Complex Text-to-Image Generation；Self-Cross Diffusion Guidance for Text-to-Image Synthesis of Similar Subjects。",
+      "trend_signals": [
+        "图像生成研究继续关注更强可控性和更低推理成本。 本期样本数：3。",
+        "高质量编辑、局部约束和一致性是更实用的方向。",
+        "CVPR / ICLR 里的方法论文通常比单篇 demo 更值得长期看。"
+      ],
+      "landmark_papers": [
+        {
+          "rank": 1,
+          "importance_score": 98,
+          "selection_reason": "这篇几乎是现代文生图路线的基石论文，长期都值得反复回看。",
+          "direction_fit": "文生图",
+          "detail_path": "papers/2112-10752-high-resolution-image-synthesis-with-latent-diffusion-models.md",
+          "paper": {
+            "paper_id": "2112.10752",
+            "source": "arXiv",
+            "title": "High-Resolution Image Synthesis with Latent Diffusion Models",
+            "abstract": "Latent Diffusion Models 是今天大多数文生图系统的关键技术基础之一，把扩散过程搬到潜空间，大幅降低了成本。",
+            "authors": [
+              "Robin Rombach",
+              "Andreas Blattmann",
+              "Dominik Lorenz"
+            ],
+            "categories": [],
+            "published": "2021-01-01 00:00:00+00:00",
+            "updated": "2021-01-01 00:00:00+00:00",
+            "abs_url": "https://arxiv.org/abs/2112.10752",
+            "pdf_url": "https://arxiv.org/pdf/2112.10752",
+            "venue": "",
+            "published_label": "2021",
+            "collection_kind": "landmark",
+            "matched_topics": [
+              "Text-to-Image"
+            ],
+            "keyword_score": 100.0,
+            "topic_scores": {
+              "Text-to-Image": 100.0
+            }
+          }
+        },
+        {
+          "rank": 2,
+          "importance_score": 97,
+          "selection_reason": "如果你关心文生图真正可用性，这篇比很多“更大模型”论文更值得长期看。",
+          "direction_fit": "文生图",
+          "detail_path": "papers/2302-05543-adding-conditional-control-to-text-to-image-diffusion-models.md",
+          "paper": {
+            "paper_id": "2302.05543",
+            "source": "arXiv",
+            "title": "Adding Conditional Control to Text-to-Image Diffusion Models",
+            "abstract": "ControlNet 展示了如何在保持大模型能力的同时加入强条件控制，这条路线对可控生成和实际工作流影响极大。",
+            "authors": [
+              "Lvmin Zhang",
+              "Anyi Rao",
+              "Maneesh Agrawala"
+            ],
+            "categories": [],
+            "published": "2023-01-01 00:00:00+00:00",
+            "updated": "2023-01-01 00:00:00+00:00",
+            "abs_url": "https://arxiv.org/abs/2302.05543",
+            "pdf_url": "https://arxiv.org/pdf/2302.05543",
+            "venue": "",
+            "published_label": "2023",
+            "collection_kind": "landmark",
+            "matched_topics": [
+              "Text-to-Image"
+            ],
+            "keyword_score": 100.0,
+            "topic_scores": {
+              "Text-to-Image": 100.0
+            }
+          }
+        }
+      ],
+      "recent_papers": [
+        {
+          "rank": 1,
+          "importance_score": 90,
+          "selection_reason": "这是这个方向近期更值得跟踪的新工作之一，它同时命中了 文生图 的关键特征。 同时它来自 CVPR 2025，值得优先看。",
+          "direction_fit": "文生图",
+          "detail_path": "papers/cvpr-2025-li-mccd-multi-agent-collaboration-based-compositional-diffusio-mccd-multi-agent-collaboration-based-compositional-diffusion-for-complex.md",
+          "paper": {
+            "paper_id": "cvpr-2025-Li_MCCD_Multi-Agent_Collaboration-based_Compositional_Diffusion_for_Complex_Text-to-Image_Generation_CVPR_2025_paper",
+            "source": "CVPR",
+            "title": "MCCD: Multi-Agent Collaboration-based Compositional Diffusion for Complex Text-to-Image Generation",
+            "abstract": "MCCD: Multi-Agent Collaboration-based Compositional Diffusion for Complex Text-to-Image Generation",
+            "authors": [],
+            "categories": [],
+            "published": "2025-01-01 00:00:00+00:00",
+            "updated": "2025-01-01 00:00:00+00:00",
+            "abs_url": "https://openaccess.thecvf.com/content/CVPR2025/html/Li_MCCD_Multi-Agent_Collaboration-based_Compositional_Diffusion_for_Complex_Text-to-Image_Generation_CVPR_2025_paper.html",
+            "pdf_url": "https://openaccess.thecvf.com/content/CVPR2025/papers/Li_MCCD_Multi-Agent_Collaboration-based_Compositional_Diffusion_for_Complex_Text-to-Image_Generation_CVPR_2025_paper.pdf",
+            "venue": "CVPR 2025",
+            "published_label": "2025",
+            "collection_kind": "recent",
+            "matched_topics": [
+              "Agentic AI",
+              "Text-to-Image",
+              "Text-to-Image + Agentic AI"
+            ],
+            "keyword_score": 28.0,
+            "topic_scores": {
+              "Agentic AI": 16.0,
+              "Text-to-Image": 20.0,
+              "Text-to-Image + Agentic AI": 28.0
+            }
+          }
+        },
+        {
+          "rank": 2,
+          "importance_score": 90,
+          "selection_reason": "这是这个方向近期更值得跟踪的新工作之一，它同时命中了 文生图 的关键特征。 同时它来自 CVPR 2025，值得优先看。",
+          "direction_fit": "文生图",
+          "detail_path": "papers/cvpr-2025-qiu-self-cross-diffusion-guidance-for-text-to-image-synthesis-self-cross-diffusion-guidance-for-text-to-image-synthesis-of-similar-sub.md",
+          "paper": {
+            "paper_id": "cvpr-2025-Qiu_Self-Cross_Diffusion_Guidance_for_Text-to-Image_Synthesis_of_Similar_Subjects_CVPR_2025_paper",
+            "source": "CVPR",
+            "title": "Self-Cross Diffusion Guidance for Text-to-Image Synthesis of Similar Subjects",
+            "abstract": "Self-Cross Diffusion Guidance for Text-to-Image Synthesis of Similar Subjects",
+            "authors": [],
+            "categories": [],
+            "published": "2025-01-01 00:00:00+00:00",
+            "updated": "2025-01-01 00:00:00+00:00",
+            "abs_url": "https://openaccess.thecvf.com/content/CVPR2025/html/Qiu_Self-Cross_Diffusion_Guidance_for_Text-to-Image_Synthesis_of_Similar_Subjects_CVPR_2025_paper.html",
+            "pdf_url": "https://openaccess.thecvf.com/content/CVPR2025/papers/Qiu_Self-Cross_Diffusion_Guidance_for_Text-to-Image_Synthesis_of_Similar_Subjects_CVPR_2025_paper.pdf",
+            "venue": "CVPR 2025",
+            "published_label": "2025",
+            "collection_kind": "recent",
+            "matched_topics": [
+              "Text-to-Image"
+            ],
+            "keyword_score": 20.0,
+            "topic_scores": {
+              "Text-to-Image": 20.0
+            }
+          }
+        },
+        {
+          "rank": 3,
+          "importance_score": 90,
+          "selection_reason": "这是这个方向近期更值得跟踪的新工作之一，它同时命中了 文生图 的关键特征。 同时它来自 CVPR 2025，值得优先看。",
+          "direction_fit": "文生图",
+          "detail_path": "papers/cvpr-2025-binyamin-make-it-count-text-to-image-generation-with-an-accura-make-it-count-text-to-image-generation-with-an-accurate-number-of-object.md",
+          "paper": {
+            "paper_id": "cvpr-2025-Binyamin_Make_It_Count_Text-to-Image_Generation_with_an_Accurate_Number_of_CVPR_2025_paper",
+            "source": "CVPR",
+            "title": "Make It Count: Text-to-Image Generation with an Accurate Number of Objects",
+            "abstract": "Make It Count: Text-to-Image Generation with an Accurate Number of Objects",
+            "authors": [],
+            "categories": [],
+            "published": "2025-01-01 00:00:00+00:00",
+            "updated": "2025-01-01 00:00:00+00:00",
+            "abs_url": "https://openaccess.thecvf.com/content/CVPR2025/html/Binyamin_Make_It_Count_Text-to-Image_Generation_with_an_Accurate_Number_of_CVPR_2025_paper.html",
+            "pdf_url": "https://openaccess.thecvf.com/content/CVPR2025/papers/Binyamin_Make_It_Count_Text-to-Image_Generation_with_an_Accurate_Number_of_CVPR_2025_paper.pdf",
+            "venue": "CVPR 2025",
+            "published_label": "2025",
+            "collection_kind": "recent",
+            "matched_topics": [
+              "Text-to-Image"
+            ],
+            "keyword_score": 20.0,
+            "topic_scores": {
+              "Text-to-Image": 20.0
+            }
+          }
+        }
+      ]
+    },
+    {
+      "topic_name": "Text-to-Video",
+      "topic_name_zh": "文生视频",
+      "summary": "纯文生视频方向更值得持续看长时序一致性、运动建模、可编辑性和训练效率，这类进展在最新会议论文里通常很集中。 本期可以重点留意：FloVD: Optical Flow Meets Video Diffusion Model for Enhanced Camera-Controlled Video Synthesis；The Devil is in the Prompts: Retrieval-Augmented Prompt Optimization for Text-to-Video Generation。",
+      "trend_signals": [
+        "视频生成研究的核心仍是长时序一致性和运动质量。 本期样本数：3。",
+        "世界模型、压缩表示和效率优化越来越重要。",
+        "顶会论文更适合用来判断真正的技术方向，而不只是看产品效果。"
+      ],
+      "landmark_papers": [
+        {
+          "rank": 1,
+          "importance_score": 98,
+          "selection_reason": "它非常适合用来理解后续绝大多数文生视频方法的共同技术祖先。",
+          "direction_fit": "文生视频",
+          "detail_path": "papers/2204-03458-video-diffusion-models.md",
+          "paper": {
+            "paper_id": "2204.03458",
+            "source": "arXiv",
+            "title": "Video Diffusion Models",
+            "abstract": "这是早期最有代表性的视频扩散模型论文之一，系统展示了扩散方法如何迁移到视频生成。",
+            "authors": [
+              "Jonathan Ho",
+              "Tim Salimans",
+              "Alexey Gritsenko"
+            ],
+            "categories": [],
+            "published": "2022-01-01 00:00:00+00:00",
+            "updated": "2022-01-01 00:00:00+00:00",
+            "abs_url": "https://arxiv.org/abs/2204.03458",
+            "pdf_url": "https://arxiv.org/pdf/2204.03458",
+            "venue": "",
+            "published_label": "2022",
+            "collection_kind": "landmark",
+            "matched_topics": [
+              "Text-to-Video"
+            ],
+            "keyword_score": 100.0,
+            "topic_scores": {
+              "Text-to-Video": 100.0
+            }
+          }
+        },
+        {
+          "rank": 2,
+          "importance_score": 97,
+          "selection_reason": "如果你要看文生视频真正迈向高质量的一批代表论文，这篇不能缺。",
+          "direction_fit": "文生视频",
+          "detail_path": "papers/2210-02303-imagen-video-high-definition-video-generation-with-diffusion-models.md",
+          "paper": {
+            "paper_id": "2210.02303",
+            "source": "arXiv",
+            "title": "Imagen Video: High Definition Video Generation with Diffusion Models",
+            "abstract": "Imagen Video 展示了级联扩散在高清视频生成上的威力，是高质量视频生成路线的代表作。",
+            "authors": [
+              "Jonathan Ho",
+              "William Chan",
+              "Chitwan Saharia"
+            ],
+            "categories": [],
+            "published": "2022-01-01 00:00:00+00:00",
+            "updated": "2022-01-01 00:00:00+00:00",
+            "abs_url": "https://arxiv.org/abs/2210.02303",
+            "pdf_url": "https://arxiv.org/pdf/2210.02303",
+            "venue": "",
+            "published_label": "2022",
+            "collection_kind": "landmark",
+            "matched_topics": [
+              "Text-to-Video"
+            ],
+            "keyword_score": 100.0,
+            "topic_scores": {
+              "Text-to-Video": 100.0
+            }
+          }
+        }
+      ],
+      "recent_papers": [
+        {
+          "rank": 1,
+          "importance_score": 90,
+          "selection_reason": "这是这个方向近期更值得跟踪的新工作之一，它同时命中了 文生视频 的关键特征。 同时它来自 CVPR 2025，值得优先看。",
+          "direction_fit": "文生视频",
+          "detail_path": "papers/cvpr-2025-jin-flovd-optical-flow-meets-video-diffusion-model-for-enhance-flovd-optical-flow-meets-video-diffusion-model-for-enhanced-camera-contr.md",
+          "paper": {
+            "paper_id": "cvpr-2025-Jin_FloVD_Optical_Flow_Meets_Video_Diffusion_Model_for_Enhanced_Camera-Controlled_CVPR_2025_paper",
+            "source": "CVPR",
+            "title": "FloVD: Optical Flow Meets Video Diffusion Model for Enhanced Camera-Controlled Video Synthesis",
+            "abstract": "FloVD: Optical Flow Meets Video Diffusion Model for Enhanced Camera-Controlled Video Synthesis",
+            "authors": [],
+            "categories": [],
+            "published": "2025-01-01 00:00:00+00:00",
+            "updated": "2025-01-01 00:00:00+00:00",
+            "abs_url": "https://openaccess.thecvf.com/content/CVPR2025/html/Jin_FloVD_Optical_Flow_Meets_Video_Diffusion_Model_for_Enhanced_Camera-Controlled_CVPR_2025_paper.html",
+            "pdf_url": "https://openaccess.thecvf.com/content/CVPR2025/papers/Jin_FloVD_Optical_Flow_Meets_Video_Diffusion_Model_for_Enhanced_Camera-Controlled_CVPR_2025_paper.pdf",
+            "venue": "CVPR 2025",
+            "published_label": "2025",
+            "collection_kind": "recent",
+            "matched_topics": [
+              "Text-to-Video",
+              "Text-to-Video + Agentic AI"
+            ],
+            "keyword_score": 28.0,
+            "topic_scores": {
+              "Text-to-Video": 20.0,
+              "Text-to-Video + Agentic AI": 28.0
+            }
+          }
+        },
+        {
+          "rank": 2,
+          "importance_score": 90,
+          "selection_reason": "这是这个方向近期更值得跟踪的新工作之一，它同时命中了 文生视频 的关键特征。 同时它来自 CVPR 2025，值得优先看。",
+          "direction_fit": "文生视频",
+          "detail_path": "papers/cvpr-2025-gao-the-devil-is-in-the-prompts-retrieval-augmented-prompt-opt-the-devil-is-in-the-prompts-retrieval-augmented-prompt-optimization-for.md",
+          "paper": {
+            "paper_id": "cvpr-2025-Gao_The_Devil_is_in_the_Prompts_Retrieval-Augmented_Prompt_Optimization_for_CVPR_2025_paper",
+            "source": "CVPR",
+            "title": "The Devil is in the Prompts: Retrieval-Augmented Prompt Optimization for Text-to-Video Generation",
+            "abstract": "The Devil is in the Prompts: Retrieval-Augmented Prompt Optimization for Text-to-Video Generation",
+            "authors": [],
+            "categories": [],
+            "published": "2025-01-01 00:00:00+00:00",
+            "updated": "2025-01-01 00:00:00+00:00",
+            "abs_url": "https://openaccess.thecvf.com/content/CVPR2025/html/Gao_The_Devil_is_in_the_Prompts_Retrieval-Augmented_Prompt_Optimization_for_CVPR_2025_paper.html",
+            "pdf_url": "https://openaccess.thecvf.com/content/CVPR2025/papers/Gao_The_Devil_is_in_the_Prompts_Retrieval-Augmented_Prompt_Optimization_for_CVPR_2025_paper.pdf",
+            "venue": "CVPR 2025",
+            "published_label": "2025",
+            "collection_kind": "recent",
+            "matched_topics": [
+              "Text-to-Video"
+            ],
+            "keyword_score": 20.0,
+            "topic_scores": {
+              "Text-to-Video": 20.0
+            }
+          }
+        },
+        {
+          "rank": 3,
+          "importance_score": 90,
+          "selection_reason": "这是这个方向近期更值得跟踪的新工作之一，它同时命中了 文生视频 的关键特征。 同时它来自 CVPR 2025，值得优先看。",
+          "direction_fit": "文生视频",
+          "detail_path": "papers/cvpr-2025-feng-blobgen-vid-compositional-text-to-video-generation-with-b-blobgen-vid-compositional-text-to-video-generation-with-blob-video-repre.md",
+          "paper": {
+            "paper_id": "cvpr-2025-Feng_BlobGEN-Vid_Compositional_Text-to-Video_Generation_with_Blob_Video_Representations_CVPR_2025_paper",
+            "source": "CVPR",
+            "title": "BlobGEN-Vid: Compositional Text-to-Video Generation with Blob Video Representations",
+            "abstract": "BlobGEN-Vid: Compositional Text-to-Video Generation with Blob Video Representations",
+            "authors": [],
+            "categories": [],
+            "published": "2025-01-01 00:00:00+00:00",
+            "updated": "2025-01-01 00:00:00+00:00",
+            "abs_url": "https://openaccess.thecvf.com/content/CVPR2025/html/Feng_BlobGEN-Vid_Compositional_Text-to-Video_Generation_with_Blob_Video_Representations_CVPR_2025_paper.html",
+            "pdf_url": "https://openaccess.thecvf.com/content/CVPR2025/papers/Feng_BlobGEN-Vid_Compositional_Text-to-Video_Generation_with_Blob_Video_Representations_CVPR_2025_paper.pdf",
+            "venue": "CVPR 2025",
+            "published_label": "2025",
+            "collection_kind": "recent",
+            "matched_topics": [
+              "Text-to-Video"
+            ],
+            "keyword_score": 20.0,
+            "topic_scores": {
+              "Text-to-Video": 20.0
+            }
+          }
+        }
+      ]
+    },
+    {
+      "topic_name": "Text-to-Image + Agentic AI",
+      "topic_name_zh": "文生图 + Agentic AI",
+      "summary": "这个方向更值得关注的是：大模型如何成为图像生成与编辑工具链的编排层，让生成流程可拆解、可修正、可多步执行。 本期可以重点留意：MCCD: Multi-Agent Collaboration-based Compositional Diffusion for Complex Text-to-Image Generation；PhysEdit: Physically-Consistent Region-Aware Image Editing via Adaptive Spatio-Temporal Reasoning。",
+      "trend_signals": [
+        "图像生成逐步成为可被 Agent 拆解和调度的工作流。 本期样本数：2。",
+        "编辑、重绘、局部控制等能力会比单纯画质更重要。",
+        "多模型协作会比单模型单次输出更值得关注。"
+      ],
+      "landmark_papers": [
+        {
+          "rank": 1,
+          "importance_score": 98,
+          "selection_reason": "这是图像生成 Agent 化的代表作之一，适合用来理解多工具视觉工作流如何被大模型调度。",
+          "direction_fit": "文生图 + Agentic AI",
+          "detail_path": "papers/2303-04671-visual-chatgpt-talking-drawing-and-editing-with-visual-foundation-models.md",
+          "paper": {
+            "paper_id": "2303.04671",
+            "source": "arXiv",
+            "title": "Visual ChatGPT: Talking, Drawing and Editing with Visual Foundation Models",
+            "abstract": "这篇工作把 ChatGPT 作为调度层，串联图像生成、编辑、理解等视觉基础模型，代表了“用 Agent 编排视觉生成工具链”的早期范式。",
+            "authors": [
+              "Chenfei Wu",
+              "Shengming Yin",
+              "Weixiang Sun"
+            ],
+            "categories": [],
+            "published": "2023-01-01 00:00:00+00:00",
+            "updated": "2023-01-01 00:00:00+00:00",
+            "abs_url": "https://arxiv.org/abs/2303.04671",
+            "pdf_url": "https://arxiv.org/pdf/2303.04671",
+            "venue": "",
+            "published_label": "2023",
+            "collection_kind": "landmark",
+            "matched_topics": [
+              "Text-to-Image + Agentic AI"
+            ],
+            "keyword_score": 100.0,
+            "topic_scores": {
+              "Text-to-Image + Agentic AI": 100.0
+            }
+          }
+        },
+        {
+          "rank": 2,
+          "importance_score": 97,
+          "selection_reason": "它是理解“视觉生成或视觉专家能力如何被 Agent 框架统一调度”的关键参考。",
+          "direction_fit": "文生图 + Agentic AI",
+          "detail_path": "papers/2303-11381-mm-react-prompting-chatgpt-for-multimodal-reasoning-and-action.md",
+          "paper": {
+            "paper_id": "2303.11381",
+            "source": "arXiv",
+            "title": "MM-REACT: Prompting ChatGPT for Multimodal Reasoning and Action",
+            "abstract": "这篇论文强调让大模型通过外部视觉专家工具处理图像与视频任务，展示了多模态推理与行动的编排方式。",
+            "authors": [
+              "Shizhe Diao",
+              "Tianyao Wei",
+              "Ziwei Wang"
+            ],
+            "categories": [],
+            "published": "2023-01-01 00:00:00+00:00",
+            "updated": "2023-01-01 00:00:00+00:00",
+            "abs_url": "https://arxiv.org/abs/2303.11381",
+            "pdf_url": "https://arxiv.org/pdf/2303.11381",
+            "venue": "",
+            "published_label": "2023",
+            "collection_kind": "landmark",
+            "matched_topics": [
+              "Text-to-Image + Agentic AI"
+            ],
+            "keyword_score": 100.0,
+            "topic_scores": {
+              "Text-to-Image + Agentic AI": 100.0
+            }
+          }
+        }
+      ],
+      "recent_papers": [
+        {
+          "rank": 1,
+          "importance_score": 90,
+          "selection_reason": "这是这个方向近期更值得跟踪的新工作之一，它同时命中了 文生图 + Agentic AI 的关键特征。 同时它来自 CVPR 2025，值得优先看。",
+          "direction_fit": "文生图 + Agentic AI",
+          "detail_path": "papers/cvpr-2025-li-mccd-multi-agent-collaboration-based-compositional-diffusio-mccd-multi-agent-collaboration-based-compositional-diffusion-for-complex.md",
+          "paper": {
+            "paper_id": "cvpr-2025-Li_MCCD_Multi-Agent_Collaboration-based_Compositional_Diffusion_for_Complex_Text-to-Image_Generation_CVPR_2025_paper",
+            "source": "CVPR",
+            "title": "MCCD: Multi-Agent Collaboration-based Compositional Diffusion for Complex Text-to-Image Generation",
+            "abstract": "MCCD: Multi-Agent Collaboration-based Compositional Diffusion for Complex Text-to-Image Generation",
+            "authors": [],
+            "categories": [],
+            "published": "2025-01-01 00:00:00+00:00",
+            "updated": "2025-01-01 00:00:00+00:00",
+            "abs_url": "https://openaccess.thecvf.com/content/CVPR2025/html/Li_MCCD_Multi-Agent_Collaboration-based_Compositional_Diffusion_for_Complex_Text-to-Image_Generation_CVPR_2025_paper.html",
+            "pdf_url": "https://openaccess.thecvf.com/content/CVPR2025/papers/Li_MCCD_Multi-Agent_Collaboration-based_Compositional_Diffusion_for_Complex_Text-to-Image_Generation_CVPR_2025_paper.pdf",
+            "venue": "CVPR 2025",
+            "published_label": "2025",
+            "collection_kind": "recent",
+            "matched_topics": [
+              "Agentic AI",
+              "Text-to-Image",
+              "Text-to-Image + Agentic AI"
+            ],
+            "keyword_score": 28.0,
+            "topic_scores": {
+              "Agentic AI": 16.0,
+              "Text-to-Image": 20.0,
+              "Text-to-Image + Agentic AI": 28.0
+            }
+          }
+        },
+        {
+          "rank": 2,
+          "importance_score": 90,
+          "selection_reason": "这是这个方向近期更值得跟踪的新工作之一，它同时命中了 文生图 + Agentic AI 的关键特征。",
+          "direction_fit": "文生图 + Agentic AI",
+          "detail_path": "papers/2605-00707v1-physedit-physically-consistent-region-aware-image-editing-via-adaptive-s.md",
+          "paper": {
+            "paper_id": "2605.00707v1",
+            "source": "arXiv",
+            "title": "PhysEdit: Physically-Consistent Region-Aware Image Editing via Adaptive Spatio-Temporal Reasoning",
+            "abstract": "Image editing instructions are heterogeneous: a color swap, an object insertion, and a physical-action edit all demand different spatial coverage and different reasoning depth, yet existing reasoning-based editors apply a single fixed inference recipe to every instruction. We argue that adaptivity along both the spatial and temporal axes is the missing degree of freedom, and we present PhysEdit, an editing framework built around this principle. PhysEdit introduces two inference-time modules that compose without retraining the backbone. At its core, (1) Complexity-Adaptive Reasoning Depth (CARD) predicts edit complexity directly from the instruction and reference image and allocates the reasoning step count N_r and reasoning-token length r per sample -- turning a previously fixed inference schedule into a conditional-computation problem. CARD is supported by (2) a Spatial Reasoning Mask (SRM) that extracts an instruction-conditioned spatial prior from cross-attention to confine reasoning to regions that semantically require it. On the full 737-case ImgEdit Basic-Edit Suite, PhysEdit delivers a 1.18x wall-clock speedup (64.3s vs. 76.1s per sample) over a strong reasoning baseline while slightly improving instruction adherence (CLIP-T 0.2283 vs. 0.2266, +0.7%) and matching identity preservation within noise (CLIP-I 0.8246 vs. 0.8280). The speedup is category-dependent and reaches 1.52x on appearance-level edits, validating CARD's adaptive allocation as the principal source of efficiency gain. A 30-sample pilot with full ablations isolates the contribution of each module.",
+            "authors": [
+              "Guandong Li",
+              "Mengxia Ye"
+            ],
+            "categories": [
+              "cs.CV"
+            ],
+            "published": "2026-05-01 14:51:52+00:00",
+            "updated": "2026-05-01 14:51:52+00:00",
+            "abs_url": "http://arxiv.org/abs/2605.00707v1",
+            "pdf_url": "https://arxiv.org/pdf/2605.00707v1",
+            "venue": "",
+            "published_label": "",
+            "collection_kind": "recent",
+            "matched_topics": [
+              "Text-to-Image",
+              "Text-to-Image + Agentic AI"
+            ],
+            "keyword_score": 23.0,
+            "topic_scores": {
+              "Text-to-Image": 8.0,
+              "Text-to-Image + Agentic AI": 23.0
+            }
+          }
+        }
+      ]
+    },
+    {
+      "topic_name": "Text-to-Video + Agentic AI",
+      "topic_name_zh": "文生视频 + Agentic AI",
+      "summary": "这个方向正在从单纯的视频生成走向可交互环境、世界模型和长时序控制，为 Agent 提供训练与模拟空间。 本期可以重点留意：FloVD: Optical Flow Meets Video Diffusion Model for Enhanced Camera-Controlled Video Synthesis；A Policy-Driven DRL Framework for System-Level Tradeoff Control in NR-U/Wi-Fi Coexistence。",
+      "trend_signals": [
+        "视频生成开始和世界模型、模拟环境概念靠近。 本期样本数：3。",
+        "长时序一致性和动作反馈是关键难点。",
+        "这一方向更适合关注“环境可用性”而不是单段视频好不好看。"
+      ],
+      "landmark_papers": [
+        {
+          "rank": 1,
+          "importance_score": 98,
+          "selection_reason": "虽然它不是今天意义上的文生视频系统，但它是视频世界模型与 Agent 结合最重要的源头之一。",
+          "direction_fit": "文生视频 + Agentic AI",
+          "detail_path": "papers/1803-10122-world-models.md",
+          "paper": {
+            "paper_id": "1803.10122",
+            "source": "arXiv",
+            "title": "World Models",
+            "abstract": "这篇经典工作提出用生成式环境模型压缩视觉世界并支持控制决策，为后续“生成环境服务 Agent”路线奠定了思想基础。",
+            "authors": [
+              "David Ha",
+              "Jürgen Schmidhuber"
+            ],
+            "categories": [],
+            "published": "2018-01-01 00:00:00+00:00",
+            "updated": "2018-01-01 00:00:00+00:00",
+            "abs_url": "https://arxiv.org/abs/1803.10122",
+            "pdf_url": "https://arxiv.org/pdf/1803.10122",
+            "venue": "",
+            "published_label": "2018",
+            "collection_kind": "landmark",
+            "matched_topics": [
+              "Text-to-Video + Agentic AI"
+            ],
+            "keyword_score": 100.0,
+            "topic_scores": {
+              "Text-to-Video + Agentic AI": 100.0
+            }
+          }
+        },
+        {
+          "rank": 2,
+          "importance_score": 97,
+          "selection_reason": "如果你关心视频生成如何进一步成为 Agent 的训练场和模拟器，这篇很值得长期追踪。",
+          "direction_fit": "文生视频 + Agentic AI",
+          "detail_path": "papers/2402-15391-genie-generative-interactive-environments.md",
+          "paper": {
+            "paper_id": "2402.15391",
+            "source": "arXiv",
+            "title": "Genie: Generative Interactive Environments",
+            "abstract": "这篇工作从视频数据中学习可交互生成环境，让模型不仅生成视觉内容，还能支持动作驱动的环境反馈，是视频世界模型和 Agent 交叉方向的重要信号。",
+            "authors": [
+              "Google DeepMind"
+            ],
+            "categories": [],
+            "published": "2024-01-01 00:00:00+00:00",
+            "updated": "2024-01-01 00:00:00+00:00",
+            "abs_url": "https://arxiv.org/abs/2402.15391",
+            "pdf_url": "https://arxiv.org/pdf/2402.15391",
+            "venue": "",
+            "published_label": "2024",
+            "collection_kind": "landmark",
+            "matched_topics": [
+              "Text-to-Video + Agentic AI"
+            ],
+            "keyword_score": 100.0,
+            "topic_scores": {
+              "Text-to-Video + Agentic AI": 100.0
+            }
+          }
+        }
+      ],
+      "recent_papers": [
+        {
+          "rank": 1,
+          "importance_score": 90,
+          "selection_reason": "这是这个方向近期更值得跟踪的新工作之一，它同时命中了 文生视频 + Agentic AI 的关键特征。 同时它来自 CVPR 2025，值得优先看。",
+          "direction_fit": "文生视频 + Agentic AI",
+          "detail_path": "papers/cvpr-2025-jin-flovd-optical-flow-meets-video-diffusion-model-for-enhance-flovd-optical-flow-meets-video-diffusion-model-for-enhanced-camera-contr.md",
+          "paper": {
+            "paper_id": "cvpr-2025-Jin_FloVD_Optical_Flow_Meets_Video_Diffusion_Model_for_Enhanced_Camera-Controlled_CVPR_2025_paper",
+            "source": "CVPR",
+            "title": "FloVD: Optical Flow Meets Video Diffusion Model for Enhanced Camera-Controlled Video Synthesis",
+            "abstract": "FloVD: Optical Flow Meets Video Diffusion Model for Enhanced Camera-Controlled Video Synthesis",
+            "authors": [],
+            "categories": [],
+            "published": "2025-01-01 00:00:00+00:00",
+            "updated": "2025-01-01 00:00:00+00:00",
+            "abs_url": "https://openaccess.thecvf.com/content/CVPR2025/html/Jin_FloVD_Optical_Flow_Meets_Video_Diffusion_Model_for_Enhanced_Camera-Controlled_CVPR_2025_paper.html",
+            "pdf_url": "https://openaccess.thecvf.com/content/CVPR2025/papers/Jin_FloVD_Optical_Flow_Meets_Video_Diffusion_Model_for_Enhanced_Camera-Controlled_CVPR_2025_paper.pdf",
+            "venue": "CVPR 2025",
+            "published_label": "2025",
+            "collection_kind": "recent",
+            "matched_topics": [
+              "Text-to-Video",
+              "Text-to-Video + Agentic AI"
+            ],
+            "keyword_score": 28.0,
+            "topic_scores": {
+              "Text-to-Video": 20.0,
+              "Text-to-Video + Agentic AI": 28.0
+            }
+          }
+        },
+        {
+          "rank": 2,
+          "importance_score": 90,
+          "selection_reason": "这是这个方向近期更值得跟踪的新工作之一，它同时命中了 文生视频 + Agentic AI 的关键特征。",
+          "direction_fit": "文生视频 + Agentic AI",
+          "detail_path": "papers/2605-00457v1-a-policy-driven-drl-framework-for-system-level-tradeoff-control-in-nr-u.md",
+          "paper": {
+            "paper_id": "2605.00457v1",
+            "source": "arXiv",
+            "title": "A Policy-Driven DRL Framework for System-Level Tradeoff Control in NR-U/Wi-Fi Coexistence",
+            "abstract": "The coexistence of NR-U and Wi-Fi in unlicensed spectrum introduces a system-level resource coordination problem, where heterogeneous channel access mechanisms lead to a significant imbalance in spectrum utilization and degraded Wi-Fi performance. To address this challenge, we propose a policy-driven deep reinforcement learning (DRL) framework for adaptive TXOP control, in which the coexistence process is formulated as a Markov decision process (MDP) and a deep Q-network (DQN) learns control policies through online interaction. A key contribution is the introduction of a policy layer via reward design, enabling explicit control of system-level tradeoffs among fairness, throughput, and quality of service (QoS). Three policies, namely absolute fairness, moderate fairness, and utility-based fairness, are developed to achieve different operating points. Simulation results show that the proposed framework achieves a Jain fairness index above 0.9 under strict fairness control. Compared to absolute fairness, moderate fairness improves aggregate throughput by 68.22%, while the utility-based policy further enhances utility by 177.6%. These results demonstrate that policy-driven control provides a flexible and effective solution for managing tradeoffs in heterogeneous coexistence networks.",
+            "authors": [
+              "Po-Heng Chou",
+              "Yi-Fang Yu",
+              "Shou-Yu Chen",
+              "Chiapin Wang"
+            ],
+            "categories": [
+              "cs.NI",
+              "cs.LG",
+              "eess.SY"
+            ],
+            "published": "2026-05-01 06:43:09+00:00",
+            "updated": "2026-05-01 06:43:09+00:00",
+            "abs_url": "http://arxiv.org/abs/2605.00457v1",
+            "pdf_url": "https://arxiv.org/pdf/2605.00457v1",
+            "venue": "",
+            "published_label": "",
+            "collection_kind": "recent",
+            "matched_topics": [
+              "Text-to-Video + Agentic AI"
+            ],
+            "keyword_score": 25.0,
+            "topic_scores": {
+              "Text-to-Video + Agentic AI": 25.0
+            }
+          }
+        },
+        {
+          "rank": 3,
+          "importance_score": 90,
+          "selection_reason": "这是这个方向近期更值得跟踪的新工作之一，它同时命中了 文生视频 + Agentic AI 的关键特征。",
+          "direction_fit": "文生视频 + Agentic AI",
+          "detail_path": "papers/2605-00412v1-physically-native-world-models-a-hamiltonian-perspective-on-generative-w.md",
+          "paper": {
+            "paper_id": "2605.00412v1",
+            "source": "arXiv",
+            "title": "Physically Native World Models: A Hamiltonian Perspective on Generative World Modeling",
+            "abstract": "World models have recently re-emerged as a central paradigm for embodied intelligence, robotics, autonomous driving, and model-based reinforcement learning. However, current world model research is often dominated by three partially separated routes: 2D video-generative models that emphasize visual future synthesis, 3D scene-centric models that emphasize spatial reconstruction, and JEPA-like latent models that emphasize abstract predictive representations. While each route has made important progress, they still struggle to provide physically reliable, action-controllable, and long-horizon stable predictions for embodied decision making. In this paper, we argue that the bottleneck of world models is no longer only whether they can generate realistic futures, but whether those futures are physically meaningful and useful for action. We propose \\emph{Hamiltonian World Models} as a physically grounded perspective on world modeling. The key idea is to encode observations into a structured latent phase space, evolve the latent state through Hamiltonian-inspired dynamics with control, dissipation, and residual terms, decode the predicted trajectory into future observations, and use the resulting rollouts for planning. We discuss how Hamiltonian structure may improve interpretability, data efficiency, and long-horizon stability, while also noting practical challenges in real-world robotic scenes involving friction, contact, non-conservative forces, and deformable objects.",
+            "authors": [
+              "Sen Cui",
+              "Jingheng Ma"
+            ],
+            "categories": [
+              "cs.AI",
+              "cs.RO"
+            ],
+            "published": "2026-05-01 05:09:32+00:00",
+            "updated": "2026-05-01 05:09:32+00:00",
+            "abs_url": "http://arxiv.org/abs/2605.00412v1",
+            "pdf_url": "https://arxiv.org/pdf/2605.00412v1",
+            "venue": "",
+            "published_label": "",
+            "collection_kind": "recent",
+            "matched_topics": [
+              "Text-to-Video + Agentic AI"
+            ],
+            "keyword_score": 24.0,
+            "topic_scores": {
+              "Text-to-Video + Agentic AI": 24.0
+            }
+          }
+        }
+      ]
+    }
+  ],
+  "paper_details": {
+    "2210.03629": "papers/2210-03629-react-synergizing-reasoning-and-acting-in-language-models.md",
+    "2302.04761": "papers/2302-04761-toolformer-language-models-can-teach-themselves-to-use-tools.md",
+    "cvpr-2025-Li_MCCD_Multi-Agent_Collaboration-based_Compositional_Diffusion_for_Complex_Text-to-Image_Generation_CVPR_2025_paper": "papers/cvpr-2025-li-mccd-multi-agent-collaboration-based-compositional-diffusio-mccd-multi-agent-collaboration-based-compositional-diffusion-for-complex.md",
+    "cvpr-2025-Xia_Learning_to_Detect_Objects_from__Multi-Agent_LiDAR_Scans_without_CVPR_2025_paper": "papers/cvpr-2025-xia-learning-to-detect-objects-from-multi-agent-lidar-scans-wi-learning-to-detect-objects-from-multi-agent-lidar-scans-without-manual-l.md",
+    "cvpr-2025-Ziliotto_TANGO_Training-free_Embodied_AI_Agents_for_Open-world_Tasks_CVPR_2025_paper": "papers/cvpr-2025-ziliotto-tango-training-free-embodied-ai-agents-for-open-world-tango-training-free-embodied-ai-agents-for-open-world-tasks.md",
+    "2112.10752": "papers/2112-10752-high-resolution-image-synthesis-with-latent-diffusion-models.md",
+    "2302.05543": "papers/2302-05543-adding-conditional-control-to-text-to-image-diffusion-models.md",
+    "cvpr-2025-Qiu_Self-Cross_Diffusion_Guidance_for_Text-to-Image_Synthesis_of_Similar_Subjects_CVPR_2025_paper": "papers/cvpr-2025-qiu-self-cross-diffusion-guidance-for-text-to-image-synthesis-self-cross-diffusion-guidance-for-text-to-image-synthesis-of-similar-sub.md",
+    "cvpr-2025-Binyamin_Make_It_Count_Text-to-Image_Generation_with_an_Accurate_Number_of_CVPR_2025_paper": "papers/cvpr-2025-binyamin-make-it-count-text-to-image-generation-with-an-accura-make-it-count-text-to-image-generation-with-an-accurate-number-of-object.md",
+    "2204.03458": "papers/2204-03458-video-diffusion-models.md",
+    "2210.02303": "papers/2210-02303-imagen-video-high-definition-video-generation-with-diffusion-models.md",
+    "cvpr-2025-Jin_FloVD_Optical_Flow_Meets_Video_Diffusion_Model_for_Enhanced_Camera-Controlled_CVPR_2025_paper": "papers/cvpr-2025-jin-flovd-optical-flow-meets-video-diffusion-model-for-enhance-flovd-optical-flow-meets-video-diffusion-model-for-enhanced-camera-contr.md",
+    "cvpr-2025-Gao_The_Devil_is_in_the_Prompts_Retrieval-Augmented_Prompt_Optimization_for_CVPR_2025_paper": "papers/cvpr-2025-gao-the-devil-is-in-the-prompts-retrieval-augmented-prompt-opt-the-devil-is-in-the-prompts-retrieval-augmented-prompt-optimization-for.md",
+    "cvpr-2025-Feng_BlobGEN-Vid_Compositional_Text-to-Video_Generation_with_Blob_Video_Representations_CVPR_2025_paper": "papers/cvpr-2025-feng-blobgen-vid-compositional-text-to-video-generation-with-b-blobgen-vid-compositional-text-to-video-generation-with-blob-video-repre.md",
+    "2303.04671": "papers/2303-04671-visual-chatgpt-talking-drawing-and-editing-with-visual-foundation-models.md",
+    "2303.11381": "papers/2303-11381-mm-react-prompting-chatgpt-for-multimodal-reasoning-and-action.md",
+    "2605.00707v1": "papers/2605-00707v1-physedit-physically-consistent-region-aware-image-editing-via-adaptive-s.md",
+    "1803.10122": "papers/1803-10122-world-models.md",
+    "2402.15391": "papers/2402-15391-genie-generative-interactive-environments.md",
+    "2605.00457v1": "papers/2605-00457v1-a-policy-driven-drl-framework-for-system-level-tradeoff-control-in-nr-u.md",
+    "2605.00412v1": "papers/2605-00412v1-physically-native-world-models-a-hamiltonian-perspective-on-generative-w.md"
+  }
+}
