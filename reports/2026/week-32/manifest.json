@@ -1,0 +1,873 @@
+{
+  "week": "2026/week-32",
+  "headline": "2026 年当前阶段，更值得跟踪的是 Agent 与视觉生成交叉方向的系统化演进。",
+  "overview": "这份周报不再只看最近几天的新论文，而是把每个方向的长期基石、近期值得关注的新工作、以及研究趋势放在一起看，帮助你做路线判断。",
+  "topics": [
+    {
+      "topic_name": "Agentic AI",
+      "topic_name_zh": "Agentic AI",
+      "summary": "这个方向的核心已经从“会不会推理”转向“能不能在真实任务中规划、调用工具并稳定完成任务”。 本期可以重点留意：AgenticRepair: Multi-Faceted Program Context Engineering for Agentic Vulnerability Repair；Beyond Component Testing: Validating Agentic AI Systems。",
+      "trend_signals": [
+        "更强调工具使用与规划，而不只是语言推理。 本期样本数：3。",
+        "研究目标逐步转向真实环境任务完成度。",
+        "鲁棒性、恢复能力和可验证性会越来越重要。"
+      ],
+      "landmark_papers": [
+        {
+          "rank": 1,
+          "importance_score": 98,
+          "selection_reason": "这是 Agentic AI 的长期基石论文之一，适合用来理解“思考 + 行动”范式的原点。",
+          "direction_fit": "Agentic AI",
+          "detail_path": "papers/2210-03629-react-synergizing-reasoning-and-acting-in-language-models.md",
+          "paper": {
+            "paper_id": "2210.03629",
+            "source": "arXiv",
+            "title": "ReAct: Synergizing Reasoning and Acting in Language Models",
+            "abstract": "这篇工作提出让语言模型在推理轨迹和外部动作之间交替执行，形成后续 Agent 领域最经典的闭环范式之一。",
+            "authors": [
+              "Shunyu Yao",
+              "Jeffrey Zhao",
+              "Dian Yu"
+            ],
+            "categories": [],
+            "published": "2022-01-01 00:00:00+00:00",
+            "updated": "2022-01-01 00:00:00+00:00",
+            "abs_url": "https://arxiv.org/abs/2210.03629",
+            "pdf_url": "https://arxiv.org/pdf/2210.03629",
+            "venue": "",
+            "published_label": "2022",
+            "collection_kind": "landmark",
+            "matched_topics": [
+              "Agentic AI"
+            ],
+            "keyword_score": 100.0,
+            "topic_scores": {
+              "Agentic AI": 100.0
+            }
+          }
+        },
+        {
+          "rank": 2,
+          "importance_score": 97,
+          "selection_reason": "如果你关心 Agent 的工具使用能力，这篇是必须长期放在视野里的代表工作。",
+          "direction_fit": "Agentic AI",
+          "detail_path": "papers/2302-04761-toolformer-language-models-can-teach-themselves-to-use-tools.md",
+          "paper": {
+            "paper_id": "2302.04761",
+            "source": "arXiv",
+            "title": "Toolformer: Language Models Can Teach Themselves to Use Tools",
+            "abstract": "这篇论文展示了语言模型可以通过自监督方式学习何时调用计算器、搜索、翻译等外部工具，是工具调用路线的代表作。",
+            "authors": [
+              "Timo Schick",
+              "Jane Dwivedi-Yu",
+              "Roberto Dessi"
+            ],
+            "categories": [],
+            "published": "2023-01-01 00:00:00+00:00",
+            "updated": "2023-01-01 00:00:00+00:00",
+            "abs_url": "https://arxiv.org/abs/2302.04761",
+            "pdf_url": "https://arxiv.org/pdf/2302.04761",
+            "venue": "",
+            "published_label": "2023",
+            "collection_kind": "landmark",
+            "matched_topics": [
+              "Agentic AI"
+            ],
+            "keyword_score": 100.0,
+            "topic_scores": {
+              "Agentic AI": 100.0
+            }
+          }
+        }
+      ],
+      "recent_papers": [
+        {
+          "rank": 1,
+          "importance_score": 90,
+          "selection_reason": "这是这个方向近期更值得跟踪的新工作之一，它同时命中了 Agentic AI 的关键特征。",
+          "direction_fit": "Agentic AI",
+          "detail_path": "papers/2607-29422v1-agenticrepair-multi-faceted-program-context-engineering-for-agentic-vuln.md",
+          "paper": {
+            "paper_id": "2607.29422v1",
+            "source": "arXiv",
+            "title": "AgenticRepair: Multi-Faceted Program Context Engineering for Agentic Vulnerability Repair",
+            "abstract": "Automated vulnerability repair aims to reduce the time and effort required to patch security flaws from a vulnerability triage report. Recent agentic AI approaches have shown promising results in automated program repair. However, vulnerability repair demands richer program context than general bug repair - context that security engineers routinely assemble in practice but that existing agentic approaches do not engineer. We identify three critical gaps: code-structure context capturing cross-file data flows and memory operation patterns, runtime-execution context revealing crash semantics and memory origins, and commit-history context recovering how fragile code patterns were introduced. We present AgenticRepair, an agentic vulnerability repair framework that addresses the gaps through multi-faceted program context engineering. AgenticRepair orchestrates three specialized LLM subagents to engineer the contexts, which are then embedded into the memory of a dedicated repair subagent for context-conditioned patch synthesis. Evaluated on SEC-Bench comprising 300 real-world instances with sanitizer-based patch verification, AgenticRepair achieves a 73% success rate, substantially outperforming the strongest baseline by 29%. Our ablation study confirms that the three context facets are mutually complementary, and that multi-agent scaffolding and base-model capacity each play an essential role. Collectively, these findings establish multi-faceted program context engineering as a promising design direction for agentic vulnerability repair.",
+            "authors": [
+              "Michael Fu",
+              "Qiyue Mei",
+              "Patanamon Thongtanunam",
+              "Kla Tantithamthavorn"
+            ],
+            "categories": [
+              "cs.SE",
+              "cs.AI",
+              "cs.CR"
+            ],
+            "published": "2026-07-31 13:42:51+00:00",
+            "updated": "2026-07-31 13:42:51+00:00",
+            "abs_url": "http://arxiv.org/abs/2607.29422v1",
+            "pdf_url": "https://arxiv.org/pdf/2607.29422v1",
+            "venue": "",
+            "published_label": "",
+            "collection_kind": "recent",
+            "matched_topics": [
+              "Agentic AI"
+            ],
+            "keyword_score": 18.0,
+            "topic_scores": {
+              "Agentic AI": 18.0
+            }
+          }
+        },
+        {
+          "rank": 2,
+          "importance_score": 90,
+          "selection_reason": "这是这个方向近期更值得跟踪的新工作之一，它同时命中了 Agentic AI 的关键特征。",
+          "direction_fit": "Agentic AI",
+          "detail_path": "papers/2607-29405v1-beyond-component-testing-validating-agentic-ai-systems.md",
+          "paper": {
+            "paper_id": "2607.29405v1",
+            "source": "arXiv",
+            "title": "Beyond Component Testing: Validating Agentic AI Systems",
+            "abstract": "Agentic AI systems act through multi-step trajectories that combine planning, tool use, memory, interaction, and adaptation. This behavior stretches validation practice beyond component testing and one-shot input--output evaluation, because acceptable system behavior now depends on how decisions unfold over time and under changing environmental conditions. This survey synthesizes 257 papers spanning agent evaluation, software assurance, cyber-physical systems, runtime monitoring, and regulatory guidance in order to characterize the validation problem for agentic systems. The review is organized around a five-dimension taxonomy covering behavioral, safety, temporal, regulatory, and multi-agent concerns, and uses that taxonomy to map current approaches and expose recurrent coverage gaps. The analysis shows that behavioral evaluation is comparatively mature, while temporal validity, runtime evidence maintenance, regulatory legibility, and open-ended multi-agent systems assurance remain under-developed. Three cross-domain case studies (medical care, industrial operations, smart-mobility systems) provide operational illustrations of how the five taxonomy dimensions recur in safety-critical settings, grounded in the failure patterns documented in the reviewed literature. The paper concludes with a lifecycle-oriented research agenda centered on bounded-autonomy specifications, adversarial trajectory generation, runtime monitoring, and audit-ready evidence structures. The central claim is that trustworthy deployment of agentic AI depends on validating trajectories in context rather than assessing isolated components alone.",
+            "authors": [
+              "Fabio Orazio Mirto",
+              "Luca D'Agati",
+              "Giuseppe Tricomi",
+              "Stefano Silvestri",
+              "Francesco Longo",
+              "Antonio Puliafito",
+              "Giovanni Merlino"
+            ],
+            "categories": [
+              "cs.AI",
+              "cs.MA",
+              "cs.SE"
+            ],
+            "published": "2026-07-31 13:24:34+00:00",
+            "updated": "2026-07-31 13:24:34+00:00",
+            "abs_url": "http://arxiv.org/abs/2607.29405v1",
+            "pdf_url": "https://arxiv.org/pdf/2607.29405v1",
+            "venue": "",
+            "published_label": "",
+            "collection_kind": "recent",
+            "matched_topics": [
+              "Agentic AI"
+            ],
+            "keyword_score": 13.0,
+            "topic_scores": {
+              "Agentic AI": 13.0
+            }
+          }
+        },
+        {
+          "rank": 3,
+          "importance_score": 83,
+          "selection_reason": "这是这个方向近期更值得跟踪的新工作之一，它同时命中了 Agentic AI 的关键特征。",
+          "direction_fit": "Agentic AI",
+          "detail_path": "papers/2607-29347v1-seekbrain-an-autonomous-multi-agent-system-for-accelerating-neuroscience.md",
+          "paper": {
+            "paper_id": "2607.29347v1",
+            "source": "arXiv",
+            "title": "SeekBrain: An Autonomous Multi-Agent System for Accelerating Neuroscience Discovery",
+            "abstract": "Modern neuroscience relies on integrating multi-scale, multimodal datasets to uncover the neural principles underlying intelligence. However, analytical challenges posed by highly heterogeneous data and fragmented workflows increasingly constrain discoveries. Here we introduce SeekBrain, an autonomous multi-agent framework designed to accelerate neuroscience discovery through domain-grounded hierarchical planning and cross-modal data analysis. SeekBrain dynamically constructs a repertoire of analysis recipes extracted from code-paper pairs. By coupling this codified expertise with agentic planning and execution engines, the framework scalably generates hypotheses and analytical pipelines on demand. Systematic evaluation on the expert-annotated BrainArena benchmark demonstrates that SeekBrain substantially outperforms state-of-the-art agent baselines across various analysis tasks. Crucially, when deployed in real-world research, SeekBrain integrated behavioral, neural, and anatomical data to reveal structured, distributed neural representations of larval zebrafish behavior and a shared axis of regional decoding strength across the brain in a mouse decision-making task. These results establish SeekBrain as a scalable and practical tool for accelerating data-driven discoveries in neuroscience.",
+            "authors": [
+              "Jiamin Wu",
+              "Peishan Xiang",
+              "Jingyang Chen",
+              "Yuqing Zhu",
+              "Yuxi Li",
+              "Ling Luo",
+              "Qihao Zheng",
+              "Jialiang Zu",
+              "Yongchao Wu",
+              "Mindong Liu",
+              "Haitao Wu",
+              "Chaofan Hu",
+              "Yijie Sun",
+              "Yuqi Hang",
+              "Yu Zhu",
+              "Shuo Li",
+              "Yue Fan",
+              "Shiyang Feng",
+              "Wanghan Xu",
+              "Tianlei Zhang",
+              "Jie Zhang",
+              "Wenlong Zhang",
+              "Bo Zhang",
+              "Kai Wang",
+              "Lei Bai",
+              "Mianxin Liu",
+              "Wanli Ouyang",
+              "Jiulin Du",
+              "Chunfeng Song"
+            ],
+            "categories": [
+              "cs.MA",
+              "cs.AI"
+            ],
+            "published": "2026-07-31 12:30:12+00:00",
+            "updated": "2026-07-31 12:30:12+00:00",
+            "abs_url": "http://arxiv.org/abs/2607.29347v1",
+            "pdf_url": "https://arxiv.org/pdf/2607.29347v1",
+            "venue": "",
+            "published_label": "",
+            "collection_kind": "recent",
+            "matched_topics": [
+              "Agentic AI"
+            ],
+            "keyword_score": 9.0,
+            "topic_scores": {
+              "Agentic AI": 9.0
+            }
+          }
+        }
+      ]
+    },
+    {
+      "topic_name": "Text-to-Image",
+      "topic_name_zh": "文生图",
+      "summary": "纯文生图方向更值得关注模型可控性、编辑能力、效率和数据配方，而最新方法往往会先在顶会和 arXiv 同步冒出来。 本期可以重点留意：SatEdit: Mask-Conditioned Image Editing via VLM-Guided Segment Annotation；Evaluation-Verification Reward for Consistent Multi-Reference Image Editing。",
+      "trend_signals": [
+        "图像生成研究继续关注更强可控性和更低推理成本。 本期样本数：3。",
+        "高质量编辑、局部约束和一致性是更实用的方向。",
+        "CVPR / ICLR 里的方法论文通常比单篇 demo 更值得长期看。"
+      ],
+      "landmark_papers": [
+        {
+          "rank": 1,
+          "importance_score": 98,
+          "selection_reason": "这篇几乎是现代文生图路线的基石论文，长期都值得反复回看。",
+          "direction_fit": "文生图",
+          "detail_path": "papers/2112-10752-high-resolution-image-synthesis-with-latent-diffusion-models.md",
+          "paper": {
+            "paper_id": "2112.10752",
+            "source": "arXiv",
+            "title": "High-Resolution Image Synthesis with Latent Diffusion Models",
+            "abstract": "Latent Diffusion Models 是今天大多数文生图系统的关键技术基础之一，把扩散过程搬到潜空间，大幅降低了成本。",
+            "authors": [
+              "Robin Rombach",
+              "Andreas Blattmann",
+              "Dominik Lorenz"
+            ],
+            "categories": [],
+            "published": "2021-01-01 00:00:00+00:00",
+            "updated": "2021-01-01 00:00:00+00:00",
+            "abs_url": "https://arxiv.org/abs/2112.10752",
+            "pdf_url": "https://arxiv.org/pdf/2112.10752",
+            "venue": "",
+            "published_label": "2021",
+            "collection_kind": "landmark",
+            "matched_topics": [
+              "Text-to-Image"
+            ],
+            "keyword_score": 100.0,
+            "topic_scores": {
+              "Text-to-Image": 100.0
+            }
+          }
+        },
+        {
+          "rank": 2,
+          "importance_score": 97,
+          "selection_reason": "如果你关心文生图真正可用性，这篇比很多“更大模型”论文更值得长期看。",
+          "direction_fit": "文生图",
+          "detail_path": "papers/2302-05543-adding-conditional-control-to-text-to-image-diffusion-models.md",
+          "paper": {
+            "paper_id": "2302.05543",
+            "source": "arXiv",
+            "title": "Adding Conditional Control to Text-to-Image Diffusion Models",
+            "abstract": "ControlNet 展示了如何在保持大模型能力的同时加入强条件控制，这条路线对可控生成和实际工作流影响极大。",
+            "authors": [
+              "Lvmin Zhang",
+              "Anyi Rao",
+              "Maneesh Agrawala"
+            ],
+            "categories": [],
+            "published": "2023-01-01 00:00:00+00:00",
+            "updated": "2023-01-01 00:00:00+00:00",
+            "abs_url": "https://arxiv.org/abs/2302.05543",
+            "pdf_url": "https://arxiv.org/pdf/2302.05543",
+            "venue": "",
+            "published_label": "2023",
+            "collection_kind": "landmark",
+            "matched_topics": [
+              "Text-to-Image"
+            ],
+            "keyword_score": 100.0,
+            "topic_scores": {
+              "Text-to-Image": 100.0
+            }
+          }
+        }
+      ],
+      "recent_papers": [
+        {
+          "rank": 1,
+          "importance_score": 89,
+          "selection_reason": "这是这个方向近期更值得跟踪的新工作之一，它同时命中了 文生图 的关键特征。",
+          "direction_fit": "文生图",
+          "detail_path": "papers/2607-29367v1-satedit-mask-conditioned-image-editing-via-vlm-guided-segment-annotation.md",
+          "paper": {
+            "paper_id": "2607.29367v1",
+            "source": "arXiv",
+            "title": "SatEdit: Mask-Conditioned Image Editing via VLM-Guided Segment Annotation",
+            "abstract": "Satellite image editing requires spatially precise object-level control, but supervised editing datasets for overhead imagery are costly to build because object masks, semantic labels, and paired edits are rarely available at scale. We introduce SatEdit, a mask-conditioned satellite image editing framework that constructs training supervision from unlabeled imagery. SatEdit proposes object masks with a seg- mentation foundation model, assigns semantic la- bels to sampled segments with a Vision-Language Model, and applies lightweight human verification before generating paired addition and removal exam- ples through mask-guided inpainting. We fine-tune a high-resolution image editing backbone with LoRA on a SODA-A-derived dataset containing 1,014 im- ages and 852 verified object annotations across 91 classes. In controlled comparisons with open- source and proprietary image editing models, SatE- dit achieves the highest aggregate masked-region se- mantic alignment, with a CLIP score of 0.6322 and CLIP delta of 0.0726, while preserving the surround- ing scene qualitatively. These results suggest that VLM-assisted segment annotation is a practical route to data-efficient, spatially controllable satellite image editing.",
+            "authors": [
+              "Muhammad Talha",
+              "Muhammad Ahmed Amer"
+            ],
+            "categories": [
+              "cs.CV"
+            ],
+            "published": "2026-07-31 12:52:32+00:00",
+            "updated": "2026-07-31 12:52:32+00:00",
+            "abs_url": "http://arxiv.org/abs/2607.29367v1",
+            "pdf_url": "https://arxiv.org/pdf/2607.29367v1",
+            "venue": "",
+            "published_label": "",
+            "collection_kind": "recent",
+            "matched_topics": [
+              "Text-to-Image"
+            ],
+            "keyword_score": 12.0,
+            "topic_scores": {
+              "Text-to-Image": 12.0
+            }
+          }
+        },
+        {
+          "rank": 2,
+          "importance_score": 87,
+          "selection_reason": "这是这个方向近期更值得跟踪的新工作之一，它同时命中了 文生图 的关键特征。",
+          "direction_fit": "文生图",
+          "detail_path": "papers/2607-29025v1-evaluation-verification-reward-for-consistent-multi-reference-image-edit.md",
+          "paper": {
+            "paper_id": "2607.29025v1",
+            "source": "arXiv",
+            "title": "Evaluation-Verification Reward for Consistent Multi-Reference Image Editing",
+            "abstract": "While recent image editing models have made rapid progress, multi-reference editing remains challenging, particularly in maintaining visual consistency across references and ensuring overall visual harmony. Reinforcement learning has proven highly effective for text-to-image generation and single-image editing, but its extension to multi-reference editing is hindered by the absence of suitable reward models that capture multi-image relational constraints. Moreover, naively using multimodal large language models(MLLMs) as zero-shot evaluators faces a key tension between hallucination-prone long-form reasoning and the limited deductive power of short-form judgments. We address these issues with a Multi-dimensional Evaluation-Verification Reward(EVR). EVR decomposes evaluation into distinct visual criteria; for each criterion, an MLLM Evaluator generates multiple candidate hypotheses, and a Verifier grounds each claim in concrete visual evidence to accept or reject it, producing reliable and fine-grained reward signals. Together with a scalable data pipeline, our method enables RL fine-tuning of off-the-shelf editors without architectural changes. Extensive experiments show substantial gains over the base Qwen-Image-Edit, improving consistency and harmony to match or surpass NanoBanana.",
+            "authors": [
+              "Yingmao Miao",
+              "Pengfei Zhang",
+              "Xiaochen Lv",
+              "Meng Yu",
+              "Lei Sun",
+              "Xiangxiang Chu",
+              "Chao Shen",
+              "Chenhao Lin"
+            ],
+            "categories": [
+              "cs.CV"
+            ],
+            "published": "2026-07-31 04:54:20+00:00",
+            "updated": "2026-07-31 04:54:20+00:00",
+            "abs_url": "http://arxiv.org/abs/2607.29025v1",
+            "pdf_url": "https://arxiv.org/pdf/2607.29025v1",
+            "venue": "",
+            "published_label": "",
+            "collection_kind": "recent",
+            "matched_topics": [
+              "Text-to-Image",
+              "Text-to-Image + Agentic AI"
+            ],
+            "keyword_score": 16.0,
+            "topic_scores": {
+              "Text-to-Image": 11.0,
+              "Text-to-Image + Agentic AI": 16.0
+            }
+          }
+        },
+        {
+          "rank": 3,
+          "importance_score": 75,
+          "selection_reason": "这是这个方向近期更值得跟踪的新工作之一，它同时命中了 文生图 的关键特征。",
+          "direction_fit": "文生图",
+          "detail_path": "papers/2607-29337v1-dualdit-a-conditional-dual-output-diffusion-transformer-for-joint-oct-im.md",
+          "paper": {
+            "paper_id": "2607.29337v1",
+            "source": "arXiv",
+            "title": "DualDiT: A Conditional Dual-Output Diffusion Transformer for Joint OCT Image and Segmentation Mask Generation",
+            "abstract": "Background and Objective: Generating realistic medical images with anatomically accurate segmentation masks helps address the shortage of annotated data in medical imaging, particularly in optical coherence tomography (OCT) of mouse eyes, where manual retinal layer delineation is labour-intensive due to tiny structures and required expertise, resulting in scarce datasets. While diffusion models perform well in medical image synthesis, joint image-mask generation has relied mainly on U-Net-based denoisers, leaving diffusion transformers largely unexplored. Methods: We propose a conditional dual-output Diffusion Transformer (DualDiT) for joint synthesis of OCT B-scans and segmentation masks of the upper retinal cell layers in ex vivo mouse retina. DualDiT encodes both modalities into a shared latent space via a pretrained VAE, concatenates their latent representations, and performs conditional diffusion over the joint tensor. We compared DualDiT against two adapted diffusion baselines: DDPM and LDM. Generative quality was assessed via Fréchet Inception Distance (FID) and spatial FID (sFID); practical utility via synthetic data augmentation for downstream U-Net segmentation; and perceptual realism via evaluation by three domain experts. Results: DualDiT achieved the best generative quality (FID 56.14, sFID 114.35), outperforming DDPM and LDM. Expert panels misclassified 46% of synthetic samples as real and 42% of real samples as synthetic. Adding DualDiT-generated images and masks improved Dice and IoU scores on a held-out segmentation test set. Conclusions: DualDiT shows that transformer-based diffusion models can effectively learn the joint distribution of OCT images and segmentation masks, surpassing DDPM- and LDM-based baselines in generative fidelity, downstream utility, and perceptual realism, highlighting its potential for data augmentation in annotation-scarce medical imaging.",
+            "authors": [
+              "Fernando García-Torres",
+              "Rocío del Amor",
+              "Sandra Morales",
+              "Álvaro Barroso",
+              "Peter Heiduschka",
+              "Björn Kemper",
+              "Valery Naranjo"
+            ],
+            "categories": [
+              "cs.CV",
+              "cs.AI"
+            ],
+            "published": "2026-07-31 12:14:04+00:00",
+            "updated": "2026-07-31 12:14:04+00:00",
+            "abs_url": "http://arxiv.org/abs/2607.29337v1",
+            "pdf_url": "https://arxiv.org/pdf/2607.29337v1",
+            "venue": "",
+            "published_label": "",
+            "collection_kind": "recent",
+            "matched_topics": [
+              "Text-to-Image"
+            ],
+            "keyword_score": 5.0,
+            "topic_scores": {
+              "Text-to-Image": 5.0
+            }
+          }
+        }
+      ]
+    },
+    {
+      "topic_name": "Text-to-Video",
+      "topic_name_zh": "文生视频",
+      "summary": "纯文生视频方向更值得持续看长时序一致性、运动建模、可编辑性和训练效率，这类进展在最新会议论文里通常很集中。 本期可以重点留意：MoRoute: Dynamic Routing for In-Context Multimodal Video Generation。",
+      "trend_signals": [
+        "视频生成研究的核心仍是长时序一致性和运动质量。 本期样本数：1。",
+        "世界模型、压缩表示和效率优化越来越重要。",
+        "顶会论文更适合用来判断真正的技术方向，而不只是看产品效果。"
+      ],
+      "landmark_papers": [
+        {
+          "rank": 1,
+          "importance_score": 98,
+          "selection_reason": "它非常适合用来理解后续绝大多数文生视频方法的共同技术祖先。",
+          "direction_fit": "文生视频",
+          "detail_path": "papers/2204-03458-video-diffusion-models.md",
+          "paper": {
+            "paper_id": "2204.03458",
+            "source": "arXiv",
+            "title": "Video Diffusion Models",
+            "abstract": "这是早期最有代表性的视频扩散模型论文之一，系统展示了扩散方法如何迁移到视频生成。",
+            "authors": [
+              "Jonathan Ho",
+              "Tim Salimans",
+              "Alexey Gritsenko"
+            ],
+            "categories": [],
+            "published": "2022-01-01 00:00:00+00:00",
+            "updated": "2022-01-01 00:00:00+00:00",
+            "abs_url": "https://arxiv.org/abs/2204.03458",
+            "pdf_url": "https://arxiv.org/pdf/2204.03458",
+            "venue": "",
+            "published_label": "2022",
+            "collection_kind": "landmark",
+            "matched_topics": [
+              "Text-to-Video"
+            ],
+            "keyword_score": 100.0,
+            "topic_scores": {
+              "Text-to-Video": 100.0
+            }
+          }
+        },
+        {
+          "rank": 2,
+          "importance_score": 97,
+          "selection_reason": "如果你要看文生视频真正迈向高质量的一批代表论文，这篇不能缺。",
+          "direction_fit": "文生视频",
+          "detail_path": "papers/2210-02303-imagen-video-high-definition-video-generation-with-diffusion-models.md",
+          "paper": {
+            "paper_id": "2210.02303",
+            "source": "arXiv",
+            "title": "Imagen Video: High Definition Video Generation with Diffusion Models",
+            "abstract": "Imagen Video 展示了级联扩散在高清视频生成上的威力，是高质量视频生成路线的代表作。",
+            "authors": [
+              "Jonathan Ho",
+              "William Chan",
+              "Chitwan Saharia"
+            ],
+            "categories": [],
+            "published": "2022-01-01 00:00:00+00:00",
+            "updated": "2022-01-01 00:00:00+00:00",
+            "abs_url": "https://arxiv.org/abs/2210.02303",
+            "pdf_url": "https://arxiv.org/pdf/2210.02303",
+            "venue": "",
+            "published_label": "2022",
+            "collection_kind": "landmark",
+            "matched_topics": [
+              "Text-to-Video"
+            ],
+            "keyword_score": 100.0,
+            "topic_scores": {
+              "Text-to-Video": 100.0
+            }
+          }
+        }
+      ],
+      "recent_papers": [
+        {
+          "rank": 1,
+          "importance_score": 87,
+          "selection_reason": "这是这个方向近期更值得跟踪的新工作之一，它同时命中了 文生视频 的关键特征。",
+          "direction_fit": "文生视频",
+          "detail_path": "papers/2607-29545v1-moroute-dynamic-routing-for-in-context-multimodal-video-generation.md",
+          "paper": {
+            "paper_id": "2607.29545v1",
+            "source": "arXiv",
+            "title": "MoRoute: Dynamic Routing for In-Context Multimodal Video Generation",
+            "abstract": "Multimodal video generation aims to generate and edit videos conditioned on arbitrary combinations of text, images, and videos within a single model, allowing diverse tasks to share complementary data and generative priors. Unifying these tasks requires multimodal understanding of diverse conditions, which is typically provided by a pretrained vision-language model (VLM). A key challenge is how to connect the VLM's hierarchical multimodal representations with a pretrained video diffusion transformer (DiT). Existing methods either inject features from only the final or a few manually selected VLM layers, or jointly train architecture-matched understanding and generation streams, making it difficult to reuse heterogeneous pretrained backbones. We introduce MoRoute, a unified multimodal video generation framework that formulates a frozen VLM and a pretrained video DiT with different architectures as heterogeneous experts connected through dynamic layer routing. For each input, a lightweight block-wise router enables every DiT block to select the VLM layer most relevant to its generation stage, thereby learning an adaptive correspondence between multimodal understanding and video synthesis. MoRoute further incorporates reference images and source videos directly into the DiT token sequence through unified in-context conditioning, preserving fine-grained visual details across diverse generation and editing tasks. Experiments on IntelligentVBench, OpenVE-Bench, and RefVIE-Bench show that MoRoute consistently surpasses the best competing method on each benchmark, improving the average score by 0.15, 0.18, and 0.34 on a 1-5 scale, respectively.",
+            "authors": [
+              "Chong Gao",
+              "Jie Ma",
+              "Zhan Peng",
+              "Chongxiao Wang",
+              "Haoxue Wu",
+              "Jun Liang",
+              "Guanbin Li",
+              "Jing Li"
+            ],
+            "categories": [
+              "cs.CV"
+            ],
+            "published": "2026-07-31 15:38:56+00:00",
+            "updated": "2026-07-31 15:38:56+00:00",
+            "abs_url": "http://arxiv.org/abs/2607.29545v1",
+            "pdf_url": "https://arxiv.org/pdf/2607.29545v1",
+            "venue": "",
+            "published_label": "",
+            "collection_kind": "recent",
+            "matched_topics": [
+              "Text-to-Video"
+            ],
+            "keyword_score": 11.0,
+            "topic_scores": {
+              "Text-to-Video": 11.0
+            }
+          }
+        }
+      ]
+    },
+    {
+      "topic_name": "Text-to-Image + Agentic AI",
+      "topic_name_zh": "文生图 + Agentic AI",
+      "summary": "这个方向更值得关注的是：大模型如何成为图像生成与编辑工具链的编排层，让生成流程可拆解、可修正、可多步执行。 本期可以重点留意：Evaluation-Verification Reward for Consistent Multi-Reference Image Editing。",
+      "trend_signals": [
+        "图像生成逐步成为可被 Agent 拆解和调度的工作流。 本期样本数：1。",
+        "编辑、重绘、局部控制等能力会比单纯画质更重要。",
+        "多模型协作会比单模型单次输出更值得关注。"
+      ],
+      "landmark_papers": [
+        {
+          "rank": 1,
+          "importance_score": 98,
+          "selection_reason": "这是图像生成 Agent 化的代表作之一，适合用来理解多工具视觉工作流如何被大模型调度。",
+          "direction_fit": "文生图 + Agentic AI",
+          "detail_path": "papers/2303-04671-visual-chatgpt-talking-drawing-and-editing-with-visual-foundation-models.md",
+          "paper": {
+            "paper_id": "2303.04671",
+            "source": "arXiv",
+            "title": "Visual ChatGPT: Talking, Drawing and Editing with Visual Foundation Models",
+            "abstract": "这篇工作把 ChatGPT 作为调度层，串联图像生成、编辑、理解等视觉基础模型，代表了“用 Agent 编排视觉生成工具链”的早期范式。",
+            "authors": [
+              "Chenfei Wu",
+              "Shengming Yin",
+              "Weixiang Sun"
+            ],
+            "categories": [],
+            "published": "2023-01-01 00:00:00+00:00",
+            "updated": "2023-01-01 00:00:00+00:00",
+            "abs_url": "https://arxiv.org/abs/2303.04671",
+            "pdf_url": "https://arxiv.org/pdf/2303.04671",
+            "venue": "",
+            "published_label": "2023",
+            "collection_kind": "landmark",
+            "matched_topics": [
+              "Text-to-Image + Agentic AI"
+            ],
+            "keyword_score": 100.0,
+            "topic_scores": {
+              "Text-to-Image + Agentic AI": 100.0
+            }
+          }
+        },
+        {
+          "rank": 2,
+          "importance_score": 97,
+          "selection_reason": "它是理解“视觉生成或视觉专家能力如何被 Agent 框架统一调度”的关键参考。",
+          "direction_fit": "文生图 + Agentic AI",
+          "detail_path": "papers/2303-11381-mm-react-prompting-chatgpt-for-multimodal-reasoning-and-action.md",
+          "paper": {
+            "paper_id": "2303.11381",
+            "source": "arXiv",
+            "title": "MM-REACT: Prompting ChatGPT for Multimodal Reasoning and Action",
+            "abstract": "这篇论文强调让大模型通过外部视觉专家工具处理图像与视频任务，展示了多模态推理与行动的编排方式。",
+            "authors": [
+              "Shizhe Diao",
+              "Tianyao Wei",
+              "Ziwei Wang"
+            ],
+            "categories": [],
+            "published": "2023-01-01 00:00:00+00:00",
+            "updated": "2023-01-01 00:00:00+00:00",
+            "abs_url": "https://arxiv.org/abs/2303.11381",
+            "pdf_url": "https://arxiv.org/pdf/2303.11381",
+            "venue": "",
+            "published_label": "2023",
+            "collection_kind": "landmark",
+            "matched_topics": [
+              "Text-to-Image + Agentic AI"
+            ],
+            "keyword_score": 100.0,
+            "topic_scores": {
+              "Text-to-Image + Agentic AI": 100.0
+            }
+          }
+        }
+      ],
+      "recent_papers": [
+        {
+          "rank": 1,
+          "importance_score": 90,
+          "selection_reason": "这是这个方向近期更值得跟踪的新工作之一，它同时命中了 文生图 + Agentic AI 的关键特征。",
+          "direction_fit": "文生图 + Agentic AI",
+          "detail_path": "papers/2607-29025v1-evaluation-verification-reward-for-consistent-multi-reference-image-edit.md",
+          "paper": {
+            "paper_id": "2607.29025v1",
+            "source": "arXiv",
+            "title": "Evaluation-Verification Reward for Consistent Multi-Reference Image Editing",
+            "abstract": "While recent image editing models have made rapid progress, multi-reference editing remains challenging, particularly in maintaining visual consistency across references and ensuring overall visual harmony. Reinforcement learning has proven highly effective for text-to-image generation and single-image editing, but its extension to multi-reference editing is hindered by the absence of suitable reward models that capture multi-image relational constraints. Moreover, naively using multimodal large language models(MLLMs) as zero-shot evaluators faces a key tension between hallucination-prone long-form reasoning and the limited deductive power of short-form judgments. We address these issues with a Multi-dimensional Evaluation-Verification Reward(EVR). EVR decomposes evaluation into distinct visual criteria; for each criterion, an MLLM Evaluator generates multiple candidate hypotheses, and a Verifier grounds each claim in concrete visual evidence to accept or reject it, producing reliable and fine-grained reward signals. Together with a scalable data pipeline, our method enables RL fine-tuning of off-the-shelf editors without architectural changes. Extensive experiments show substantial gains over the base Qwen-Image-Edit, improving consistency and harmony to match or surpass NanoBanana.",
+            "authors": [
+              "Yingmao Miao",
+              "Pengfei Zhang",
+              "Xiaochen Lv",
+              "Meng Yu",
+              "Lei Sun",
+              "Xiangxiang Chu",
+              "Chao Shen",
+              "Chenhao Lin"
+            ],
+            "categories": [
+              "cs.CV"
+            ],
+            "published": "2026-07-31 04:54:20+00:00",
+            "updated": "2026-07-31 04:54:20+00:00",
+            "abs_url": "http://arxiv.org/abs/2607.29025v1",
+            "pdf_url": "https://arxiv.org/pdf/2607.29025v1",
+            "venue": "",
+            "published_label": "",
+            "collection_kind": "recent",
+            "matched_topics": [
+              "Text-to-Image",
+              "Text-to-Image + Agentic AI"
+            ],
+            "keyword_score": 16.0,
+            "topic_scores": {
+              "Text-to-Image": 11.0,
+              "Text-to-Image + Agentic AI": 16.0
+            }
+          }
+        }
+      ]
+    },
+    {
+      "topic_name": "Text-to-Video + Agentic AI",
+      "topic_name_zh": "文生视频 + Agentic AI",
+      "summary": "这个方向正在从单纯的视频生成走向可交互环境、世界模型和长时序控制，为 Agent 提供训练与模拟空间。 本期可以重点留意：BWM: A Low-Cost High-Fidelity World Simulator for Robot Learning；Auto-JEPA: A Latent World Model of Continuous Intent for End-to-End Autonomous Driving。",
+      "trend_signals": [
+        "视频生成开始和世界模型、模拟环境概念靠近。 本期样本数：3。",
+        "长时序一致性和动作反馈是关键难点。",
+        "这一方向更适合关注“环境可用性”而不是单段视频好不好看。"
+      ],
+      "landmark_papers": [
+        {
+          "rank": 1,
+          "importance_score": 98,
+          "selection_reason": "虽然它不是今天意义上的文生视频系统，但它是视频世界模型与 Agent 结合最重要的源头之一。",
+          "direction_fit": "文生视频 + Agentic AI",
+          "detail_path": "papers/1803-10122-world-models.md",
+          "paper": {
+            "paper_id": "1803.10122",
+            "source": "arXiv",
+            "title": "World Models",
+            "abstract": "这篇经典工作提出用生成式环境模型压缩视觉世界并支持控制决策，为后续“生成环境服务 Agent”路线奠定了思想基础。",
+            "authors": [
+              "David Ha",
+              "Jürgen Schmidhuber"
+            ],
+            "categories": [],
+            "published": "2018-01-01 00:00:00+00:00",
+            "updated": "2018-01-01 00:00:00+00:00",
+            "abs_url": "https://arxiv.org/abs/1803.10122",
+            "pdf_url": "https://arxiv.org/pdf/1803.10122",
+            "venue": "",
+            "published_label": "2018",
+            "collection_kind": "landmark",
+            "matched_topics": [
+              "Text-to-Video + Agentic AI"
+            ],
+            "keyword_score": 100.0,
+            "topic_scores": {
+              "Text-to-Video + Agentic AI": 100.0
+            }
+          }
+        },
+        {
+          "rank": 2,
+          "importance_score": 97,
+          "selection_reason": "如果你关心视频生成如何进一步成为 Agent 的训练场和模拟器，这篇很值得长期追踪。",
+          "direction_fit": "文生视频 + Agentic AI",
+          "detail_path": "papers/2402-15391-genie-generative-interactive-environments.md",
+          "paper": {
+            "paper_id": "2402.15391",
+            "source": "arXiv",
+            "title": "Genie: Generative Interactive Environments",
+            "abstract": "这篇工作从视频数据中学习可交互生成环境，让模型不仅生成视觉内容，还能支持动作驱动的环境反馈，是视频世界模型和 Agent 交叉方向的重要信号。",
+            "authors": [
+              "Google DeepMind"
+            ],
+            "categories": [],
+            "published": "2024-01-01 00:00:00+00:00",
+            "updated": "2024-01-01 00:00:00+00:00",
+            "abs_url": "https://arxiv.org/abs/2402.15391",
+            "pdf_url": "https://arxiv.org/pdf/2402.15391",
+            "venue": "",
+            "published_label": "2024",
+            "collection_kind": "landmark",
+            "matched_topics": [
+              "Text-to-Video + Agentic AI"
+            ],
+            "keyword_score": 100.0,
+            "topic_scores": {
+              "Text-to-Video + Agentic AI": 100.0
+            }
+          }
+        }
+      ],
+      "recent_papers": [
+        {
+          "rank": 1,
+          "importance_score": 90,
+          "selection_reason": "这是这个方向近期更值得跟踪的新工作之一，它同时命中了 文生视频 + Agentic AI 的关键特征。",
+          "direction_fit": "文生视频 + Agentic AI",
+          "detail_path": "papers/2607-29302v1-bwm-a-low-cost-high-fidelity-world-simulator-for-robot-learning.md",
+          "paper": {
+            "paper_id": "2607.29302v1",
+            "source": "arXiv",
+            "title": "BWM: A Low-Cost High-Fidelity World Simulator for Robot Learning",
+            "abstract": "Reliable robot learning requires a world simulator that can predict action consequences before execution on physical hardware, including risky and failure-prone outcomes. Existing physics simulators require substantial asset construction and calibration and still face a sim-to-real gap, while video generators often lack precise control over their responses to fine-grained robot actions. In this paper, we present the Boundless World Model (BWM), an open-source, low-cost, high-fidelity world simulator for robot manipulation. BWM is an action-conditioned world model that combines initial-environment guidance, dynamic visual history, and temporally aligned robot-action conditioning for stateful autoregressive prediction of future observations. We construct action-aligned training clips through trajectory replay, overlapping clip sampling, and initial-observation enhancement. BWM serves as a data engine that augments imitation-learning data with action-aligned rollouts, and as a policy evaluator for closed-loop assessment, risk anticipation, and policy ranking. Experiments on the WorldArena benchmark and physical robots demonstrate improved simulator fidelity and functional utility across the data-engine and policy-evaluator settings. BWM ranks first overall in the WorldArena Challenge across Track 1 and its two Track 2 applications. We release the BWM open-source ecosystem, including model checkpoints, training and inference code, and interfaces for data generation and policy evaluation.",
+            "authors": [
+              "BWM Team"
+            ],
+            "categories": [
+              "cs.RO",
+              "cs.CV"
+            ],
+            "published": "2026-07-31 11:18:17+00:00",
+            "updated": "2026-07-31 11:18:17+00:00",
+            "abs_url": "http://arxiv.org/abs/2607.29302v1",
+            "pdf_url": "https://arxiv.org/pdf/2607.29302v1",
+            "venue": "",
+            "published_label": "",
+            "collection_kind": "recent",
+            "matched_topics": [
+              "Text-to-Video + Agentic AI"
+            ],
+            "keyword_score": 21.0,
+            "topic_scores": {
+              "Text-to-Video + Agentic AI": 21.0
+            }
+          }
+        },
+        {
+          "rank": 2,
+          "importance_score": 90,
+          "selection_reason": "这是这个方向近期更值得跟踪的新工作之一，它同时命中了 文生视频 + Agentic AI 的关键特征。",
+          "direction_fit": "文生视频 + Agentic AI",
+          "detail_path": "papers/2607-29031v1-auto-jepa-a-latent-world-model-of-continuous-intent-for-end-to-end-auton.md",
+          "paper": {
+            "paper_id": "2607.29031v1",
+            "source": "arXiv",
+            "title": "Auto-JEPA: A Latent World Model of Continuous Intent for End-to-End Autonomous Driving",
+            "abstract": "Existing autonomous-driving world models typically perform dense prediction of future videos, occupancy states, BEV representations, or agent motion. We argue that planning need not reconstruct the complete future world, but only focus on scene features that affect future ego action. Based on this perspective, we propose Auto-JEPA, an action-oriented latent world model that learns continuous future driving intent through joint-embedding prediction. Given visual observations, egomotion history, and navigation commands, Auto-JEPA predicts an intent embedding aligned with the latent representation of the future ego trajectory. The predicted intent retrieves executable trajectories from a fixed trajectory memory, which are then ranked by a scene-conditioned candidate selection module. Auto-JEPA keeps the visual encoder frozen, requires no explicit perception annotations, and uses no learned trajectory generator. By optimizing only task-specific modules for trajectory representation, intent prediction, and candidate selection, Auto-JEPA achieves 91.3 PDMS on NAVSIM v1 and 89.1 EPDMS on NAVSIM v2. Semantic occlusion experiments show that masking dynamic-agent regions induces an average intent change 2.97x that of equal-area random masking. Moreover, occluding vehicles that affect future driving substantially changes the predicted intent and selected trajectory, whereas both remain essentially unchanged when non-influential vehicles are occluded. These results show that future-intent prediction encourages the model to focus on planning-relevant visual features and supports high-quality planning without dense future-world modeling.",
+            "authors": [
+              "Jiwei Yang",
+              "Zhengxian Chen",
+              "Chaosheng Huang",
+              "Jun Li"
+            ],
+            "categories": [
+              "cs.RO",
+              "cs.AI"
+            ],
+            "published": "2026-07-31 05:10:23+00:00",
+            "updated": "2026-07-31 05:10:23+00:00",
+            "abs_url": "http://arxiv.org/abs/2607.29031v1",
+            "pdf_url": "https://arxiv.org/pdf/2607.29031v1",
+            "venue": "",
+            "published_label": "",
+            "collection_kind": "recent",
+            "matched_topics": [
+              "Text-to-Video + Agentic AI"
+            ],
+            "keyword_score": 21.0,
+            "topic_scores": {
+              "Text-to-Video + Agentic AI": 21.0
+            }
+          }
+        },
+        {
+          "rank": 3,
+          "importance_score": 90,
+          "selection_reason": "这是这个方向近期更值得跟踪的新工作之一，它同时命中了 文生视频 + Agentic AI 的关键特征。",
+          "direction_fit": "文生视频 + Agentic AI",
+          "detail_path": "papers/2607-29496v1-transcript-managed-transformers-monotone-multi-agent-collapse-and-univer.md",
+          "paper": {
+            "paper_id": "2607.29496v1",
+            "source": "arXiv",
+            "title": "Transcript-Managed Transformers: Monotone Multi-Agent Collapse and Universality with Two Pop-Enabled Transcripts",
+            "abstract": "We study transcript management for fixed, finite-precision causal Transformers. A transcript is partitioned into channels of bounded blocks. Each transition consults a fixed visible suffix and may append one block, leaving the model, weights, and token protocol unchanged. The operation $P_c:=\\PopContext(c)$ deletes the newest block on channel $c$ and exposes its predecessor. We model the layer by the Transcript-Managed Transducer $\\TMTn{k}$: one finite controller, $k$ channels, and per-round actions from stay, push, and pop under a caller-driven status map. Fixed visible windows encode as finite symbols. The pop-free Restricted Transcript-Managed Transducer $\\RTMTn{k}$ is the standard append-only layer and, for every fixed $k$, realizes exactly the deterministic finite-state transductions. The same holds for every fixed finite agent population under a monotone protocol that appends, routes, and copies visible blocks. Admitting $\\{P_c\\}_{c=1}^k$ restores pop. Newest-first, a pop-enabled channel is a stack; compiling to the Hopcroft--Ullman presentation transfers the classical hierarchy: $\\DCFL$ for $k=1$ and $\\RE$ for every $k\\ge2$. Orchestrated one-channel agents match one controller with $k$ channels, so two pop-enabled transcripts---in one agent or two---suffice for universality. Simulation costs and invariance to fixed block size and visible radius are stated. The bounds fix precision, alphabets, blocks, visibility, controller state, and population; growing exact context, hidden-block access, writable stores, and unbounded \\textbf{Spawn} add further state.",
+            "authors": [
+              "Sergey Salishev"
+            ],
+            "categories": [
+              "cs.LG",
+              "cs.FL",
+              "cs.MA"
+            ],
+            "published": "2026-07-31 15:03:09+00:00",
+            "updated": "2026-07-31 15:03:09+00:00",
+            "abs_url": "http://arxiv.org/abs/2607.29496v1",
+            "pdf_url": "https://arxiv.org/pdf/2607.29496v1",
+            "venue": "",
+            "published_label": "",
+            "collection_kind": "recent",
+            "matched_topics": [
+              "Agentic AI",
+              "Text-to-Video + Agentic AI"
+            ],
+            "keyword_score": 19.0,
+            "topic_scores": {
+              "Agentic AI": 7.0,
+              "Text-to-Video + Agentic AI": 19.0
+            }
+          }
+        }
+      ]
+    }
+  ],
+  "paper_details": {
+    "2210.03629": "papers/2210-03629-react-synergizing-reasoning-and-acting-in-language-models.md",
+    "2302.04761": "papers/2302-04761-toolformer-language-models-can-teach-themselves-to-use-tools.md",
+    "2607.29422v1": "papers/2607-29422v1-agenticrepair-multi-faceted-program-context-engineering-for-agentic-vuln.md",
+    "2607.29405v1": "papers/2607-29405v1-beyond-component-testing-validating-agentic-ai-systems.md",
+    "2607.29347v1": "papers/2607-29347v1-seekbrain-an-autonomous-multi-agent-system-for-accelerating-neuroscience.md",
+    "2112.10752": "papers/2112-10752-high-resolution-image-synthesis-with-latent-diffusion-models.md",
+    "2302.05543": "papers/2302-05543-adding-conditional-control-to-text-to-image-diffusion-models.md",
+    "2607.29367v1": "papers/2607-29367v1-satedit-mask-conditioned-image-editing-via-vlm-guided-segment-annotation.md",
+    "2607.29025v1": "papers/2607-29025v1-evaluation-verification-reward-for-consistent-multi-reference-image-edit.md",
+    "2607.29337v1": "papers/2607-29337v1-dualdit-a-conditional-dual-output-diffusion-transformer-for-joint-oct-im.md",
+    "2204.03458": "papers/2204-03458-video-diffusion-models.md",
+    "2210.02303": "papers/2210-02303-imagen-video-high-definition-video-generation-with-diffusion-models.md",
+    "2607.29545v1": "papers/2607-29545v1-moroute-dynamic-routing-for-in-context-multimodal-video-generation.md",
+    "2303.04671": "papers/2303-04671-visual-chatgpt-talking-drawing-and-editing-with-visual-foundation-models.md",
+    "2303.11381": "papers/2303-11381-mm-react-prompting-chatgpt-for-multimodal-reasoning-and-action.md",
+    "1803.10122": "papers/1803-10122-world-models.md",
+    "2402.15391": "papers/2402-15391-genie-generative-interactive-environments.md",
+    "2607.29302v1": "papers/2607-29302v1-bwm-a-low-cost-high-fidelity-world-simulator-for-robot-learning.md",
+    "2607.29031v1": "papers/2607-29031v1-auto-jepa-a-latent-world-model-of-continuous-intent-for-end-to-end-auton.md",
+    "2607.29496v1": "papers/2607-29496v1-transcript-managed-transformers-monotone-multi-agent-collapse-and-univer.md"
+  }
+}
